@@ -3,7 +3,7 @@ export const data = [
     year: "2021",
     title: "Company Founded",
     description:
-      "Quotus Software Solutions was established with a vision to innovate in the blockchain and web technologies space.",
+      "Galileos was established with a vision to innovate in the blockchain and web technologies space.",
     image: "/home/timeline/group.gif",
   },
   {

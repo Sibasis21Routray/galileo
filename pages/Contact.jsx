@@ -26,12 +26,7 @@ const ContactSection = () => {
 
   return (
     <section className="bg-black min-h-screen py-24 px-6 md:px-12 lg:px-24">
-      <SEO
-        title="Contact Galileo Ventures"
-        description="Connect with Galileo Ventures for bespoke software, IT infrastructure, and digital growth strategies."
-        image="https://galileonext.com/logo.png"
-        url="https://galileonext.com/contact"
-      />
+     
 
       <div className="max-w-6xl mx-auto">
         {/* Header */}

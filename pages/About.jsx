@@ -19,14 +19,7 @@ const AboutUs3D = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
   return (
     <div ref={containerRef} className="relative overflow-hidden">
-      <SEO
-        title="About Us | Quotus Software Solutions"
-        description="Learn about Quotus  a software Solutions building innovative blockchain, AI, and SaaS products. Discover our mission, team, and journey in enterprise software development."
-        keywords="Quotus, about Quotus, Quotus team, software Solutions, blockchain experts, AI software developers, enterprise IT, company mission, software consulting, technology innovation"
-        image="https://quotus.co.in/QuotusLOGO.png"
-        url="https://quotus.co.in/about"
-      />
-
+   
       {/* intro image*/}
       <IntroImage title="About Us" imageUrl="/commonEntroImage.jpg" />
 

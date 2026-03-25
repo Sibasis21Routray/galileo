@@ -1,177 +1,181 @@
 import { useRef } from "react";
 import { useInView, motion } from "framer-motion";
-import { 
-  FaCode, 
-  FaCloud, 
-  FaShieldAlt, 
+import {
+  FaCode,
+  FaCloud,
+  FaShieldAlt,
   FaChartLine,
   FaMobile,
   FaDatabase,
   FaRobot,
   FaSearch,
-  FaArrowRight 
+  FaArrowRight,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const features = [
+// Icons for the new structure (using react-icons as fallback)
+import {
+  FiPenTool,
+  FiCode,
+  FiSmartphone,
+  FiCpu,
+  FiActivity,
+} from "react-icons/fi";
+
+export const servicesData = [
   {
-    icon: FaCode,
-    title: "Software Development",
-    description: "Custom web and mobile apps, APIs, SaaS platforms, UI/UX, and DevOps pipelines.",
-    link: "/services/software-development",
-    linkText: "Explore",
-    category: "Development"
+    title: "UI/UX Design",
+    icon: <FiPenTool className="text-[#29f67a] text-2xl" />,
+    path: "/services/ui-ux-design",
+    items: [
+      { title: "Wireframing & Prototyping" },
+      { title: "User Interface Design" },
+      { title: "User Experience Research" },
+      { title: "Web & Mobile App Design" },
+    ],
   },
   {
-    icon: FaCloud,
-    title: "Software Solutions",
-    description: "Ready-to-deploy platforms for key business functions — fast, scalable, and reliable.",
-    link: "/services/software-solutions",
-    linkText: "Explore",
-    category: "Solutions"
+    title: "Web Development",
+    icon: <FiCode className="text-[#29f67a] text-2xl" />,
+    path: "/services/web-development",
+    items: [
+      { title: "Frontend & Backend Development" },
+      { title: "Custom Web Applications" },
+      { title: "E-commerce & CMS Integration" },
+      { title: "API Development & Integration" },
+    ],
   },
   {
-    icon: FaShieldAlt,
-    title: "IT Services",
-    description: "Cloud migration, cybersecurity, support, and infrastructure management.",
-    link: "/services/it-services",
-    linkText: "Explore",
-    category: "Services"
+    title: "Mobile App Development",
+    icon: <FiSmartphone className="text-[#29f67a] text-2xl" />,
+    path: "/services/mobile-app-development",
+    items: [
+      { title: "iOS & Android Development" },
+      { title: "Flutter & React Native" },
+      { title: "App Store Deployment" },
+      { title: "UI/UX for Mobile" },
+    ],
   },
   {
-    icon: FaChartLine,
+    title: "Blockchain Development",
+    icon: <FiCpu className="text-[#29f67a] text-2xl" />,
+    path: "/services/blockchain-development",
+    items: [
+      { title: "Smart Contract Development" },
+      { title: "Ethereum, Polygon, BSC" },
+      { title: "Wallet & Token Integration" },
+      { title: "DApp & NFT Solutions" },
+    ],
+  },
+  {
+    title: "AI Solutions",
+    icon: <FiActivity className="text-[#29f67a] text-2xl" />,
+    path: "/services/ai-solutions",
+    items: [
+      { title: "AI Chatbots & Assistants" },
+      { title: "Predictive Analytics" },
+      { title: "Natural Language Processing" },
+      { title: "Machine Learning Models" },
+    ],
+  },
+  {
     title: "Digital Marketing",
-    description: "SEO, paid ads, content strategy, and growth campaigns that convert.",
-    link: "/services/digital-marketing",
-    linkText: "Explore",
-    category: "Marketing"
+    icon: <FiActivity className="text-[#29f67a] text-2xl" />,
+    path: "/services/digital-marketing",
+    items: [
+      { title: "Search Engine Optimization (SEO)" },
+      { title: "Paid Advertising (SEM & Social Ads)" },
+      { title: "Social Media Strategy & Management" },
+      { title: "Email Marketing & Automation" },
+    ],
   },
-  {
-    icon: FaMobile,
-    title: "Mobile Development",
-    description: "Native and cross-platform mobile apps for iOS and Android with seamless UX.",
-    link: "/services/mobile-development",
-    linkText: "Explore",
-    category: "Development"
-  },
-  {
-    icon: FaDatabase,
-    title: "Data Analytics",
-    description: "Data-driven insights, business intelligence, and predictive analytics solutions.",
-    link: "/services/data-analytics",
-    linkText: "Explore",
-    category: "Analytics"
-  },
-  {
-    icon: FaRobot,
-    title: "AI & Automation",
-    description: "Intelligent automation, machine learning models, and AI-powered solutions.",
-    link: "/services/ai-automation",
-    linkText: "Explore",
-    category: "Innovation"
-  },
-  {
-    icon: FaSearch,
-    title: "SEO Optimization",
-    description: "Boost visibility, drive organic traffic, and improve search rankings.",
-    link: "/services/seo",
-    linkText: "Explore",
-    category: "Marketing"
-  }
 ];
 
-const FeatureCard = ({ icon: Icon, title, description, link, linkText, category, delay }) => {
+const FeatureCard = ({ title, icon, path, items, delay }) => {
   const ref = useRef(null);
   const inView = useInView(ref, {
-    threshold: 0.3,
+    threshold: 0.2,
     once: true,
   });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{
-        duration: 0.5,
-        delay: delay * 0.08,
+        duration: 0.6,
+        delay: delay * 0.1,
         ease: "easeOut",
       }}
       whileHover={{
-        y: -4,
-        transition: { duration: 0.2 },
+        y: -6,
+        transition: { duration: 0.25 },
       }}
-      className="group relative bg-gradient-to-br from-black to-gray-900 rounded-xl border border-[#29f67a]/10 hover:border-[#29f67a]/30 transition-all duration-300 p-5"
+      className="group relative bg-gradient-to-br from-black to-gray-900 rounded-2xl border border-[#29f67a]/10 hover:border-[#29f67a]/30 transition-all duration-300 p-6 md:p-7 flex flex-col h-full"
     >
-      {/* Category Badge */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={inView ? { opacity: 1, scale: 1 } : {}}
-        transition={{ delay: delay * 0.08 + 0.1 }}
-        className="absolute top-3 right-3"
-      >
-        <span className="text-[10px] font-medium px-2 py-1 rounded-full bg-[#29f67a]/10 text-[#29f67a] border border-[#29f67a]/20">
-          {category}
-        </span>
-      </motion.div>
-
-      {/* Icon */}
+      {/* Icon Section - Larger */}
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={inView ? { scale: 1, opacity: 1 } : {}}
-        transition={{ delay: delay * 0.08 + 0.15, type: "spring", stiffness: 200 }}
-        className="mb-4"
+        transition={{ delay: delay * 0.1 + 0.1, type: "spring", stiffness: 200 }}
+        className="mb-5"
       >
-        <div className="w-10 h-10 flex items-center justify-center bg-[#29f67a]/10 rounded-lg group-hover:bg-[#29f67a]/20 transition-all duration-300">
-          <Icon className="w-5 h-5 text-[#29f67a]" />
+        <div className="w-14 h-14 flex items-center justify-center bg-[#29f67a]/10 rounded-xl group-hover:bg-[#29f67a]/20 transition-all duration-300">
+          {icon}
         </div>
       </motion.div>
 
-      {/* Title */}
+      {/* Title - Larger */}
       <motion.h3
-        className="text-base font-semibold text-white mb-2"
+        className="text-xl md:text-2xl font-bold text-white mb-3 tracking-tight"
         initial={{ opacity: 0, x: -10 }}
         animate={inView ? { opacity: 1, x: 0 } : {}}
-        transition={{ delay: delay * 0.08 + 0.2 }}
+        transition={{ delay: delay * 0.1 + 0.15 }}
       >
         {title}
       </motion.h3>
 
-      {/* Description */}
-      <motion.p
-        className="text-xs text-gray-400 leading-relaxed mb-3"
+      {/* Sub-items List */}
+      <motion.ul
+        className="space-y-2 mb-5 flex-grow"
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
-        transition={{ delay: delay * 0.08 + 0.25 }}
+        transition={{ delay: delay * 0.1 + 0.2 }}
       >
-        {description}
-      </motion.p>
+        {items.map((item, idx) => (
+          <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
+            <span className="text-[#29f67a] mt-1 text-xs">▹</span>
+            <span className="leading-relaxed">{item.title}</span>
+          </li>
+        ))}
+      </motion.ul>
 
-      {/* Link */}
+      {/* Link - Larger */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
-        transition={{ delay: delay * 0.08 + 0.3 }}
+        transition={{ delay: delay * 0.1 + 0.25 }}
       >
-        <Link to={link}>
+        <Link to={path}>
           <motion.div
-            className="inline-flex items-center gap-1.5 text-[#29f67a] text-xs font-medium group-hover:gap-2.5 transition-all duration-300"
-            whileHover={{ x: 3 }}
+            className="inline-flex items-center gap-2 text-[#29f67a] text-sm font-medium group-hover:gap-3 transition-all duration-300"
+            whileHover={{ x: 4 }}
           >
-            <span>{linkText}</span>
-            <FaArrowRight className="w-2.5 h-2.5" />
+            <span>Explore Services</span>
+            <FaArrowRight className="w-3.5 h-3.5" />
           </motion.div>
         </Link>
       </motion.div>
 
       {/* Animated Border Glow */}
       <motion.div
-        className="absolute inset-0 rounded-xl pointer-events-none"
+        className="absolute inset-0 rounded-2xl pointer-events-none"
         initial={{ opacity: 0 }}
         whileHover={{
           opacity: 1,
-          boxShadow: "0 0 20px rgba(41, 246, 122, 0.1)",
-          transition: { duration: 0.3 }
+          boxShadow: "0 0 24px rgba(41, 246, 122, 0.12)",
+          transition: { duration: 0.3 },
         }}
       />
     </motion.div>
@@ -180,23 +184,26 @@ const FeatureCard = ({ icon: Icon, title, description, link, linkText, category,
 
 const FeaturesSection = () => {
   return (
-    <div className="py-12 md:py-16 bg-black">
-      {/* Background Pattern */}
+    <div className="py-16 md:py-24 bg-black relative overflow-hidden">
+      {/* Background Pattern - Enhanced */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M60 0v60H0V0h60zM10 10v40h40V10H10zm5 5h30v30H15V15zm5 5v20h20V20H20z' stroke='%2329f67a' stroke-width='0.3' fill='none'/%3E%3C/svg%3E")`,
-          backgroundSize: "30px 30px"
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h80v80H0z' fill='none'/%3E%3Cpath d='M80 0v80H0V0h80zM15 15v50h50V15H15zm10 10h30v30H25V25zm5 5v20h20V30H30z' stroke='%2329f67a' stroke-width='0.4' fill='none'/%3E%3C/svg%3E")`,
+            backgroundSize: "40px 40px",
+          }}
+        />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Section Header - Enhanced */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-14 md:mb-20"
         >
           {/* Badge */}
           <motion.div
@@ -204,16 +211,16 @@ const FeaturesSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#29f67a]/10 border border-[#29f67a]/20 mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#29f67a]/10 border border-[#29f67a]/20 mb-5"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-[#29f67a] animate-pulse" />
-            <span className="text-xs font-medium text-[#29f67a] tracking-wide">
-              OUR CAPABILITIES
+            <span className="text-xs font-medium text-[#29f67a] tracking-wider uppercase">
+              Our Capabilities
             </span>
           </motion.div>
 
           <motion.h2
-            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -226,7 +233,7 @@ const FeaturesSection = () => {
           </motion.h2>
 
           <motion.p
-            className="text-sm text-gray-400 max-w-2xl mx-auto"
+            className="text-base text-gray-400 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -237,30 +244,25 @@ const FeaturesSection = () => {
           </motion.p>
         </motion.div>
 
-        {/* Features Grid */}
+        {/* Features Grid - Larger Cards with 3 columns on desktop for better spacing */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
-          {features.map((feature, index) => (
+          {servicesData.map((service, index) => (
             <FeatureCard
               key={index}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-              link={feature.link}
-              linkText={feature.linkText}
-              category={feature.category}
+              title={service.title}
+              icon={service.icon}
+              path={service.path}
+              items={service.items}
               delay={index}
             />
           ))}
         </motion.div>
-
-        {/* View All Services Link */}
-      
       </div>
     </div>
   );

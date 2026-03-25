@@ -39,24 +39,7 @@ function Product() {
 
   return (
     <div>
-      {/*  Dynamic SEO */}
-      {productData && (
-        <SEO
-          title={
-            productData.seo?.title || "Products | Quotus Software Solutions"
-          }
-          description={
-            productData.seo?.description ||
-            "Explore innovative products by Quotus Software Solutions."
-          }
-          keywords={
-            productData.seo?.keywords ||
-            "Quotus products, blockchain, AI, SaaS, enterprise software"
-          }
-          image={productData.seo?.image || "https://quotus.io/QuotusLOGO.png"}
-          url={productData.seo?.url}
-        />
-      )}
+   
       {!productData && <div className="text-black h-screen"></div>}
 
       {productData && (

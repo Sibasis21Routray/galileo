@@ -4,7 +4,7 @@ export const blogPosts = [
     title:
       "How AI Booking Agents Are Transforming the Hotel Booking Experience",
     excerpt:
-      "Explore the benefits of AI booking agents in the hotel booking experience - boost efficiency, guest satisfaction, and bookings with Quotus software solutions.",
+      "Explore the benefits of AI booking agents in the hotel booking experience - boost efficiency, guest satisfaction, and bookings with Galileos.",
     date: "September 15, 2025",
     company: "QUOTUS",
     category: "Hospitality Technology",
@@ -13,7 +13,7 @@ export const blogPosts = [
     image: "/blogs/img6.jpg",
     imageCaption:
       "AI booking agents provide seamless, personalized hotel reservation experiences",
-    author: "Quotus Software Solutions",
+    author: "Galileos",
     authorImage: "/blogs/profile.webp",
     // authorRole: "Senior Product Manager",
 
@@ -86,7 +86,7 @@ export const blogPosts = [
           id: 9,
           question: "Which is the best booking site for hotel booking?",
           answer:
-            "The best way to book hotels is through a dedicated booking engine powered by Quotus Software Solutions. Our smart, user-friendly system ensures seamless reservations, competitive pricing, and a smooth experience for both guests and hotel owners.",
+            "The best way to book hotels is through a dedicated booking engine powered by Galileos. Our smart, user-friendly system ensures seamless reservations, competitive pricing, and a smooth experience for both guests and hotel owners.",
           category: "Quotus Solutions",
         },
       ],

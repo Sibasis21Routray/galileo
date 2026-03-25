@@ -105,13 +105,7 @@ const EventGallery = () => {
 
   return (
     <div className="min-h-screen bg-white mt-[5%]">
-      <SEO
-        title="Gallery | Quotus Software Solutions"
-        description="Contact Quotus Software Solutions for blockchain, AI, SaaS, and custom software development. Reach out to our team for inquiries, collaborations, or support."
-        keywords="Quotus gallery, blockchain solutions contact, AI development contact, SaaS company contact, enterprise IT contact"
-        image="https://quotus.co.in/QuotusLOGO.png"
-        url="https://quotus.co.in/gallery"
-      />
+     
 
       {/* Intro image */}
       <IntroImage title="Our Gallery" imageUrl="/commonEntroImage.jpg" />

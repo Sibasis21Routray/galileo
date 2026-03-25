@@ -149,7 +149,7 @@ const OverlayCopy = ({ subheading, heading, productUrl, description }) => {
       )}
 
       {/* CTA Button */}
-      {productUrl && (
+      {/* {productUrl && (
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -162,7 +162,7 @@ const OverlayCopy = ({ subheading, heading, productUrl, description }) => {
           <span>View Product</span>
           <FiExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </motion.button>
-      )}
+      )} */}
     </motion.div>
   );
 };

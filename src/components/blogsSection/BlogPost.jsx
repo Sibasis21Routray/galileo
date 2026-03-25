@@ -91,13 +91,7 @@ const BlogPost = () => {
 
   return (
     <div className="bg-white">
-      <SEO
-        title="How AI Booking Agents Transform Hotel Experiences today"
-        description="Explore the benefits of AI booking agents in the hotel booking experience - boost efficiency, guest satisfaction, and bookings with Quotus software solutions."
-        keywords="Ai booking agents"
-        image="https://quotus.co.in/QuotusLOGO.png"
-        url="https://quotus.co.in/blogs/ai-booking-agents-for-hotel-industry"
-      />
+     
       <motion.div
         className="min-h-screen  w-full mt-10"
         initial={{ opacity: 0, y: 20 }}

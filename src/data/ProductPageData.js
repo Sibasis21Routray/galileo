@@ -7,11 +7,11 @@ export const ourProducts = [
     name: "Naturopura: Smart Farming Platform",
 
     seo: {
-      title: "Naturopura | Smart Farming Platform | Quotus Software Solutions",
+      title: "Naturopura | Smart Farming Platform | Galileos",
       description:
         "Naturopura is a blockchain-powered smart farming platform that leverages AI and IoT for sustainable agriculture. Empower farmers with real-time insights, secure supply chain tracking, and efficient crop management.",
       keywords:
-        "Naturopura, smart farming, blockchain agriculture, AI farming, sustainable farming, agri-tech platform, IoT in agriculture, digital farming, smart crop management, Quotus Software Solutions",
+        "Naturopura, smart farming, blockchain agriculture, AI farming, sustainable farming, agri-tech platform, IoT in agriculture, digital farming, smart crop management, Galileos",
       image:
         "https://quotus.co.in/product/allProducts/naturopura/naturopura.png",
       url: "https://quotus.co.in/product/naturopura",
@@ -176,11 +176,11 @@ export const ourProducts = [
 
     seo: {
       title:
-        "Arthapro AI | Web3 Blockchain Gaming Platform | Quotus Software Solutions",
+        "Arthapro AI | Web3 Blockchain Gaming Platform | Galileos",
       description:
         "Arthapro AI is a next-gen blockchain gaming platform that  deliver secure, scalable, and engaging play-to-earn experiences. Unlock the future of decentralized gaming with smart contracts and crypto rewards.",
       keywords:
-        "Arthapro AI, blockchain gaming platform, Web3 games, play-to-earn, decentralized gaming, crypto gaming, smart contract gaming, Quotus Software Solutions",
+        "Arthapro AI, blockchain gaming platform, Web3 games, play-to-earn, decentralized gaming, crypto gaming, smart contract gaming, Galileos",
       image: "https://quotus.co.in/product/allProducts/artha/arthaLogo.png",
       url: "https://quotus.co.in/product/arthaProAi",
     },
@@ -346,7 +346,7 @@ export const ourProducts = [
 
   //   seo: {
   //     title:
-  //       "Feedora | Create stunning widgets for your website | Quotus Software Solutions",
+  //       "Feedora | Create stunning widgets for your website | Galileos",
   //     description:
   //       "Build beautiful, customizable widgets in minutes. No coding required. Boost your website's engagement with our easy-to-use widget builder.",
   //     keywords:
@@ -585,7 +585,7 @@ export const ourProducts = [
 
     seo: {
       title:
-        "SwiftRooms | Find Next Place To Visit | Quotus Software Solutions",
+        "SwiftRooms | Find Next Place To Visit | Galileos",
       description: "Discover amazing places at exclusive deals.",
       keywords:
         "SwiftRooms, hotel booking, travel deals, find hotels, exclusive stays, affordable hotels, next destination, book rooms online, best travel deals, weekend getaways, luxury stays, budget travel, hotel finder, instant booking, last minute hotel deals, discounted rooms, travel planning, accommodations, explore destinations",
