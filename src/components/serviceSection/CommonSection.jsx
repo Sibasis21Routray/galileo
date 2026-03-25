@@ -227,7 +227,7 @@ const CommonSection = ({ data }) => {
                 <img
                   src={tech.icon}
                   alt={tech.name}
-                  className="h-12 w-12 object-contain mb-3 group-hover:scale-110 transition-transform"
+                  className="h-12 w-12 object-contain mb-3 group-hover:scale-110 transition-transform bg-white"
                 />
                 <span className="text-sm text-gray-500 group-hover:text-[#29f67a] transition-colors">
                   {tech.name}
