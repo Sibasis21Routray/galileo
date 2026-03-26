@@ -692,7 +692,7 @@ export const blockchainPageData = {
       },
       {
         name: "Meta Ads",
-        icon: "https://gulupadigital.com/wp-content/uploads/2023/10/Meta-Ads.png",
+        icon: "https://pngimg.com/uploads/meta/meta_PNG12.png",
         description: "Advertising across Facebook and Instagram",
       },
       {
