@@ -79,6 +79,27 @@ const CommonSection = ({ data }) => {
     { title: "Support", icon: FiGlobe, description: "24/7 ongoing maintenance" }
   ];
 
+
+  const path = location.pathname;
+
+// mapping service → product route
+const routeMap = {
+  "/services/ui-ux-design": "/product/arthaProAi",
+  "/services/web-development": "/product/naturopura",
+  "/services/mobile-app-development": "/product/swiftrooms",
+  "/services/blockchain-development": "/product/arthaProAi",
+  "/services/ai-solutions": "/product/agrieye",
+};
+
+// check if button should be shown
+const shouldShowCTA = path !== "/services/digital-marketing";
+
+// get target route
+const targetRoute = routeMap[path];
+
+
+
+
   return (
     <div className="bg-black min-h-screen">
       {/* Section 1: Hero Section */}
@@ -107,16 +128,16 @@ const CommonSection = ({ data }) => {
                 {data.section1.description}
               </p>
               
-              {data.section1.cta && (
-                <motion.button
-                  whileHover={{ x: 5 }}
-                  onClick={() => navigate("/product/naturopura")}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#29f67a] text-black font-medium rounded-lg hover:bg-[#29f67a]/90 transition-all"
-                >
-                  <span>{data.section1.cta}</span>
-                  <FiArrowRight className="w-4 h-4" />
-                </motion.button>
-              )}
+             {data.section1.cta && shouldShowCTA && targetRoute && (
+  <motion.button
+    whileHover={{ x: 5 }}
+    onClick={() => navigate(targetRoute)}
+    className="inline-flex items-center gap-2 px-6 py-3 bg-[#29f67a] text-black font-medium rounded-lg hover:bg-[#29f67a]/90 transition-all"
+  >
+    <span>{data.section1.cta}</span>
+    <FiArrowRight className="w-4 h-4" />
+  </motion.button>
+)}
             </motion.div>
 
             <motion.div
