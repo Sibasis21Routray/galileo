@@ -5,16 +5,17 @@ import {
   FiLinkedin, FiInstagram, FiMail, FiPhone, FiFacebook, FiTwitter, 
   FiChevronDown, FiChevronUp 
 } from 'react-icons/fi';
-import { MdOutlineLocationOn, MdPolicy } from "react-icons/md";
+import { MdOutlineLocationOn } from "react-icons/md";
 import { FaRegHeart, FaHome, FaInfoCircle, FaEnvelope } from "react-icons/fa";
-import { IoDocumentTextOutline } from "react-icons/io5";
 import { servicesData } from "../data/servicesData";
+import { ourProducts } from "../data/ProductPageData";
 
 const Footer = () => {
   const location = useLocation();
   const [openSections, setOpenSections] = useState({
     corporate: false,
     services: false,
+    products: false,
     contact: false
   });
 
@@ -25,6 +26,7 @@ const Footer = () => {
         setOpenSections({
           corporate: false,
           services: false,
+          products: false,
           contact: false
         });
       }
@@ -75,6 +77,13 @@ const Footer = () => {
     { name: "Contact", href: "/contact", icon: FaEnvelope },
   ];
 
+  // Product items from ourProducts data
+  const productItems = ourProducts.map(product => ({
+    name: product.productHeadingSection.name,
+    href: product.productHeadingSection.pathUrl,
+    description: product.productHeadingSection.heading
+  }));
+
   return (
     <footer className="bg-black text-white pt-20 pb-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden border-t border-[#29f67a]/20">
       {/* Animated Background Gradient */}
@@ -116,13 +125,14 @@ const Footer = () => {
       </div>
 
       <motion.div
-        className="relative z-10 mx-auto "
+        className="relative z-10 mx-[5vw]    "
         initial="hidden"
         whileInView="visible"
         variants={footerVariants}
         viewport={{ once: true, margin: "-50px" }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12">
+          {/* Company Info */}
           {/* Company Info */}
           <motion.div variants={itemVariants} className="lg:col-span-1 space-y-6">
             <div className="flex items-center gap-3">
@@ -132,7 +142,7 @@ const Footer = () => {
                 className="h-12 w-auto"
               />
             </div>
-            <p className="text-gray-400 leading-relaxed text-sm">
+            <p className="text-gray-400 leading-relaxed text-md">
               Bold thinking. Better tech. Real results. We build technology that helps modern businesses operate smarter, scale faster, and stand out.
             </p>
             <div className="flex space-x-3">
@@ -175,6 +185,7 @@ const Footer = () => {
             </div>
           </motion.div>
 
+
           {/* Corporate Information - Desktop */}
           <motion.div variants={itemVariants} className="hidden lg:block">
             <h3 className="text-lg font-bold text-white mb-6 relative">
@@ -192,7 +203,7 @@ const Footer = () => {
                   >
                     <Link
                       to={item.href}
-                      className={`text-sm flex items-center group transition-colors ${
+                      className={`text-md flex items-center group transition-colors ${
                         active ? 'text-[#29f67a]' : 'text-gray-400 hover:text-[#29f67a]'
                       }`}
                     >
@@ -238,7 +249,7 @@ const Footer = () => {
                         >
                           <Link
                             to={item.href}
-                            className={`text-sm flex items-center group transition-colors ${
+                            className={`text-md flex items-center group transition-colors ${
                               active ? 'text-[#29f67a]' : 'text-gray-400 hover:text-[#29f67a]'
                             }`}
                           >
@@ -271,7 +282,7 @@ const Footer = () => {
                   >
                     <Link
                       to={service.path}
-                      className={`text-sm flex items-center group transition-colors ${
+                      className={`text-md flex items-center group transition-colors ${
                         active ? 'text-[#29f67a]' : 'text-gray-400 hover:text-[#29f67a]'
                       }`}
                     >
@@ -316,7 +327,7 @@ const Footer = () => {
                         >
                           <Link
                             to={service.path}
-                            className={`text-sm flex items-center group transition-colors ${
+                            className={`text-md flex items-center group transition-colors ${
                               active ? 'text-[#29f67a]' : 'text-gray-400 hover:text-[#29f67a]'
                             }`}
                           >
@@ -334,6 +345,83 @@ const Footer = () => {
             </AnimatePresence>
           </div>
 
+          {/* Products - Desktop */}
+          <motion.div variants={itemVariants} className="hidden lg:block">
+            <h3 className="text-lg font-bold text-white mb-6 relative">
+              Products
+              <div className="absolute bottom-0 left-0 w-10 h-0.5 bg-[#29f67a] mt-2" />
+            </h3>
+            <ul className="space-y-3">
+              {productItems.map((product) => {
+                const active = isActive(product.href);
+                return (
+                  <motion.li
+                    key={product.name}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <Link
+                      to={product.href}
+                      className={`text-md flex items-center group transition-colors ${
+                        active ? 'text-[#29f67a]' : 'text-gray-400 hover:text-[#29f67a]'
+                      }`}
+                    >
+                      {product.name}
+                    </Link>
+                  </motion.li>
+                );
+              })}
+            </ul>
+          </motion.div>
+
+          {/* Products - Mobile Accordion */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => toggleSection('products')}
+              className="w-full flex items-center justify-between py-3 border-b border-[#29f67a]/20"
+            >
+              <h3 className="text-lg font-bold text-white">Products</h3>
+              {openSections.products ? (
+                <FiChevronUp className="text-[#29f67a]" />
+              ) : (
+                <FiChevronDown className="text-[#29f67a]" />
+              )}
+            </button>
+            <AnimatePresence>
+              {openSections.products && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="overflow-hidden"
+                >
+                  <ul className="space-y-3 py-4">
+                    {productItems.map((product) => {
+                      const active = isActive(product.href);
+                      return (
+                        <motion.li
+                          key={product.name}
+                          whileHover={{ x: 5 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <Link
+                            to={product.href}
+                            className={`text-md flex items-center group transition-colors ${
+                              active ? 'text-[#29f67a]' : 'text-gray-400 hover:text-[#29f67a]'
+                            }`}
+                          >
+                            {product.name}
+                          </Link>
+                        </motion.li>
+                      );
+                    })}
+                  </ul>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           {/* Contact Info */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <h3 className="text-lg font-bold text-white mb-6 relative">
@@ -341,8 +429,7 @@ const Footer = () => {
               <div className="absolute bottom-0 left-0 w-10 h-0.5 bg-[#29f67a] mt-2" />
             </h3>
             <address className="not-italic text-gray-400 space-y-4">
-             
-              <motion.p whileHover={{ x: 5 }} className="flex items-center text-sm">
+              <motion.p whileHover={{ x: 5 }} className="flex items-center text-md">
                 <FiMail className="mr-3 text-[#29f67a]" size={16} />
                 <Link
                   to="mailto:info@galileo.com"
@@ -351,7 +438,7 @@ const Footer = () => {
                   info@galileo.com
                 </Link>
               </motion.p>
-              <motion.p whileHover={{ x: 5 }} className="flex items-center text-sm">
+              <motion.p whileHover={{ x: 5 }} className="flex items-center text-md">
                 <FiPhone className="mr-3 text-[#29f67a]" size={16} />
                 <Link
                   to="tel:+919777403555"
@@ -363,8 +450,6 @@ const Footer = () => {
             </address>
           </motion.div>
         </div>
-
-     
 
         {/* Copyright */}
         <motion.div
