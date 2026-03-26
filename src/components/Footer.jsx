@@ -116,7 +116,7 @@ const Footer = () => {
       </div>
 
       <motion.div
-        className="relative z-10 mx-auto max-w-7xl"
+        className="relative z-10 mx-auto "
         initial="hidden"
         whileInView="visible"
         variants={footerVariants}
