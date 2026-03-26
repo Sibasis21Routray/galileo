@@ -55,18 +55,15 @@ export default function AppRoutes() {
         <Route path="/services/ai-solutions" element={<AiSolutions />} />
         <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
 
-        <Route path="/gallery" element={<Gallery />} />
+        
 
         {/* Nested route for products */}
         <Route path="/product/naturopura" element={<Product />} />
         <Route path="/product/arthaProAi" element={<Product />} />
-        <Route path="/product/feedora" element={<Product />} />
         <Route path="/product/swiftrooms" element={<Product />} />
         <Route path="/product/agrieye" element={<Product />} />
 
         <Route path="/contact" element={<Contact />} />
-        <Route path="/blogs" element={<Blog />} />
-        <Route path="/blogs/:slug" element={<BlogPost />} />
 
         {/* unmatched paths */}
         <Route path="*" element={<PageNotFound />} />
