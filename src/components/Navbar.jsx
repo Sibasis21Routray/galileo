@@ -12,13 +12,11 @@ export const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services", hasDropdown: true },
-  // { name: "Gallery", href: "/gallery" },
   { name: "Product", href: "/product", hasDropdown: true },
-  // { name: "Blogs", href: "/blogs" },
   { name: "Contact", href: "/contact" },
 ];
 
-// Filter services data to only include the required ones
+// Filter services data for desktop dropdown
 const filteredServicesData = servicesData.filter(service => 
   ["SOFTWARE DEVELOPMENT", "SOFTWARE SOLUTIONS", "IT SERVICES", "DIGITAL MARKETING"].includes(service.title)
 );
@@ -69,6 +67,14 @@ export default function Navbar() {
     }
     return location.pathname.startsWith(href);
   };
+
+  // Reset mobile dropdowns when sheet closes
+  useEffect(() => {
+    if (!isOpen) {
+      setMobileServicesOpen(false);
+      setMobileProductOpen(false);
+    }
+  }, [isOpen]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black" style={{ backgroundColor: "#000000" }}>
@@ -192,7 +198,7 @@ export default function Navbar() {
                     )}
                   </Link>
 
-                  {/* Services Dropdown */}
+                  {/* Services Dropdown - Desktop */}
                   <AnimatePresence>
                     {isServices && showServicesDropdown && (
                       <motion.div
@@ -211,7 +217,7 @@ export default function Navbar() {
                     )}
                   </AnimatePresence>
 
-                  {/* Product Dropdown */}
+                  {/* Product Dropdown - Desktop */}
                   <AnimatePresence>
                     {isProduct && showProductDropdown && (
                       <motion.div
@@ -321,9 +327,7 @@ export default function Navbar() {
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <div
-                variant="ghost"
-                size="icon"
-                className="lg:hidden relative z-10 text-gray-300 hover:text-[#29f67a] hover:bg-[#29f67a]/10 cursor-pointer"
+                className="lg:hidden relative z-10 text-gray-300 hover:text-[#29f67a] hover:bg-[#29f67a]/10 cursor-pointer p-2 rounded-lg transition-all"
               >
                 {isOpen ? (
                   <X className="h-6 w-6" />
@@ -341,7 +345,7 @@ export default function Navbar() {
               <div className="flex flex-col h-full">
                 {/* Mobile Header logo */}
                 <div className="flex items-center justify-between p-4 border-b border-[#29f67a]/20">
-                  <Link to="/" className="z-10 block">
+                  <Link to="/" className="z-10 block" onClick={() => setIsOpen(false)}>
                     <motion.div
                       whileTap={{
                         scale: 0.95,
@@ -370,195 +374,115 @@ export default function Navbar() {
                 </div>
 
                 {/* Mobile Navigation */}
-                <nav className="flex-1 py-2 overflow-y-auto">
+                <div className="flex-1 py-2 overflow-y-auto">
                   {navItems.map((item) => {
                     const active = isActive(item.href);
+                    const isServices = item.name === "Services";
+                    const isProduct = item.name === "Product";
 
-                    return (
-                      <div key={item.name}>
-                        {item.name === "Services" || item.name === "Product" ? (
-                          <div className="px-2">
-                            <div
-                              onClick={() => {
-                                if (item.name === "Services") {
-                                  setMobileServicesOpen(!mobileServicesOpen);
-                                } else if (item.name === "Product") {
-                                  setMobileProductOpen(!mobileProductOpen);
-                                }
-                              }}
-                              className={`flex items-center justify-between px-4 py-3 rounded-lg cursor-pointer transition-all ${
-                                active
-                                  ? "text-[#29f67a] bg-[#29f67a]/10"
-                                  : "text-gray-300 hover:bg-[#29f67a]/5"
-                              }`}
-                            >
-                              <span className="font-medium">{item.name}</span>
-                              <motion.div
-                                animate={{
-                                  rotate:
-                                    item.name === "Services"
-                                      ? mobileServicesOpen
-                                        ? 180
-                                        : 0
-                                      : mobileProductOpen
-                                      ? 180
-                                      : 0,
-                                }}
-                                transition={{ duration: 0.2 }}
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  className={`h-5 w-5 ${
-                                    active ? "text-[#29f67a]" : "text-gray-400"
-                                  }`}
-                                  viewBox="0 0 20 20"
-                                  fill="currentColor"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clipRule="evenodd"
-                                  />
-                                </svg>
-                              </motion.div>
-                            </div>
-
-                            {/* Services Dropdown */}
-                            <AnimatePresence>
-                              {item.name === "Services" && mobileServicesOpen && (
-                                <motion.div
-                                  initial={{ opacity: 0, height: 0 }}
-                                  animate={{ opacity: 1, height: "auto" }}
-                                  exit={{ opacity: 0, height: 0 }}
-                                  transition={{ duration: 0.2 }}
-                                  className="overflow-hidden"
-                                >
-                                  <div className="pl-4 py-2 space-y-2">
-                                    {filteredServicesData.map((service, index) => {
-                                      const serviceActive = location.pathname === service.path;
-
-                                      return (
-                                        <div
-                                          key={index}
-                                          className={`flex items-center gap-2 cursor-pointer px-4 py-2 rounded-lg transition ${
-                                            serviceActive
-                                              ? "text-[#29f67a] bg-[#29f67a]/10"
-                                              : "text-gray-300 hover:text-[#29f67a] hover:bg-[#29f67a]/5"
-                                          }`}
-                                          onClick={() => {
-                                            setMobileServicesOpen(false);
-                                            navigate(service.path);
-                                            setIsOpen(false);
-                                          }}
-                                        >
-                                          {service.icon}
-                                          <span className="text-xs font-medium">
-                                            {service.title}
-                                          </span>
-                                          {serviceActive && (
-                                            <motion.div
-                                              layoutId="mobile-service-active"
-                                              className="w-1 h-5 bg-[#29f67a] rounded-full ml-auto"
-                                              transition={{
-                                                type: "spring",
-                                                bounce: 0.2,
-                                                duration: 0.6,
-                                              }}
-                                            />
-                                          )}
-                                        </div>
-                                      );
-                                    })}
-                                  </div>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-
-                            {/* Product Dropdown */}
-                            <AnimatePresence>
-                              {item.name === "Product" && mobileProductOpen && (
-                                <motion.div
-                                  initial={{ opacity: 0, height: 0 }}
-                                  animate={{ opacity: 1, height: "auto" }}
-                                  exit={{ opacity: 0, height: 0 }}
-                                  transition={{ duration: 0.2 }}
-                                  className="overflow-hidden"
-                                >
-                                  <div className="pl-4 py-2 space-y-2">
-                                    {ourProducts.map((product, index) => {
-                                      const productActive = location.pathname === product.productHeadingSection.pathUrl;
-
-                                      return (
-                                        <div
-                                          key={index}
-                                          className={`flex items-center gap-2 cursor-pointer px-4 py-2 rounded-lg transition ${
-                                            productActive
-                                              ? "text-[#29f67a] bg-[#29f67a]/10"
-                                              : "text-gray-300 hover:text-[#29f67a] hover:bg-[#29f67a]/5"
-                                          }`}
-                                          onClick={() => {
-                                            setMobileProductOpen(false);
-                                            navigate(product.productHeadingSection.pathUrl);
-                                            setIsOpen(false);
-                                          }}
-                                        >
-                                          <span className="mr-3">
-                                            <img
-                                              src={product.productHeadingSection.navIcon}
-                                              className="rounded-full w-8 h-8 object-contain"
-                                              alt="Product Icon"
-                                            />
-                                          </span>
-                                          <span className="text-xs font-medium">
-                                            {product.productHeadingSection.name}
-                                          </span>
-                                          {productActive && (
-                                            <motion.div
-                                              layoutId="mobile-product-active"
-                                              className="w-1 h-5 bg-[#29f67a] rounded-full ml-auto"
-                                              transition={{
-                                                type: "spring",
-                                                bounce: 0.2,
-                                                duration: 0.6,
-                                              }}
-                                            />
-                                          )}
-                                        </div>
-                                      );
-                                    })}
-                                  </div>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                          </div>
-                        ) : (
-                          <Link
-                            to={item.href}
-                            onClick={() => setIsOpen(false)}
-                            className={`block px-4 py-3 rounded-lg transition-all mx-2 font-medium relative ${
+                    if (isServices || isProduct) {
+                      const isOpenState = isServices ? mobileServicesOpen : mobileProductOpen;
+                      const setIsOpenState = isServices ? setMobileServicesOpen : setMobileProductOpen;
+                      const dataToShow = isServices ? servicesData : ourProducts;
+                      
+                      return (
+                        <div key={item.name} className="border-b border-[#29f67a]/10 mx-2">
+                          {/* Dropdown Header */}
+                          <button
+                            onClick={() => {
+                              if (isServices && mobileProductOpen) setMobileProductOpen(false);
+                              if (isProduct && mobileServicesOpen) setMobileServicesOpen(false);
+                              setIsOpenState(!isOpenState);
+                            }}
+                            className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all ${
                               active
-                                ? "text-[#29f67a] bg-[#29f67a]/10"
-                                : "text-gray-300 hover:text-[#29f67a] hover:bg-[#29f67a]/5"
+                                ? "text-[#29f67a]"
+                                : "text-gray-300 hover:text-[#29f67a]"
                             }`}
                           >
-                            {item.name}
-                            {active && (
+                            <span className="font-medium text-base">{item.name}</span>
+                            <motion.div
+                              animate={{ rotate: isOpenState ? 180 : 0 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </motion.div>
+                          </button>
+
+                          {/* Dropdown Content */}
+                          <AnimatePresence>
+                            {isOpenState && (
                               <motion.div
-                                layoutId="mobile-nav-active"
-                                className="absolute left-0 top-0 bottom-0 w-1 bg-[#29f67a] rounded-r-full"
-                                transition={{
-                                  type: "spring",
-                                  bounce: 0.2,
-                                  duration: 0.6,
-                                }}
-                              />
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="overflow-hidden"
+                              >
+                                <div className="pl-8 py-2 space-y-1">
+                                  {dataToShow.map((item_data, idx) => {
+                                    const itemPath = isServices ? item_data.path : item_data.productHeadingSection?.pathUrl;
+                                    const itemTitle = isServices ? item_data.title : item_data.productHeadingSection?.name;
+                                    const itemIcon = isServices ? item_data.icon : item_data.productHeadingSection?.navIcon;
+                                    const isItemActive = location.pathname === itemPath;
+                                    
+                                    return (
+                                      <Link
+                                        key={idx}
+                                        to={itemPath}
+                                        onClick={() => {
+                                          setIsOpenState(false);
+                                          setTimeout(() => setIsOpen(false), 100);
+                                        }}
+                                        className={`flex items-center gap-2 px-4 py-2 rounded-lg transition text-sm ${
+                                          isItemActive
+                                            ? "text-[#29f67a] bg-[#29f67a]/10"
+                                            : "text-gray-400 hover:text-[#29f67a] hover:bg-[#29f67a]/5"
+                                        }`}
+                                      >
+                                       
+                                        <span>{itemTitle}</span>
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              </motion.div>
                             )}
-                          </Link>
-                        )}
-                      </div>
+                          </AnimatePresence>
+                        </div>
+                      );
+                    }
+
+                    // Regular nav items (Home, About, Contact)
+                    return (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        onClick={() => {
+                          setIsOpen(false);
+                        }}
+                        className={`block px-6 py-3 rounded-lg transition-all mx-2 my-1 font-medium ${
+                          active
+                            ? "text-[#29f67a] bg-[#29f67a]/10"
+                            : "text-gray-300 hover:text-[#29f67a] hover:bg-[#29f67a]/5"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
                     );
                   })}
-                </nav>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
