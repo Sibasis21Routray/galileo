@@ -115,7 +115,7 @@ export default function HeroSection() {
         >
            <div className="absolute inset-0 bg-[#29f67a]/20 blur-[80px] rounded-full animate-pulse" />
            <img
-              src="https://galileonext.com/wp-content/uploads/2025/06/augmented-reality-illustration-03@2x.png"
+              src="/robo.png"
               alt="Galileo"
               className="relative z-10 w-full h-full object-contain filter drop-shadow-[0_0_30px_rgba(41,246,122,0.3)]"
             />

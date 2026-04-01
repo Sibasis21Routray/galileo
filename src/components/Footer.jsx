@@ -137,7 +137,7 @@ const Footer = () => {
           <motion.div variants={itemVariants} className="lg:col-span-1 space-y-6">
             <div className="flex items-center gap-3">
               <img 
-                src="https://galileonext.com/wp-content/uploads/2025/06/galileo.png" 
+                src="/logo.png" 
                 alt="Galileo" 
                 className="h-12 w-auto"
               />
@@ -438,7 +438,7 @@ const Footer = () => {
                   info@galileo.com
                 </Link>
               </motion.p>
-              <motion.p whileHover={{ x: 5 }} className="flex items-center text-md">
+              {/* <motion.p whileHover={{ x: 5 }} className="flex items-center text-md">
                 <FiPhone className="mr-3 text-[#29f67a]" size={16} />
                 <Link
                   to="tel:+919777403555"
@@ -446,7 +446,7 @@ const Footer = () => {
                 >
                   +91 123456789
                 </Link>
-              </motion.p>
+              </motion.p> */}
             </address>
           </motion.div>
         </div>

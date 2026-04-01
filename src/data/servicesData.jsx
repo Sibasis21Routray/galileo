@@ -634,7 +634,7 @@ export const blockchainPageData = {
 
   export const digitalMarketingPageData = {
   section1: {
-    image: "https://img.freepik.com/free-vector/digital-marketing-concept-with-online-advertising-media-symbols-flat_1284-31958.jpg?semt=ais_hybrid&w=740&q=80",
+    image: "/marketing.avif",
     title: "Marketing That Converts, Not Just Clicks",
     description:
       "Our digital marketing services combine data science, storytelling, and automation to transform visibility into measurable business growth. We craft campaigns driven by insights, not assumptions — helping you reach the right audience, on the right channels, with the right message.",

@@ -56,7 +56,7 @@ export default function IntroImage({ title, imageUrl }) {
         className="w-full h-[60vh] md:h-[50vh] relative"
       >
         <img
-          src={"https://static.vecteezy.com/system/resources/thumbnails/049/185/609/small/a-green-paper-texture-background-offers-an-abstract-dark-green-surface-suitable-for-various-design-projects-photo.jpg"}
+          src={"/entroBg.jpg"}
           alt={title}
           className="w-full h-full object-cover opacity-60 transition-all duration-1000"
         />

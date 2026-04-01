@@ -10,9 +10,7 @@ const Gallery = lazy(() => import("../pages/Gallery"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const Product = lazy(() => import("../pages/Product"));
 const Contact = lazy(() => import("../pages/Contact"));
-const Blog = lazy(() => import("../pages/Blog"));
 const PageNotFound = lazy(() => import("../pages/PageNotFound"));
-const BlogPost = lazy(() => import("../src/components/blogsSection/BlogPost"));
 
 // Lazy load services
 const WebDevelopment = lazy(() =>

@@ -6,16 +6,7 @@ export const ourProducts = [
     slug: "naturopura",
     name: "Naturopura: Smart Farming Platform",
 
-    seo: {
-      title: "Naturopura | Smart Farming Platform | Galileos",
-      description:
-        "Naturopura is a blockchain-powered smart farming platform that leverages AI and IoT for sustainable agriculture. Empower farmers with real-time insights, secure supply chain tracking, and efficient crop management.",
-      keywords:
-        "Naturopura, smart farming, blockchain agriculture, AI farming, sustainable farming, agri-tech platform, IoT in agriculture, digital farming, smart crop management, Galileos",
-      image:
-        "https://quotus.co.in/product/allProducts/naturopura/naturopura.png",
-      url: "https://quotus.co.in/product/naturopura",
-    },
+
     productHeadingSection: {
       name: "Naturopura",
       navIcon: "/product/allProducts/naturopura/naturopura.png",
@@ -174,16 +165,6 @@ export const ourProducts = [
     slug: "arthaProAi",
     name: "Artha Pro AI",
 
-    seo: {
-      title:
-        "Arthapro AI | Web3 Blockchain Gaming Platform | Galileos",
-      description:
-        "Arthapro AI is a next-gen blockchain gaming platform that  deliver secure, scalable, and engaging play-to-earn experiences. Unlock the future of decentralized gaming with smart contracts and crypto rewards.",
-      keywords:
-        "Arthapro AI, blockchain gaming platform, Web3 games, play-to-earn, decentralized gaming, crypto gaming, smart contract gaming, Galileos",
-      image: "https://quotus.co.in/product/allProducts/artha/arthaLogo.png",
-      url: "https://quotus.co.in/product/arthaProAi",
-    },
     productHeadingSection: {
       name: "Artha Pro AI",
       navIcon: "/product/allProducts/artha/arthaLogo.png",
@@ -344,16 +325,7 @@ export const ourProducts = [
   //   slug: "feedora",
   //   name: "Feedora",
 
-  //   seo: {
-  //     title:
-  //       "Feedora | Create stunning widgets for your website | Galileos",
-  //     description:
-  //       "Build beautiful, customizable widgets in minutes. No coding required. Boost your website's engagement with our easy-to-use widget builder.",
-  //     keywords:
-  //       "Feedora, social media aggregator, social feed integration, website widgets, real-time content updates, customizable social feeds, multi-platform integration, responsive social media display, brand engagement tools, unified social hub, social media wall, digital marketing platform, content curation, live social feed display, enterprise social media solution",
-  //     image: "https://quotus.co.in/product/allProducts/feedora/FEEDORLOGO.png",
-  //     url: "https://quotus.co.in/product/feedora",
-  //   },
+  // 
   //   productHeadingSection: {
   //     name: "Feedora",
   //     navIcon: "/product/allProducts/feedora/FEEDORLOGO.png",
@@ -583,16 +555,7 @@ export const ourProducts = [
     slug: "swiftrooms",
     name: "SwiftRooms",
 
-    seo: {
-      title:
-        "SwiftRooms | Find Next Place To Visit | Galileos",
-      description: "Discover amazing places at exclusive deals.",
-      keywords:
-        "SwiftRooms, hotel booking, travel deals, find hotels, exclusive stays, affordable hotels, next destination, book rooms online, best travel deals, weekend getaways, luxury stays, budget travel, hotel finder, instant booking, last minute hotel deals, discounted rooms, travel planning, accommodations, explore destinations",
-      image:
-        "https://quotus.co.in/product/allProducts/swiftrooms/swiftroomsLogo.jpeg",
-      url: "https://quotus.co.in/product/swiftrooms",
-    },
+   
     productHeadingSection: {
       name: "SwiftRooms",
       navIcon: "/product/allProducts/swiftrooms/swiftroomsLogo.jpeg",
@@ -755,22 +718,14 @@ export const ourProducts = [
   slug: "agrieye",
   name: "AgriEye",
 
-  seo: {
-    title: "AgriEye | AI-Powered Farm Protection System",
-    description:
-      "AgriEye is an AI + IoT based farm monitoring system that detects threats in real-time and helps farmers prevent crop damage.",
-    keywords:
-      "AgriEye, smart farming, AI agriculture, farm monitoring, IoT farming, pest detection, wildlife detection, agri tech, precision farming, YOLOv5 agriculture",
-    image: "/product/agrieye/logo.png",
-    url: "/product/agrieye",
-  },
+
 
   productHeadingSection: {
     name: "AgriEye - The Farm Defender",
     navIcon: "/product/allProducts/agrieye/agrieye.png",
     pathUrl: "/product/agrieye",
     productUrl: "",
-    bgImage: "https://media.omya.com/is/image/omyaschweizag/header%20agriculture%20page%3ALandscape?ts=1773739102200&dpr=on,2.625",
+    bgImage: "/aggreculture.avif",
     heading: "AI-Powered Farm Protection",
     subheading: "Real-time detection. Smart alerts. Zero loss.",
     description:

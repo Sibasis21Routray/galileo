@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { FiSend, FiMapPin, FiMail, FiClock, FiArrowRight } from "react-icons/fi";
-import Map from "../src/components/contactSection/Map";
 import ContactForm from "../src/components/contactSection/ContactForm";
 import SEO from "../src/SEO";
 
@@ -67,7 +66,7 @@ const ContactSection = () => {
           >
             {/* Contact Details */}
             <div className="border border-gray-800 rounded-xl p-6 md:p-8">
-              <img src="https://www.ace-cranes.com/public/front/images/contact-banner.jpg" alt="Contact Us" className="w-full h-90 object-cover rounded-lg mb-6" />
+              <img src="/contactImg.jpg" alt="Contact Us" className="w-full h-90 object-cover rounded-lg mb-6" />
               <h2 className="text-white text-lg font-medium mb-6">Contact info</h2>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
