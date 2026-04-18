@@ -94,7 +94,10 @@ export default function Navbar() {
       <div className="relative px-0 md:px-4 pr-3 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="z-10 block">
+          <Link
+  to="/"
+  className="z-10 block focus:outline-none focus:ring-0 active:outline-none"
+>
             <motion.div
               whileTap={{
                 scale: 0.95,
@@ -338,10 +341,11 @@ export default function Navbar() {
               </div>
             </SheetTrigger>
 
-            <SheetContent
-              side="right"
-              className="w-[320px] sm:w-[380px] bg-black border-l border-[#29f67a]/20 p-0"
-            >
+           <SheetContent
+  side="right"
+  className="w-[320px] sm:w-[380px] bg-black border-l border-[#29f67a]/20 p-0"
+  onOpenAutoFocus={(e) => e.preventDefault()}
+>
               <div className="flex flex-col h-full">
                 {/* Mobile Header logo */}
                 <div className="flex items-center justify-between p-4 border-b border-[#29f67a]/20">
