@@ -697,7 +697,7 @@ export const blockchainPageData = {
       },
       {
         name: "HubSpot",
-        icon: "https://play-lh.googleusercontent.com/4ciMOQ0XcqbChkij9FV1HPShKHfCJwm5Ph5fypIG6veCOyAvFUmk7PCZgso_ub8nLw=w240-h480-rw",
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968872.png",
         description: "CRM and marketing automation platform",
       },
       {

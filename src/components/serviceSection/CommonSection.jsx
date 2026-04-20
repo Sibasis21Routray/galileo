@@ -231,31 +231,48 @@ const targetRoute = routeMap[path];
             <div className="w-16 h-0.5 bg-[#29f67a] mx-auto" />
           </motion.div>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-6"
-          >
-            {data.section3.technologies.map((tech, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ y: -4 }}
-                className="flex flex-col items-center p-4 border border-gray-800 rounded-xl hover:border-[#29f67a]/50 transition-all group bg-black"
-              >
-                <img
-                  src={tech.icon}
-                  alt={tech.name}
-                  className="h-12 w-12 object-contain mb-3 group-hover:scale-110 transition-transform bg-white"
-                />
-                <span className="text-sm text-gray-500 group-hover:text-[#29f67a] transition-colors">
-                  {tech.name}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
+        <motion.div
+  variants={staggerContainer}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="flex flex-wrap justify-center gap-8 px-4"
+>
+  {data.section3.technologies.map((tech, index) => (
+    <motion.div
+      key={index}
+      variants={fadeInUp}
+      whileHover={{ 
+        y: -8,
+        transition: { duration: 0.2, ease: "easeOut" }
+      }}
+      className="relative flex flex-col items-center justify-center p-6 w-32 h-32 md:w-36 md:h-36 border border-gray-800/60 rounded-2xl hover:border-[#29f67a]/40 transition-all duration-300 group bg-gradient-to-b from-gray-900/50 to-black overflow-hidden shadow-2xl"
+    >
+      {/* Background Glow Effect on Hover */}
+      <div className="absolute inset-0 bg-[#29f67a]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+      
+      {/* Subtle Top Light Line */}
+      <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-[#29f67a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+      <div className="relative z-10 flex flex-col items-center">
+        <div className="relative mb-4 p-3 rounded-xl bg-white shadow-md">
+  <img
+    src={tech.icon}
+    alt={tech.name}
+    className="h-10 w-10 object-contain transition-transform duration-500 group-hover:scale-110"
+  />
+</div>
+        
+        <span className="text-[13px] font-medium tracking-wide text-gray-400 group-hover:text-[#29f67a] group-hover:translate-y-1 transition-all duration-300">
+          {tech.name}
+        </span>
+      </div>
+
+      {/* Modern Bottom Accent */}
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#29f67a] scale-x-0 group-hover:scale-x-50 transition-transform duration-500 ease-in-out" />
+    </motion.div>
+  ))}
+</motion.div>
         </div>
       </section>
 
