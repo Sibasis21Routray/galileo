@@ -459,9 +459,7 @@ const Footer = () => {
           <p className="text-gray-500 text-xs">
             &copy; {new Date().getFullYear()} Galileo. All rights reserved.
           </p>
-          <p className="mt-2 text-gray-600 text-[10px] flex items-center justify-center">
-            Designed with <FaRegHeart className="mx-1 text-[#29f67a]" size={10} /> in India
-          </p>
+         
         </motion.div>
       </motion.div>
     </footer>
