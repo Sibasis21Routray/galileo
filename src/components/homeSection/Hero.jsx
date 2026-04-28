@@ -42,7 +42,7 @@ export default function HeroSection() {
   const orbitRotation = useTransform(orbitProgress, [0, 1], [0, 360]);
 
   return (
-    <div ref={containerRef} className="relative min-h-screen w-full overflow-hidden bg-[#050505] flex flex-col lg:flex-row items-center px-6 md:px-12 lg:px-20 py-20">
+    <div ref={containerRef} className="relative min-h-screen w-full overflow-hidden bg-[#050505] flex flex-col lg:flex-row items-center px-6 md:px-12 lg:px-20 py-20 mt-10 md:mt-0">
       
       {/* 1. Background Layer: The "Scientific Grid" */}
       <div className="absolute inset-0 z-0">
