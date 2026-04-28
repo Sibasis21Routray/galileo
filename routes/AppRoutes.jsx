@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
-
+import Home from "../pages/Home";
 // Lazy load pages
-const Home = lazy(() => import("../pages/Home"));
+// const Home = lazy(() => import("../pages/Home"));
 const About = lazy(() => import("../pages/About"));
 const Services = lazy(() => import("../pages/Services"));
 const Team = lazy(() => import("../pages/Team"));
