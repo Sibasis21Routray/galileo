@@ -98,9 +98,9 @@ const CommonServicePage = ({ data }) => {
               <div className="text-center mb-12">
                 <div className="max-w-2xl mx-auto">
                   <div className="flex items-center justify-center gap-4 mb-4">
-                    <div className="p-3 rounded-xl bg-[#29f67a]/10 border border-[#29f67a]/20">
+                    {/* <div className="p-3 rounded-xl bg-[#29f67a]/10 border border-[#29f67a]/20">
                       {getIcon(section.icon, "w-6 h-6 text-[#29f67a]")}
-                    </div>
+                    </div> */}
                     <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
                       {section.title}
                     </h2>
