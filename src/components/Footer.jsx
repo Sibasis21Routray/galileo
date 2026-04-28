@@ -84,7 +84,7 @@ const Footer = () => {
   }));
 
   return (
-    <footer className="bg-gradient-to-b from-black/40 via-[#29f67a]/20 to-[#29f67a]/30 text-white pt-20 pb-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden">
+    <footer className="bg-gradient-to-b from-black/10 via-[#29f67a]/20 to-[#29f67a]/30 text-white pt-20 pb-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden">
       {/* Animated Background Gradient - Darker overlay for contrast */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-0 left-0 w-96 h-96 bg-black/20 rounded-full blur-3xl animate-pulse" />
