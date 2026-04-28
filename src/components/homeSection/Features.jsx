@@ -23,17 +23,7 @@ import {
 } from "react-icons/fi";
 
 export const servicesData = [
-  {
-    title: "UI/UX Design",
-    icon: <FiPenTool className="text-[#29f67a] text-2xl" />,
-    path: "/services/ui-ux-design",
-    items: [
-      { title: "Wireframing & Prototyping" },
-      { title: "User Interface Design" },
-      { title: "User Experience Research" },
-      { title: "Web & Mobile App Design" },
-    ],
-  },
+  
   {
     title: "Web Development",
     icon: <FiCode className="text-[#29f67a] text-2xl" />,
@@ -57,17 +47,6 @@ export const servicesData = [
     ],
   },
   {
-    title: "Blockchain Development",
-    icon: <FiCpu className="text-[#29f67a] text-2xl" />,
-    path: "/services/blockchain-development",
-    items: [
-      { title: "Smart Contract Development" },
-      { title: "Ethereum, Polygon, BSC" },
-      { title: "Wallet & Token Integration" },
-      { title: "DApp & NFT Solutions" },
-    ],
-  },
-  {
     title: "AI Solutions",
     icon: <FiActivity className="text-[#29f67a] text-2xl" />,
     path: "/services/ai-solutions",
@@ -79,6 +58,18 @@ export const servicesData = [
     ],
   },
   {
+    title: "Blockchain Development",
+    icon: <FiCpu className="text-[#29f67a] text-2xl" />,
+    path: "/services/blockchain-development",
+    items: [
+      { title: "Smart Contract Development" },
+      { title: "Ethereum, Polygon, BSC" },
+      { title: "Wallet & Token Integration" },
+      { title: "DApp & NFT Solutions" },
+    ],
+  },
+  
+  {
     title: "Digital Marketing",
     icon: <FiActivity className="text-[#29f67a] text-2xl" />,
     path: "/services/digital-marketing",
@@ -87,6 +78,17 @@ export const servicesData = [
       { title: "Paid Advertising (SEM & Social Ads)" },
       { title: "Social Media Strategy & Management" },
       { title: "Email Marketing & Automation" },
+    ],
+  },
+  {
+    title: "UI/UX Design",
+    icon: <FiPenTool className="text-[#29f67a] text-2xl" />,
+    path: "/services/ui-ux-design",
+    items: [
+      { title: "Wireframing & Prototyping" },
+      { title: "User Interface Design" },
+      { title: "User Experience Research" },
+      { title: "Web & Mobile App Design" },
     ],
   },
 ];

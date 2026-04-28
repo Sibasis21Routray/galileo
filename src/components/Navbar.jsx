@@ -114,7 +114,7 @@ export default function Navbar() {
                 >
                   <div className="relative flex items-center justify-center">
                     <img
-                      src="https://galileonext.com/wp-content/uploads/2025/06/galileo.png"
+                      src="/logo.png"
                       alt="Logo"
                       className="object-contain h-10"
                     />

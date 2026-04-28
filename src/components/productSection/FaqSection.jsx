@@ -280,7 +280,7 @@ const FaqSection = ({ productData }) => {
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#29f67a] text-black font-medium rounded-lg hover:bg-[#29f67a]/90 transition-all"
           >
             <FiMessageSquare className="w-4 h-4" />
-            <span>Contact Support</span>
+            <span>Contact Us</span>
           </motion.button>
         </motion.div>
       </div>

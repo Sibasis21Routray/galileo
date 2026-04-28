@@ -87,38 +87,24 @@ function CTA() {
           {/* Contact Modules */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10 max-w-2xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-1 gap-px bg-white/10 border border-white/10 max-w-2xl mx-auto"
           >
-            {[
-              { 
-                icon: <FiMail />, 
-                label: "Email Dispatch", 
-                text: "info@galileo.co.in",
-                link: "mailto:info@galileo.co.in" 
-              },
-              { 
-                icon: <FiPhone />, 
-                label: "Direct Line", 
-                text: "+91123456789",
-                link: "tel:+91123456789" 
-              },
-            ].map((item, i) => (
+            
               <a
-                href={item.link}
-                key={i}
+                href="mailto:connect@galileonext.com"
                 className="group flex flex-col items-center p-8 bg-black hover:bg-[#080808] transition-all duration-300"
               >
                 <div className="w-10 h-10 flex items-center justify-center border border-[#29f67a]/20 text-[#29f67a] rounded-sm group-hover:border-[#29f67a] group-hover:bg-[#29f67a] group-hover:text-black transition-all duration-500 mb-4">
-                  {item.icon}
+                  <FiMail size={18} />
                 </div>
                 <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest mb-1">
-                  {item.label}
+                  Email Dispatch
                 </span>
                 <span className="text-white font-medium group-hover:text-[#29f67a] transition-colors">
-                  {item.text}
+                  connect@galileonext.com
                 </span>
               </a>
-            ))}
+           
           </motion.div>
         </motion.div>
       </div>

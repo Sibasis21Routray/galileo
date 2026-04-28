@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  FiLinkedin, FiInstagram, FiMail, FiPhone, FiFacebook, FiTwitter, 
+  FiLinkedin, FiInstagram, FiMail, FiFacebook, FiTwitter, 
   FiChevronDown, FiChevronUp 
 } from 'react-icons/fi';
-import { MdOutlineLocationOn } from "react-icons/md";
-import { FaRegHeart, FaHome, FaInfoCircle, FaEnvelope } from "react-icons/fa";
+import { FaHome, FaInfoCircle, FaEnvelope } from "react-icons/fa";
 import { servicesData } from "../data/servicesData";
 import { ourProducts } from "../data/ProductPageData";
 
@@ -85,47 +84,58 @@ const Footer = () => {
   }));
 
   return (
-    <footer className="bg-black text-white pt-20 pb-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden border-t border-[#29f67a]/20">
-      {/* Animated Background Gradient */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#29f67a]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#29f67a]/5 rounded-full blur-3xl" />
+    <footer className="bg-gradient-to-b from-black/40 via-[#29f67a]/20 to-[#29f67a]/30 text-white pt-20 pb-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative overflow-hidden">
+      {/* Animated Background Gradient - Darker overlay for contrast */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-black/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-black/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-black/20 rounded-full blur-3xl animate-pulse delay-500" />
       </div>
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M60 0v60H0V0h60zM10 10v40h40V10H10zm5 5h30v30H15V15zm5 5v20h20V20H20z' stroke='%2329f67a' stroke-width='0.3' fill='none'/%3E%3C/svg%3E")`,
+      {/* Grid Pattern - Darker for contrast */}
+      <div className="absolute inset-0 opacity-[5] " style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M60 0v60H0V0h60zM10 10v40h40V10H10zm5 5h30v30H15V15zm5 5v20h20V20H20z' stroke='%23000000' stroke-width='0.3' fill='none'/%3E%3C/svg%3E")`,
         backgroundSize: "40px 40px"
       }} />
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-[#29f67a]/10"
-            style={{
-              width: Math.random() * 100 + 30,
-              height: Math.random() * 100 + 30,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, Math.random() * 30 - 15],
-              x: [0, Math.random() * 30 - 15],
-            }}
-            transition={{
-              duration: Math.random() * 20 + 15,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
-          />
-        ))}
+      {/* Floating particles - Darker for visibility */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none ">
+        {[...Array(8)].map((_, i) => {
+          const randomSize = Math.random() * 80 + 20;
+          const randomLeft = Math.random() * 100;
+          const randomTop = Math.random() * 100;
+          const randomY = Math.random() * 40 - 20;
+          const randomX = Math.random() * 40 - 20;
+          const randomDuration = Math.random() * 25 + 15;
+          
+          return (
+            <motion.div
+              key={i}
+              className="absolute rounded-full bg-black/10"
+              style={{
+                width: randomSize,
+                height: randomSize,
+                left: `${randomLeft}%`,
+                top: `${randomTop}%`,
+              }}
+              animate={{
+                y: [0, randomY],
+                x: [0, randomX],
+                opacity: [0.2, 0.05, 0.2]
+              }}
+              transition={{
+                duration: randomDuration,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut",
+              }}
+            />
+          );
+        })}
       </div>
 
       <motion.div
-        className="relative z-10 mx-[5vw]    "
+        className="relative z-10  mx-auto"
         initial="hidden"
         whileInView="visible"
         variants={footerVariants}
@@ -133,16 +143,20 @@ const Footer = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12">
           {/* Company Info */}
-          {/* Company Info */}
           <motion.div variants={itemVariants} className="lg:col-span-1 space-y-6">
             <div className="flex items-center gap-3">
               <img 
                 src="/logo.png" 
                 alt="Galileo" 
-                className="h-12 w-auto"
+                className="h-12 w-auto rounded-2xl"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "https://via.placeholder.com/48x48?text=G";
+                }}
               />
+             
             </div>
-            <p className="text-gray-400 leading-relaxed text-md">
+            <p className="text-white/70 leading-relaxed text-md">
               Bold thinking. Better tech. Real results. We build technology that helps modern businesses operate smarter, scale faster, and stand out.
             </p>
             <div className="flex space-x-3">
@@ -150,8 +164,9 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/galileo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#29f67a]/10 flex items-center justify-center text-[#29f67a] hover:bg-[#29f67a] hover:text-black transition-all duration-300"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#29f67a] hover:text-black transition-all duration-300"
                 whileHover={{ y: -3, scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <FiLinkedin className="w-4 h-4" />
               </motion.a>
@@ -159,8 +174,9 @@ const Footer = () => {
                 href="https://www.instagram.com/galileo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#29f67a]/10 flex items-center justify-center text-[#29f67a] hover:bg-[#29f67a] hover:text-black transition-all duration-300"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#29f67a] hover:text-black transition-all duration-300"
                 whileHover={{ y: -3, scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <FiInstagram className="w-4 h-4" />
               </motion.a>
@@ -168,8 +184,9 @@ const Footer = () => {
                 href="https://twitter.com/galileo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#29f67a]/10 flex items-center justify-center text-[#29f67a] hover:bg-[#29f67a] hover:text-black transition-all duration-300"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#29f67a] hover:text-black transition-all duration-300"
                 whileHover={{ y: -3, scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <FiTwitter className="w-4 h-4" />
               </motion.a>
@@ -177,20 +194,25 @@ const Footer = () => {
                 href="https://facebook.com/galileo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-[#29f67a]/10 flex items-center justify-center text-[#29f67a] hover:bg-[#29f67a] hover:text-black transition-all duration-300"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#29f67a] hover:text-black transition-all duration-300"
                 whileHover={{ y: -3, scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <FiFacebook className="w-4 h-4" />
               </motion.a>
             </div>
           </motion.div>
 
-
           {/* Corporate Information - Desktop */}
           <motion.div variants={itemVariants} className="hidden lg:block">
-            <h3 className="text-lg font-bold text-white mb-6 relative">
+            <h3 className="text-lg font-bold text-white mb-6 relative inline-block">
               Corporate Information
-              <div className="absolute bottom-0 left-0 w-10 h-0.5 bg-[#29f67a] mt-2" />
+              <motion.div 
+                className="absolute bottom-0 left-0 h-0.5 bg-[#29f67a] mt-2"
+                initial={{ width: 0 }}
+                whileInView={{ width: "40px" }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              />
             </h3>
             <ul className="space-y-3">
               {corporateItems.map((item) => {
@@ -203,11 +225,13 @@ const Footer = () => {
                   >
                     <Link
                       to={item.href}
-                      className={`text-md flex items-center group transition-colors ${
-                        active ? 'text-[#29f67a]' : 'text-gray-400 hover:text-[#29f67a]'
+                      className={`text-md flex items-center group transition-all duration-300 ${
+                        active ? 'text-[#29f67a] font-semibold' : 'text-white/60 hover:text-[#29f67a]'
                       }`}
                     >
-                      <item.icon className="w-3.5 h-3.5 mr-2 opacity-60 group-hover:opacity-100" />
+                      <item.icon className={`w-3.5 h-3.5 mr-2 transition-all duration-300 ${
+                        active ? 'text-[#29f67a]' : 'text-white/50 group-hover:text-[#29f67a]'
+                      }`} />
                       {item.name}
                     </Link>
                   </motion.li>
@@ -220,7 +244,7 @@ const Footer = () => {
           <div className="lg:hidden">
             <button
               onClick={() => toggleSection('corporate')}
-              className="w-full flex items-center justify-between py-3 border-b border-[#29f67a]/20"
+              className="w-full flex items-center justify-between py-3 border-b border-white/20 hover:border-white/40 transition-colors"
             >
               <h3 className="text-lg font-bold text-white">Corporate Information</h3>
               {openSections.corporate ? (
@@ -235,7 +259,7 @@ const Footer = () => {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
                   <ul className="space-y-3 py-4">
@@ -249,11 +273,13 @@ const Footer = () => {
                         >
                           <Link
                             to={item.href}
-                            className={`text-md flex items-center group transition-colors ${
-                              active ? 'text-[#29f67a]' : 'text-gray-400 hover:text-[#29f67a]'
+                            className={`text-md flex items-center group transition-all duration-300 ${
+                              active ? 'text-[#29f67a] font-semibold' : 'text-white/60 hover:text-[#29f67a]'
                             }`}
                           >
-                            <item.icon className="w-3.5 h-3.5 mr-2 opacity-60 group-hover:opacity-100" />
+                            <item.icon className={`w-3.5 h-3.5 mr-2 transition-all duration-300 ${
+                              active ? 'text-[#29f67a]' : 'text-white/50 group-hover:text-[#29f67a]'
+                            }`} />
                             {item.name}
                           </Link>
                         </motion.li>
@@ -267,12 +293,17 @@ const Footer = () => {
 
           {/* Services - Desktop */}
           <motion.div variants={itemVariants} className="hidden lg:block">
-            <h3 className="text-lg font-bold text-white mb-6 relative">
+            <h3 className="text-lg font-bold text-white mb-6 relative inline-block">
               Services
-              <div className="absolute bottom-0 left-0 w-10 h-0.5 bg-[#29f67a] mt-2" />
+              <motion.div 
+                className="absolute bottom-0 left-0 h-0.5 bg-[#29f67a] mt-2"
+                initial={{ width: 0 }}
+                whileInView={{ width: "40px" }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              />
             </h3>
             <ul className="space-y-3">
-              {servicesData.map((service) => {
+              {servicesData && servicesData.map((service) => {
                 const active = isActive(service.path);
                 return (
                   <motion.li
@@ -282,8 +313,8 @@ const Footer = () => {
                   >
                     <Link
                       to={service.path}
-                      className={`text-md flex items-center group transition-colors ${
-                        active ? 'text-[#29f67a]' : 'text-gray-400 hover:text-[#29f67a]'
+                      className={`text-md flex items-center group transition-all duration-300 ${
+                        active ? 'text-[#29f67a] font-semibold' : 'text-white/60 hover:text-[#29f67a]'
                       }`}
                     >
                       {service.title}
@@ -298,7 +329,7 @@ const Footer = () => {
           <div className="lg:hidden">
             <button
               onClick={() => toggleSection('services')}
-              className="w-full flex items-center justify-between py-3 border-b border-[#29f67a]/20"
+              className="w-full flex items-center justify-between py-3 border-b border-white/20 hover:border-white/40 transition-colors"
             >
               <h3 className="text-lg font-bold text-white">Services</h3>
               {openSections.services ? (
@@ -313,11 +344,11 @@ const Footer = () => {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
                   <ul className="space-y-3 py-4">
-                    {servicesData.map((service) => {
+                    {servicesData && servicesData.map((service) => {
                       const active = isActive(service.path);
                       return (
                         <motion.li
@@ -327,13 +358,15 @@ const Footer = () => {
                         >
                           <Link
                             to={service.path}
-                            className={`text-md flex items-center group transition-colors ${
-                              active ? 'text-[#29f67a]' : 'text-gray-400 hover:text-[#29f67a]'
+                            className={`text-md flex items-center group transition-all duration-300 ${
+                              active ? 'text-[#29f67a] font-semibold' : 'text-white/60 hover:text-[#29f67a]'
                             }`}
                           >
-                            <span className="mr-2 text-[#29f67a] opacity-60 group-hover:opacity-100 transition-opacity">
-                              {service.icon}
-                            </span>
+                            {service.icon && (
+                              <span className="mr-2 text-[#29f67a]/50 group-hover:text-[#29f67a] transition-opacity">
+                                {service.icon}
+                              </span>
+                            )}
                             {service.title}
                           </Link>
                         </motion.li>
@@ -347,12 +380,17 @@ const Footer = () => {
 
           {/* Products - Desktop */}
           <motion.div variants={itemVariants} className="hidden lg:block">
-            <h3 className="text-lg font-bold text-white mb-6 relative">
+            <h3 className="text-lg font-bold text-white mb-6 relative inline-block">
               Products
-              <div className="absolute bottom-0 left-0 w-10 h-0.5 bg-[#29f67a] mt-2" />
+              <motion.div 
+                className="absolute bottom-0 left-0 h-0.5 bg-[#29f67a] mt-2"
+                initial={{ width: 0 }}
+                whileInView={{ width: "40px" }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              />
             </h3>
             <ul className="space-y-3">
-              {productItems.map((product) => {
+              {productItems && productItems.map((product) => {
                 const active = isActive(product.href);
                 return (
                   <motion.li
@@ -362,8 +400,8 @@ const Footer = () => {
                   >
                     <Link
                       to={product.href}
-                      className={`text-md flex items-center group transition-colors ${
-                        active ? 'text-[#29f67a]' : 'text-gray-400 hover:text-[#29f67a]'
+                      className={`text-md flex items-center group transition-all duration-300 ${
+                        active ? 'text-[#29f67a] font-semibold' : 'text-white/60 hover:text-[#29f67a]'
                       }`}
                     >
                       {product.name}
@@ -378,7 +416,7 @@ const Footer = () => {
           <div className="lg:hidden">
             <button
               onClick={() => toggleSection('products')}
-              className="w-full flex items-center justify-between py-3 border-b border-[#29f67a]/20"
+              className="w-full flex items-center justify-between py-3 border-b border-white/20 hover:border-white/40 transition-colors"
             >
               <h3 className="text-lg font-bold text-white">Products</h3>
               {openSections.products ? (
@@ -393,11 +431,11 @@ const Footer = () => {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.2 }}
+                  transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
                   <ul className="space-y-3 py-4">
-                    {productItems.map((product) => {
+                    {productItems && productItems.map((product) => {
                       const active = isActive(product.href);
                       return (
                         <motion.li
@@ -407,8 +445,8 @@ const Footer = () => {
                         >
                           <Link
                             to={product.href}
-                            className={`text-md flex items-center group transition-colors ${
-                              active ? 'text-[#29f67a]' : 'text-gray-400 hover:text-[#29f67a]'
+                            className={`text-md flex items-center group transition-all duration-300 ${
+                              active ? 'text-[#29f67a] font-semibold' : 'text-white/60 hover:text-[#29f67a]'
                             }`}
                           >
                             {product.name}
@@ -424,41 +462,42 @@ const Footer = () => {
 
           {/* Contact Info */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
-            <h3 className="text-lg font-bold text-white mb-6 relative">
+            <h3 className="text-lg font-bold text-white mb-6 relative inline-block">
               Get in Touch
-              <div className="absolute bottom-0 left-0 w-10 h-0.5 bg-[#29f67a] mt-2" />
+              <motion.div 
+                className="absolute bottom-0 left-0 h-0.5 bg-[#29f67a] mt-2"
+                initial={{ width: 0 }}
+                whileInView={{ width: "40px" }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              />
             </h3>
-            <address className="not-italic text-gray-400 space-y-4">
+            <address className="not-italic text-white/60 space-y-4">
               <motion.p whileHover={{ x: 5 }} className="flex items-center text-md">
-                <FiMail className="mr-3 text-[#29f67a]" size={16} />
+                <FiMail className="mr-3 text-[#29f67a]" size={18} />
                 <Link
-                  to="mailto:info@galileo.com"
-                  className="hover:text-[#29f67a] transition-colors"
+                  to="mailto:connect@galileonext.com"
+                  className="hover:text-[#29f67a] transition-colors duration-300"
                 >
-                  info@galileo.com
+                  connect@galileonext.com
                 </Link>
               </motion.p>
-              {/* <motion.p whileHover={{ x: 5 }} className="flex items-center text-md">
-                <FiPhone className="mr-3 text-[#29f67a]" size={16} />
-                <Link
-                  to="tel:+919777403555"
-                  className="hover:text-[#29f67a] transition-colors"
-                >
-                  +91 123456789
-                </Link>
-              </motion.p> */}
+             
             </address>
           </motion.div>
         </div>
 
-        {/* Copyright */}
+        {/* Bottom Bar with Newsletter Signup */}
         <motion.div
-          className="mt-10 pt-6 border-t border-[#29f67a]/10 text-center"
+          className="mt-16 pt-8 border-t border-white/20"
           variants={itemVariants}
         >
-          <p className="text-gray-500 text-xs">
-            &copy; {new Date().getFullYear()} Galileo. All rights reserved.
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-white/50 text-sm">
+              &copy; {new Date().getFullYear()} Galileo. All rights reserved.
+            </p>
+            
+                    </div>
+          
          
         </motion.div>
       </motion.div>

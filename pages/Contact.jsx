@@ -8,8 +8,8 @@ const ContactSection = () => {
     {
       icon: FiMail,
       title: "Email",
-      value: "hello@galileonext.com",
-      link: "mailto:hello@galileonext.com"
+      value: "connect@galileonext.com",
+      link: "mailto:connect@galileonext.com"
     },
     // {
     //   icon: FiMapPin,
