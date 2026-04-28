@@ -321,235 +321,235 @@ export const ourProducts = [
     },
   },
 
-  // {
-  //   slug: "feedora",
-  //   name: "Feedora",
+  {
+    slug: "feedora",
+    name: "Feedora",
 
-  // 
-  //   productHeadingSection: {
-  //     name: "Feedora",
-  //     navIcon: "/product/allProducts/feedora/FEEDORLOGO.png",
-  //     pathUrl: "/product/feedora",
-  //     productUrl: "https://getfeedora.com/",
-  //     bgImage: "/product/allProducts/feedora/feedoraBG.jpg",
-  //     heading: "Create stunning widgets for your website",
-  //     subheading: "Create stunning widgets for your website",
-  //     description:
-  //       "Build beautiful, customizable widgets in minutes. No coding required. Boost your website's engagement with our easy-to-use widget builder.",
-  //   },
+  
+    productHeadingSection: {
+      name: "Feedora",
+      navIcon: "/product/allProducts/feedora/FEEDORLOGO.png",
+      pathUrl: "/product/feedora",
+      productUrl: "https://getfeedora.com/",
+      bgImage: "/product/allProducts/feedora/feedoraBG.jpg",
+      heading: "Create stunning widgets for your website",
+      subheading: "Create stunning widgets for your website",
+      description:
+        "Build beautiful, customizable widgets in minutes. No coding required. Boost your website's engagement with our easy-to-use widget builder.",
+    },
 
-  //   featureSection: {
-  //     heading: "Everything You Need know about Feedora ",
-  //     description:
-  //       "Build beautiful, customizable widgets in minutes. No coding required. Boost your website's engagement with our easy-to-use widget builder.",
-  //     features: [
-  //       {
-  //         title: "Easy Installation",
-  //         description:
-  //           "Add widgets to any website platform with a simple copy-paste installation process",
-  //         icon: "/product/allProducts/feedora/featureIcon/drivers.png",
-  //       },
-  //       {
-  //         title: "Customizable Design",
-  //         description:
-  //           "Customize colors, layouts, and styles to match your brand's unique identity",
-  //         icon: "/product/allProducts/feedora/featureIcon/web-design.png",
-  //       },
-  //       {
-  //         title: "Multi-Platform Support",
-  //         description:
-  //           "Connect and display content from various social media platforms in one place",
-  //         icon: "/product/allProducts/feedora/featureIcon/responsive-design.png",
-  //       },
-  //       {
-  //         title: "Secure & Reliable",
-  //         description:
-  //           "Enterprise-grade security with reliable uptime and performance monitoring",
-  //         icon: "/product/allProducts/feedora/featureIcon/security.png",
-  //       },
-  //       {
-  //         title: "Real-time Updates",
-  //         description:
-  //           "Automatically sync and display the latest social media content without manual updates",
-  //         icon: "/product/allProducts/feedora/featureIcon/realtime.png",
-  //       },
-  //       {
-  //         title: "Responsive Layouts",
-  //         description:
-  //           "Perfectly adapts to any screen size for optimal viewing experience",
-  //         icon: "/product/allProducts/feedora/featureIcon/responsive.png",
-  //       },
-  //     ],
-  //   },
+    featureSection: {
+      heading: "Everything You Need know about Feedora ",
+      description:
+        "Build beautiful, customizable widgets in minutes. No coding required. Boost your website's engagement with our easy-to-use widget builder.",
+      features: [
+        {
+          title: "Easy Installation",
+          description:
+            "Add widgets to any website platform with a simple copy-paste installation process",
+          icon: "/product/allProducts/feedora/featureIcon/drivers.png",
+        },
+        {
+          title: "Customizable Design",
+          description:
+            "Customize colors, layouts, and styles to match your brand's unique identity",
+          icon: "/product/allProducts/feedora/featureIcon/web-design.png",
+        },
+        {
+          title: "Multi-Platform Support",
+          description:
+            "Connect and display content from various social media platforms in one place",
+          icon: "/product/allProducts/feedora/featureIcon/responsive-design.png",
+        },
+        {
+          title: "Secure & Reliable",
+          description:
+            "Enterprise-grade security with reliable uptime and performance monitoring",
+          icon: "/product/allProducts/feedora/featureIcon/security.png",
+        },
+        {
+          title: "Real-time Updates",
+          description:
+            "Automatically sync and display the latest social media content without manual updates",
+          icon: "/product/allProducts/feedora/featureIcon/realtime.png",
+        },
+        {
+          title: "Responsive Layouts",
+          description:
+            "Perfectly adapts to any screen size for optimal viewing experience",
+          icon: "/product/allProducts/feedora/featureIcon/responsive.png",
+        },
+      ],
+    },
 
-  //   productBenefits: {
-  //     image: "/product/allProducts/feedora/feedora-bg.jpg",
-  //     keyBenefits: [
-  //       {
-  //         id: 1,
-  //         title: "Unified Social Hub",
-  //         description:
-  //           "Bring all your social media content together in one place, giving your audience a seamless viewing experience.",
-  //       },
-  //       {
-  //         id: 2,
-  //         title: "Brand-Centric Customization",
-  //         description:
-  //           "Easily adjust layouts, themes, and styles to match your brand’s unique identity and design language.",
-  //       },
-  //       {
-  //         id: 3,
-  //         title: "Seamless Multi-Platform Integration",
-  //         description:
-  //           "Connect with popular platforms like Instagram, Twitter, YouTube, and more — all displayed in one feed.",
-  //       },
-  //       {
-  //         id: 4,
-  //         title: "Enterprise-Grade Security",
-  //         description:
-  //           "Enjoy reliable uptime and strong protection for your data with enterprise-level security and monitoring.",
-  //       },
-  //       {
-  //         id: 5,
-  //         title: "Hassle-Free Management",
-  //         description:
-  //           "Automatic real-time updates, analytics insights, and easy moderation tools make content management effortless.",
-  //       },
-  //     ],
-  //   },
+    productBenefits: {
+      image: "/product/allProducts/feedora/feedora-bg.jpg",
+      keyBenefits: [
+        {
+          id: 1,
+          title: "Unified Social Hub",
+          description:
+            "Bring all your social media content together in one place, giving your audience a seamless viewing experience.",
+        },
+        {
+          id: 2,
+          title: "Brand-Centric Customization",
+          description:
+            "Easily adjust layouts, themes, and styles to match your brand’s unique identity and design language.",
+        },
+        {
+          id: 3,
+          title: "Seamless Multi-Platform Integration",
+          description:
+            "Connect with popular platforms like Instagram, Twitter, YouTube, and more — all displayed in one feed.",
+        },
+        {
+          id: 4,
+          title: "Enterprise-Grade Security",
+          description:
+            "Enjoy reliable uptime and strong protection for your data with enterprise-level security and monitoring.",
+        },
+        {
+          id: 5,
+          title: "Hassle-Free Management",
+          description:
+            "Automatic real-time updates, analytics insights, and easy moderation tools make content management effortless.",
+        },
+      ],
+    },
 
-  //   faqSection: {
-  //     heading: "Frequently Asked Questions",
-  //     description:
-  //       "Here are some of the most common questions about Feedora and how it helps you manage and display social media content.",
-  //     faqs: [
-  //       {
-  //         id: 1,
-  //         question: "How do I install Feedora on my website?",
-  //         answer:
-  //           "Simply copy and paste the embed code into your website. No technical expertise is required, and it works with all major platforms.",
-  //         category: "Installation",
-  //       },
-  //       {
-  //         id: 2,
-  //         question: "Can I customize the design?",
-  //         answer:
-  //           "Yes, you can fully customize colors, layouts, and styles to match your brand identity and website theme.",
-  //         category: "Customization",
-  //       },
-  //       {
-  //         id: 3,
-  //         question: "Which social media platforms are supported?",
-  //         answer:
-  //           "Feedora supports Instagram, X , Facebook, YouTube, Whats App, and more — all in a single unified feed.",
-  //         category: "Integrations",
-  //       },
-  //       {
-  //         id: 4,
-  //         question: "Does Feedora update automatically?",
-  //         answer:
-  //           "Yes, your feeds refresh in real time, ensuring your audience always sees the latest content without manual updates.",
-  //         category: "Updates",
-  //       },
-  //       {
-  //         id: 5,
-  //         question: "Is Feedora mobile-friendly?",
-  //         answer:
-  //           "Absolutely. All widgets are fully responsive and optimized for desktops, tablets, and smartphones.",
-  //         category: "Compatibility",
-  //       },
-  //       {
-  //         id: 6,
-  //         question: "How secure is Feedora?",
-  //         answer:
-  //           "Feedora uses enterprise-grade security with encrypted data handling and reliable uptime monitoring for maximum protection.",
-  //         category: "Security",
-  //       },
-  //       {
-  //         id: 7,
-  //         question: "Do I need coding skills to use Feedora?",
-  //         answer:
-  //           "Not at all. Feedora is built for non-technical users. Installation and customization can be done with just a few clicks.",
-  //         category: "Ease of Use",
-  //       },
-  //       {
-  //         id: 8,
-  //         question: "How can I get support?",
-  //         answer:
-  //           "You can contact us anytime via live chat or email. Premium and enterprise users also get priority support.",
-  //         category: "Support",
-  //       },
-  //     ],
-  //   },
-  //   platformIntegratins: [
-  //     {
-  //       name: "Instagram",
-  //       color: "#1f0079",
-  //       description: "Share your moments with vibrant visuals.",
-  //       logo: "/product/allProducts/feedora/platformIntegration/insta.webp",
-  //     },
-  //     {
-  //       name: "X",
-  //       color: "#1f0079",
-  //       description: "Join the conversation in real-time.",
-  //       logo: "/product/allProducts/feedora/platformIntegration/x.png",
-  //     },
-  //     {
-  //       name: "Facebook",
-  //       color: "#1f0079",
-  //       description: "Connect with friends and communities.",
-  //       logo: "/product/allProducts/feedora/platformIntegration/fb.webp",
-  //     },
-  //     {
-  //       name: "YouTube",
-  //       color: "#1f0079",
-  //       description: "Watch and create captivating videos.",
-  //       logo: "/product/allProducts/feedora/platformIntegration/utube.webp",
-  //     },
-  //     {
-  //       name: "WhatsApp",
-  //       color: "#1f0079",
-  //       description: "Stay in touch with secure messaging.",
-  //       logo: "/product/allProducts/feedora/platformIntegration/wpp.webp",
-  //     },
-  //     {
-  //       name: "Pinterest",
-  //       color: "#1f0079",
-  //       description: "Discover and save creative ideas.",
-  //       logo: "/product/allProducts/feedora/platformIntegration/Pinterest.png",
-  //     },
-  //   ],
+    faqSection: {
+      heading: "Frequently Asked Questions",
+      description:
+        "Here are some of the most common questions about Feedora and how it helps you manage and display social media content.",
+      faqs: [
+        {
+          id: 1,
+          question: "How do I install Feedora on my website?",
+          answer:
+            "Simply copy and paste the embed code into your website. No technical expertise is required, and it works with all major platforms.",
+          category: "Installation",
+        },
+        {
+          id: 2,
+          question: "Can I customize the design?",
+          answer:
+            "Yes, you can fully customize colors, layouts, and styles to match your brand identity and website theme.",
+          category: "Customization",
+        },
+        {
+          id: 3,
+          question: "Which social media platforms are supported?",
+          answer:
+            "Feedora supports Instagram, X , Facebook, YouTube, Whats App, and more — all in a single unified feed.",
+          category: "Integrations",
+        },
+        {
+          id: 4,
+          question: "Does Feedora update automatically?",
+          answer:
+            "Yes, your feeds refresh in real time, ensuring your audience always sees the latest content without manual updates.",
+          category: "Updates",
+        },
+        {
+          id: 5,
+          question: "Is Feedora mobile-friendly?",
+          answer:
+            "Absolutely. All widgets are fully responsive and optimized for desktops, tablets, and smartphones.",
+          category: "Compatibility",
+        },
+        {
+          id: 6,
+          question: "How secure is Feedora?",
+          answer:
+            "Feedora uses enterprise-grade security with encrypted data handling and reliable uptime monitoring for maximum protection.",
+          category: "Security",
+        },
+        {
+          id: 7,
+          question: "Do I need coding skills to use Feedora?",
+          answer:
+            "Not at all. Feedora is built for non-technical users. Installation and customization can be done with just a few clicks.",
+          category: "Ease of Use",
+        },
+        {
+          id: 8,
+          question: "How can I get support?",
+          answer:
+            "You can contact us anytime via live chat or email. Premium and enterprise users also get priority support.",
+          category: "Support",
+        },
+      ],
+    },
+    platformIntegratins: [
+      {
+        name: "Instagram",
+        color: "#1f0079",
+        description: "Share your moments with vibrant visuals.",
+        logo: "/product/allProducts/feedora/platformIntegration/insta.webp",
+      },
+      {
+        name: "X",
+        color: "#1f0079",
+        description: "Join the conversation in real-time.",
+        logo: "/product/allProducts/feedora/platformIntegration/x.png",
+      },
+      {
+        name: "Facebook",
+        color: "#1f0079",
+        description: "Connect with friends and communities.",
+        logo: "/product/allProducts/feedora/platformIntegration/fb.webp",
+      },
+      {
+        name: "YouTube",
+        color: "#1f0079",
+        description: "Watch and create captivating videos.",
+        logo: "/product/allProducts/feedora/platformIntegration/utube.webp",
+      },
+      {
+        name: "WhatsApp",
+        color: "#1f0079",
+        description: "Stay in touch with secure messaging.",
+        logo: "/product/allProducts/feedora/platformIntegration/wpp.webp",
+      },
+      {
+        name: "Pinterest",
+        color: "#1f0079",
+        description: "Discover and save creative ideas.",
+        logo: "/product/allProducts/feedora/platformIntegration/Pinterest.png",
+      },
+    ],
 
-  //   upcomingFeatures: [
-  //     {
-  //       title: "Google Reviews Integration",
-  //       description:
-  //         "Seamlessly showcase customer testimonials and ratings from Google directly in your Feedora experience.",
-  //       icon: FcGoogle,
-  //       color: "bg-blue-100 text-blue-600",
-  //       status: "Coming Q2 2023",
-  //       image: "/product/allProducts/feedora/upcomingFeatures/google.png",
-  //     },
-  //     {
-  //       title: "AI Chatbot Assistant",
-  //       description:
-  //         "Get intelligent recommendations and assistance with an AI-powered chatbot that learns your preferences.",
-  //       icon: FaRobot,
-  //       color: "bg-purple-100 text-purple-600",
-  //       status: "In Development",
-  //       image: "/product/allProducts/feedora/upcomingFeatures/p22.avif",
-  //     },
-  //     {
-  //       title: "LinkedIn Feed Integration",
-  //       description:
-  //         "Stay connected with your professional network by integrating your LinkedIn feed directly into Feedora.",
-  //       icon: FaLinkedin,
-  //       color: "bg-indigo-100 text-blue-600",
-  //       status: "Planned Q3 2023",
-  //       image: "/product/allProducts/feedora/upcomingFeatures/ld.png",
-  //     },
-  //   ],
-  // },
+    upcomingFeatures: [
+      {
+        title: "Google Reviews Integration",
+        description:
+          "Seamlessly showcase customer testimonials and ratings from Google directly in your Feedora experience.",
+        icon: FcGoogle,
+        color: "bg-blue-100 text-blue-600",
+        status: "Coming Q2 2023",
+        image: "/product/allProducts/feedora/upcomingFeatures/google.png",
+      },
+      {
+        title: "AI Chatbot Assistant",
+        description:
+          "Get intelligent recommendations and assistance with an AI-powered chatbot that learns your preferences.",
+        icon: FaRobot,
+        color: "bg-gray-100 text-gray-600",
+        status: "In Development",
+        image: "/product/allProducts/feedora/upcomingFeatures/p22.avif",
+      },
+      {
+        title: "LinkedIn Feed Integration",
+        description:
+          "Stay connected with your professional network by integrating your LinkedIn feed directly into Feedora.",
+        icon: FaLinkedin,
+        color: "bg-indigo-100 text-blue-600",
+        status: "Planned Q3 2023",
+        image: "/product/allProducts/feedora/upcomingFeatures/ld.png",
+      },
+    ],
+  },
 
   {
     slug: "swiftrooms",
@@ -875,5 +875,152 @@ export const ourProducts = [
       },
     ],
   },
-}
+},
+
+{
+  slug: "Cv-Builder",
+  name: "Cv-Builder",
+
+  productHeadingSection: {
+    name: "Cv-Builder",
+    navIcon: "/product/allProducts/cv-builder/icon.png",
+    pathUrl: "/product/cv-builder",
+    productUrl: "",
+    bgImage: "/product/allProducts/cv-builder/bg.jpg",
+    heading: "AI-Powered Resume Creation",
+    subheading: "Build ATS-friendly resumes in minutes.",
+    description:
+      "Cv-Builder is an intelligent resume-building platform that leverages AI to generate, optimize, and format professional CVs tailored for job success. From freshers to experienced professionals, it ensures ATS compatibility and recruiter appeal.",
+  },
+
+  featureSection: {
+    heading: "Everything You Need to Build a Perfect Resume",
+    description:
+      "Cv-Builder combines AI, modern templates, and real-time optimization to help users craft high-impact resumes effortlessly.",
+    features: [
+      {
+        title: "AI Resume Generator",
+        description:
+          "Automatically generates professional summaries, experience points, and achievements using AI.",
+        icon: "/product/allProducts/cv-builder/featureIcons/ai.png",
+      },
+      {
+        title: "ATS Optimization",
+        description:
+          "Ensures resumes pass Applicant Tracking Systems with keyword-rich content.",
+        icon: "/product/allProducts/cv-builder/featureIcons/optimize.png",
+      },
+      {
+        title: "Multiple Templates",
+        description:
+          "Choose from modern, professional, and creative resume templates.",
+        icon: "/product/allProducts/cv-builder/featureIcons/templates.png",
+      },
+      {
+        title: "Real-Time Preview",
+        description:
+          "Instantly preview your resume while editing with pixel-perfect accuracy.",
+        icon: "/product/allProducts/cv-builder/featureIcons/preview.png",
+      },
+      {
+        title: "Export Options",
+        description:
+          "Download resumes in PDF and DOCX formats with consistent formatting.",
+        icon: "/product/allProducts/cv-builder/featureIcons/export.png",
+      },
+      {
+        title: "Admin Dashboard",
+        description:
+          "Controll over templates, user management, and analytics with a powerful admin dashboard.",
+        icon: "/product/allProducts/cv-builder/featureIcons/dashboard .png",
+      },
+    ],
+  },
+
+  productBenefits: {
+    image: "/product/cvbuilder/benefits.jpg",
+    keyBenefits: [
+      {
+        id: 1,
+        title: "Faster Resume Creation",
+        description:
+          "Generate a complete professional resume in under 5 minutes using AI assistance.",
+      },
+      {
+        id: 2,
+        title: "ATS-Friendly Format",
+        description:
+          "Structured layouts designed to pass ATS filters used by top companies.",
+      },
+      {
+        id: 3,
+        title: "High Recruiter Impact",
+        description:
+          "Optimized content improves chances of getting shortlisted.",
+      },
+      {
+        id: 4,
+        title: "Consistent Formatting",
+        description:
+          "Pixel-perfect PDF and DOCX outputs with no layout breaks.",
+      },
+      {
+        id: 5,
+        title: "Beginner Friendly",
+        description:
+          "Simple UI that helps even non-technical users build resumes easily.",
+      },
+    ],
+  },
+
+  faqSection: {
+    heading: "Frequently Asked Questions",
+    description:
+      "Common questions about Cv-Builder and how it helps users build professional resumes.",
+    faqs: [
+      {
+        id: 1,
+        question: "How does Cv-Builder generate resumes?",
+        answer:
+          "It uses AI models to analyze user input and generate structured, professional resume content.",
+        category: "Technology",
+      },
+      {
+        id: 2,
+        question: "Is it ATS-friendly?",
+        answer:
+          "Yes, all templates and content are optimized for Applicant Tracking Systems.",
+        category: "ATS",
+      },
+      {
+        id: 3,
+        question: "Can I download my resume?",
+        answer:
+          "Yes, resumes can be exported in both PDF and DOCX formats.",
+        category: "Download",
+      },
+      {
+        id: 4,
+        question: "Is it suitable for freshers?",
+        answer:
+          "Yes, it provides guided content and AI suggestions specifically for freshers.",
+        category: "Users",
+      },
+      {
+        id: 5,
+        question: "Does it support customization?",
+        answer:
+          "Yes, users can fully edit sections, templates, and styling.",
+        category: "Customization",
+      },
+      {
+        id: 6,
+        question: "What is the pricing model?",
+        answer:
+          "Premium pricing models with premium features .",
+        category: "Business",
+      },
+    ],
+  },
+},
 ];

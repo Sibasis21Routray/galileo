@@ -6,7 +6,7 @@ import { useState } from "react";
 const FutureFeaturesSection = ({ upcomingFeatures }) => {
  
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center mb-16"
@@ -15,10 +15,10 @@ const FutureFeaturesSection = ({ upcomingFeatures }) => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1f0079] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Future Innovations
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-500 max-w-3xl mx-auto">
             We're constantly evolving Feedora to bring you the most
             comprehensive social experience. Here's what's coming next.
           </p>
@@ -26,22 +26,21 @@ const FutureFeaturesSection = ({ upcomingFeatures }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {upcomingFeatures.map((feature, index) => (
-            <motion.div
-              key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 "
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            >
-              <div className="h-40 overflow-hidden">
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
-                />
-              </div>
+           <motion.div
+  key={index}
+  className="rounded-xl overflow-hidden shadow-lg border border-green-400/30 transition-all duration-300"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: index * 0.1 }}
+  viewport={{ once: true }}
+  whileHover={{
+    y: -5,
+    backgroundColor: "rgba(34,197,94,0.05)", // light green tint
+    borderColor: "rgba(34,197,94,0.4)",
+    // boxShadow: "0px 10px 25px rgba(34,197,94,0.25)",
+    transition: { duration: 0.2 }
+  }}
+>
 
               <div className="p-6">
                 <div className="flex items-center mb-4">
@@ -49,7 +48,7 @@ const FutureFeaturesSection = ({ upcomingFeatures }) => {
                     {feature.icon && <feature.icon size={28} />}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-xl font-semibold text-white">
                       {feature.title}
                     </h3>
                   </div>

@@ -21,6 +21,7 @@ import {
   FiCpu,
   FiActivity,
 } from "react-icons/fi";
+import { BrainCircuit, Megaphone, MegaphoneIcon } from "lucide-react";
 
 export const servicesData = [
   
@@ -48,7 +49,7 @@ export const servicesData = [
   },
   {
     title: "AI Solutions",
-    icon: <FiActivity className="text-[#29f67a] text-2xl" />,
+    icon: <BrainCircuit className="text-[#29f67a] text-2xl" />,
     path: "/services/ai-solutions",
     items: [
       { title: "AI Chatbots & Assistants" },
@@ -71,7 +72,7 @@ export const servicesData = [
   
   {
     title: "Digital Marketing",
-    icon: <FiActivity className="text-[#29f67a] text-2xl" />,
+    icon: <MegaphoneIcon className="text-[#29f67a] text-2xl" />,
     path: "/services/digital-marketing",
     items: [
       { title: "Search Engine Optimization (SEO)" },

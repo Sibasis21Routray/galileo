@@ -60,6 +60,8 @@ export default function AppRoutes() {
         <Route path="/product/arthaProAi" element={<Product />} />
         <Route path="/product/swiftrooms" element={<Product />} />
         <Route path="/product/agrieye" element={<Product />} />
+        <Route path="/product/feedora" element={<Product />} />
+        <Route path="/product/cv-builder" element={<Product />} />
 
         <Route path="/contact" element={<Contact />} />
 
