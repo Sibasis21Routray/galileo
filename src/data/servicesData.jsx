@@ -1,737 +1,294 @@
-import { FiPenTool, FiCode, FiSmartphone, FiCpu, FiActivity } from "react-icons/fi";
+import React from 'react';
+import { FiCode, FiSmartphone, FiActivity, FiCloud, FiServer, FiShield, FiTrendingUp, FiTarget, FiPieChart, FiLayout } from "react-icons/fi";
 
 export const servicesData = [
-    
-    {
-      title: "Web Development",
-      icon: <FiCode className="text-[#21047c]" />,
-      path: "/services/web-development",
-      id:"subHeadings",
-      items: [
-        { title: "Frontend & Backend Development" },
-        { title: "Custom Web Applications" },
-        { title: "E-commerce & CMS Integration" },
-        { title: "API Development & Integration" },
-      ],
-    },
-    {
-      title: "Mobile App Development",
-      icon: <FiSmartphone className="text-[#21047c]" />,
-      path: "/services/mobile-app-development",
-      id:"subHeadings",
-      items: [
-        { title: "iOS & Android Development" },
-        { title: "Flutter & React Native" },
-        { title: "App Store Deployment" },
-        { title: "UI/UX for Mobile" },
-      ],
-    },
-    {
-      title: "AI Solutions",
-      icon: <FiActivity className="text-[#21047c]" />,
-      path: "/services/ai-solutions",
-      id:"subHeadings",
-      items: [
-        { title: "AI Chatbots & Assistants" },
-        { title: "Predictive Analytics" },
-        { title: "Natural Language Processing" },
-        { title: "Machine Learning Models" },
-      ],
-    },
-    {
-      title: "Blockchain Development",
-      icon: <FiCpu className="text-[#21047c]" />,
-      path: "/services/blockchain-development",
-      id:"subHeadings",
-      items: [
-        { title: "Smart Contract Development" },
-        { title: "Ethereum, Polygon, BSC" },
-        { title: "Wallet & Token Integration" },
-        { title: "DApp & NFT Solutions" },
-      ],
-    },
-    
-    {
-      title: "Digital Marketing",
-      icon: <FiActivity className="text-[#21047c]" />,
-      path: "/services/digital-marketing",
-      id:"subHeadings",
-      items: [
-        { title: "Search Engine Optimization (SEO)" },
-        { title: "Paid Advertising (SEM & Social Ads)" },
-        { title: "Social Media Strategy & Management" },
-        { title: "Email Marketing & Automation" },
-      ],
-    },
-    {
-      title: "UI/UX Design",
-      icon: <FiPenTool className="text-[#21047c]" />,
-      path: "/services/ui-ux-design",
-      id:"subHeadings",
-      items: [
-        { title: "Wireframing & Prototyping" },
-        { title: "User Interface Design" },
-        { title: "User Experience Research" },
-        { title: "Web & Mobile App Design" },
-      ],
-    },
-  ];
-
-  // data that sent to each component separately
-  // blockchain development
-export const blockchainPageData = {
-  section1: {
-    image: "/service/blockchain/blockchainBg.jpg",
-    title: "Build Secure, Scalable Web3 Solutions",
-    description:
-      "We develop robust blockchain applications that enable transparency, automation, and trust. From smart contracts to full-scale decentralized platforms, our solutions are engineered for security, scalability, and real-world adoption.",
-    cta: "Discover Blockchain Work",
+  {
+    title: "Software Development",
+    description: "Build custom platforms, applications, and systems tailored to your business.",
+    icon: <FiCode className="text-[#29f67a]" size={32} />,
+    path: "/services/software-development",
   },
-
-  section2: {
-    title: "Our Blockchain Services",
-    services: [
-      {
-        title: "Smart Contract Development",
-        description:
-          "Secure, audited, and gas-optimized smart contracts built using Solidity and Vyper for reliable on-chain execution.",
-      },
-      {
-        title: "DApp Development",
-        description:
-          "End-to-end decentralized application development with seamless frontend and blockchain integration.",
-      },
-      {
-        title: "Tokenization",
-        description:
-          "Custom token development including ERC-20, ERC-721, and ERC-1155 for digital assets, NFTs, and ecosystems.",
-      },
-      {
-        title: "Wallet Integration",
-        description:
-          "Seamless integration with MetaMask, WalletConnect, and custom wallets for smooth user interactions.",
-      },
-      {
-        title: "DeFi Platforms",
-        description:
-          "Development of decentralized finance solutions including staking, yield farming, and liquidity protocols.",
-      },
-      {
-        title: "Blockchain Consulting",
-        description:
-          "Strategic guidance on architecture, protocol selection, and scalable Web3 ecosystem design.",
-      },
-    ],
+  {
+    title: "IT Infrastructure & Cloud",
+    description: "Design and manage scalable, secure, and high-performance infrastructure.",
+    icon: <FiCloud className="text-[#29f67a]" size={32} />,
+    path: "/services/it-infrastructure-cloud",
   },
-
-  section3: {
-    title: "Blockchain Stack",
-    technologies: [
-      {
-        name: "Solidity",
-        icon: "/service/blockchain/solidityLogo.svg",
-        description:
-          "Primary language for building secure Ethereum smart contracts",
-      },
-      {
-        name: "Hardhat",
-        icon: "/service/blockchain/hardhat.png",
-        description:
-          "Development environment for testing, deploying, and debugging smart contracts",
-      },
-      {
-        name: "Ethers.js",
-        icon: "/service/blockchain/ether.png",
-        description:
-          "Lightweight library for interacting with Ethereum and smart contracts",
-      },
-      {
-        name: "IPFS",
-        icon: "/service/blockchain/ipfs.png",
-        description:
-          "Decentralized storage system for secure and distributed data hosting",
-      },
-      {
-        name: "Polygon",
-        icon: "/service/blockchain/pol.jpeg",
-        description:
-          "High-speed, low-cost Layer 2 scaling solution for Ethereum",
-      },
-      {
-        name: "Cardano",
-        icon: "/service/blockchain/cardanoimg.png",
-        description:
-          "Proof-of-stake blockchain platform for secure and scalable applications",
-      },
-      {
-        name: "Metamask",
-        icon: "/service/blockchain/metamask.png",
-        description:
-          "Popular Web3 wallet for interacting with decentralized applications",
-      },
-    ],
+  {
+    title: "Digital Growth",
+    description: "Drive measurable growth through data-driven digital strategies.",
+    icon: <FiActivity className="text-[#29f67a]" size={32} />,
+    path: "/services/digital-growth",
   },
+];
 
-  section4: {
-    otherServices: [
-      {
-        name: "Ui Ux Design",
-        path: "/services/ui-ux-design",
-        imageUrl: "/service/additionalServices/uiux.avif",
-      },
-      {
-        name: "Web Development",
-        path: "/services/web-development",
-        imageUrl: "/service/additionalServices/webDev.jpeg",
-      },
-      {
-        name: "Mobile App Development",
-        path: "/services/mobile-app-development",
-        imageUrl: "/service/additionalServices/mobile.webp",
-      },
-      {
-        name: "AI Solutions",
-        path: "/services/ai-solutions",
-        imageUrl: "/service/additionalServices/ai.jpeg",
-      },
-    ],
-  },
+export const softwareDevelopmentData = {
+  title: "Software Development",
+  intro: "We design and build custom platforms that solve real business problems — from internal tools to full-scale digital products.",
+  sections: [
+    {
+      title: "WHAT WE BUILD",
+      items: [
+        { name: "Web applications" },
+        { name: "Mobile applications" },
+        { name: "SaaS platforms" },
+        { name: "APIs and integrations" },
+        { name: "Custom systems and dashboards" }
+      ]
+    },
+    {
+      title: "ADVANCED CAPABILITIES",
+      items: [
+        { name: "AI-driven automation" },
+        { name: "Machine learning integrations" },
+        { name: "Blockchain-based applications (where relevant)" },
+        { name: "Data processing pipelines" }
+      ]
+    },
+    {
+      title: "TECHNOLOGY STACK",
+      categories: [
+        { name: "Frontend", technologies: [ { name: "React" }, { name: "Next.js" }, { name: "Tailwind" } ] },
+        { name: "Backend", technologies: [ { name: "Node.js" }, { name: "Express" } ] },
+        { name: "Mobile", technologies: [ { name: "Flutter" }, { name: "React Native" }, { name: "Swift" }, { name: "Kotlin" } ] },
+        { name: "Database", technologies: [ { name: "MongoDB" }, { name: "MySQL" } ] },
+        { name: "Cloud", technologies: [ { name: "AWS" }, { name: "Docker" }, { name: "Kubernetes" } ] },
+        { name: "Design", technologies: [ { name: "Adobe Photoshop" }, { name: "Illustrator" } ] }
+      ]
+    },
+    {
+      title: "SUB-SERVICES",
+      items: [
+        { name: "Web Applications", description: "Fast, scalable web platforms", link: "/services/software-development/web-applications" },
+        { name: "Mobile Applications", description: "iOS and Android apps", link: "/services/software-development/mobile-applications" },
+        { name: "SaaS Platforms", description: "Subscription-based solutions", link: "/services/software-development/saas-platforms" },
+        { name: "API & Integrations", description: "Connect underlying systems", link: "/services/software-development/api-integrations" },
+        { name: "Custom Systems & Dashboards", description: "Internal tooling", link: "/services/software-development/custom-systems" }
+      ]
+    },
+    {
+      title: "OUTCOMES",
+      items: [
+        { name: "Faster operations" },
+        { name: "Reduced manual work" },
+        { name: "Scalable systems" },
+        { name: "Better data visibility" }
+      ]
+    }
+  ]
 };
 
-  //mobile app development
- export const mobileAppPagedata = {
-  section1: {
-    image: "/service/mobileApp/mobile.avif",
-    title: "Build Mobile Apps That Users Love",
-    description:
-      "We create high-performance mobile applications that deliver seamless user experiences across iOS and Android. From concept to deployment, our apps are engineered for speed, scalability, and real-world usability.",
-    cta: "See Our Apps",
-  },
-
-  section2: {
-    title: "Our Mobile App Services",
-    services: [
-      {
-        title: "iOS & Android Apps",
-        description:
-          "Robust native applications built with Swift and Kotlin, optimized for performance and platform-specific excellence.",
-      },
-      {
-        title: "Cross-Platform Apps",
-        description:
-          "Efficient cross-platform solutions using Flutter and React Native to accelerate development without compromising quality.",
-      },
-      {
-        title: "UI/UX for Mobile",
-        description:
-          "Intuitive, mobile-first designs focused on usability, engagement, and smooth user journeys.",
-      },
-      {
-        title: "App Store Deployment",
-        description:
-          "End-to-end deployment including store optimization, compliance, and seamless publishing on App Store and Google Play.",
-      },
-      {
-        title: "Backend Integration",
-        description:
-          "Secure integration with APIs, databases, and third-party services to power dynamic mobile experiences.",
-      },
-      {
-        title: "Maintenance & Updates",
-        description:
-          "Continuous support, performance optimization, and feature updates to keep your app competitive and reliable.",
-      },
-    ],
-  },
-
-  section3: {
-    title: "Mobile Tech Stack",
-    technologies: [
-      {
-        name: "Flutter",
-        icon: "/service/mobileApp/flutter.svg",
-        description:
-          "High-performance UI toolkit for building natively compiled apps from a single codebase",
-      },
-      {
-        name: "React Native",
-        icon: "/service/mobileApp/react.svg",
-        description:
-          "Cross-platform framework for building mobile apps using React and reusable components",
-      },
-      {
-        name: "Kotlin",
-        icon: "/service/mobileApp/kotlin.svg",
-        description:
-          "Modern, concise language for developing powerful Android applications",
-      },
-      {
-        name: "Swift",
-        icon: "/service/mobileApp/swift.svg",
-        description:
-          "Fast and secure programming language for building iOS applications",
-      },
-      {
-        name: "Firebase",
-        icon: "/service/mobileApp/firebase.svg",
-        description:
-          "Backend-as-a-service platform for authentication, real-time data, and scalable infrastructure",
-      },
-    ],
-  },
-
-  section4: {
-    otherServices: [
-      {
-        name: "Ui Ux Design",
-        path: "/services/ui-ux-design",
-        imageUrl: "/service/additionalServices/uiux.avif",
-      },
-      {
-        name: "Web Development",
-        path: "/services/web-development",
-        imageUrl: "/service/additionalServices/webDev.jpeg",
-      },
-      {
-        name: "Blockchain Development",
-        path: "/services/blockchain-development",
-        imageUrl: "/service/additionalServices/blockchainDev.webp",
-      },
-      {
-        name: "AI Solutions",
-        path: "/services/ai-solutions",
-        imageUrl: "/service/additionalServices/ai.jpeg",
-      },
-    ],
-  },
+export const webAppDevData = {
+  title: "Web Application Development",
+  intro: "We build fast, scalable web applications designed for performance and long-term growth.",
+  sections: [
+    { title: "WHAT WE BUILD", items: [ { name: "SaaS platforms" }, { name: "Admin dashboards" }, { name: "Customer portals" }, { name: "Business applications" } ] },
+    { title: "TECHNOLOGIES USED", categories: [ { name: "Frontend", technologies: [ {name: "React"}, {name: "Next.js"}, {name: "Tailwind"} ] }, { name: "Backend", technologies: [ {name: "Node.js"}, {name: "Express"} ] }, { name: "Database", technologies: [ {name: "MongoDB"}, {name: "MySQL"} ] }, { name: "Cloud", technologies: [ {name: "AWS"} ] } ] },
+    { title: "USE CASES", items: [ { name: "Internal tools" }, { name: "SaaS platforms" }, { name: "Client-facing systems" } ] },
+    { title: "OUTCOMES", items: [ { name: "High performance" }, { name: "Scalable architecture" }, { name: "Strong UX" } ] },
+  ]
 };
 
-  //web dev
-
- export const webDevPageData = {
-  section1: {
-    image: "/service/webDevelopment/webDev.jpeg",
-    title: "Build Fast, Scalable, and Future-Ready Web Apps",
-    description:
-      "We develop high-performance web applications engineered for scalability, security, and seamless user experience. From frontend to backend, our solutions are designed to handle real-world demands while delivering speed, reliability, and business impact.",
-    cta: "Get Started",
-  },
-
-  section2: {
-    title: "Our Web Development Services",
-    services: [
-      {
-        title: "Frontend Development",
-        description:
-          "Responsive, high-performance interfaces built with modern frameworks like React, Vue, and Angular for seamless user experiences.",
-      },
-      {
-        title: "Backend Development",
-        description:
-          "Scalable and secure server-side architectures using Node.js, Express, and Django to power robust applications.",
-      },
-      {
-        title: "API Development",
-        description:
-          "Efficient RESTful and GraphQL APIs that ensure smooth communication between systems and services.",
-      },
-      {
-        title: "CMS Integration",
-        description:
-          "Flexible CMS solutions including WordPress and headless platforms like Strapi for easy content management.",
-      },
-      {
-        title: "E-commerce Solutions",
-        description:
-          "Custom and scalable e-commerce platforms designed to optimize user journeys and maximize conversions.",
-      },
-      {
-        title: "Progressive Web Apps",
-        description:
-          "App-like web experiences with offline support, fast loading, and mobile-first performance.",
-      },
-    ],
-  },
-
-  section3: {
-    title: "Our Tech Stack",
-    technologies: [
-      {
-        name: "React",
-        icon: "/service/webDevelopment/react.svg",
-        description:
-          "Component-based frontend library for building dynamic user interfaces",
-      },
-      {
-        name: "Next.js",
-        icon: "/service/webDevelopment/nextjs.svg",
-        description:
-          "Optimized React framework with SSR, SSG, and performance enhancements",
-      },
-      {
-        name: "Node.js",
-        icon: "/service/webDevelopment/nodejs.svg",
-        description:
-          "Scalable JavaScript runtime for building fast backend services",
-      },
-      {
-        name: "Express",
-        icon: "/service/webDevelopment/express.svg",
-        description:
-          "Lightweight backend framework for building APIs and web servers",
-      },
-      {
-        name: "MongoDB",
-        icon: "/service/webDevelopment/mongodb.svg",
-        description:
-          "Flexible NoSQL database for scalable and high-volume applications",
-      },
-      {
-        name: "MySQL",
-        icon: "/service/webDevelopment/mysql.svg",
-        description:
-          "Reliable relational database for structured data management",
-      },
-      {
-        name: "Tailwind CSS",
-        icon: "/service/webDevelopment/Tailwind.png",
-        description:
-          "Utility-first CSS framework for rapid and consistent UI development",
-      },
-    ],
-  },
-
-  section4: {
-    otherServices: [
-      {
-        name: "Ui Ux Design",
-        path: "/services/ui-ux-design",
-        imageUrl: "/service/additionalServices/uiux.avif",
-      },
-      {
-        name: "Mobile App Development",
-        path: "/services/mobile-app-development",
-        imageUrl: "/service/additionalServices/mobile.webp",
-      },
-      {
-        name: "Blockchain Development",
-        path: "/services/blockchain-development",
-        imageUrl: "/service/additionalServices/blockchainDev.webp",
-      },
-      {
-        name: "AI Solutions",
-        path: "/services/ai-solutions",
-        imageUrl: "/service/additionalServices/ai.jpeg",
-      },
-    ],
-  },
+export const mobileAppDevData = {
+  title: "Mobile App Development",
+  intro: "We build high-performance mobile apps for iOS and Android.",
+  sections: [
+    { title: "WHAT WE BUILD", items: [ { name: "Consumer apps" }, { name: "Business apps" }, { name: "Cross-platform apps" }, { name: "Native apps" } ] },
+    { title: "TECHNOLOGIES USED", categories: [ { name: "Tech", technologies: [ {name: "Flutter"}, {name: "React Native"}, {name: "Swift"}, {name: "Kotlin"}, {name: "Firebase"} ] } ] },
+    { title: "APPROACH", items: [ { name: "We select native or cross-platform based on performance, scalability, and product requirements." } ] },
+    { title: "OUTCOMES", items: [ { name: "Faster launch" }, { name: "Optimised performance" }, { name: "Scalable apps" } ] },
+  ]
 };
 
-  //uiux
-
-  export const uiuxPageData = {
-  section1: {
-    image: "/service/uiux/uiuxBg.avif",
-    title: "Design Experiences That Users Remember",
-    description:
-      "We design intuitive, high-impact digital experiences that balance usability with visual excellence. Our approach focuses on understanding user behavior, simplifying complexity, and crafting interfaces that not only look great but perform seamlessly.",
-    cta: "View Our Work",
-  },
-
-  section2: {
-    title: "Our UI/UX Design Services",
-    services: [
-      {
-        title: "User Research",
-        description:
-          "Data-driven research to uncover user motivations, behaviors, and friction points, ensuring every design decision is backed by real insights.",
-      },
-      {
-        title: "Wireframing & Prototyping",
-        description:
-          "Structured wireframes and interactive prototypes that validate ideas early, reduce risk, and accelerate product development.",
-      },
-      {
-        title: "UI Design",
-        description:
-          "Modern, visually engaging interfaces designed with precision in typography, color systems, and component consistency.",
-      },
-      {
-        title: "UX Strategy",
-        description:
-          "Strategic design planning that aligns user journeys with business objectives to maximize engagement and conversion.",
-      },
-      {
-        title: "Design Systems",
-        description:
-          "Scalable design systems and reusable components that ensure consistency, speed, and efficiency across all digital products.",
-      },
-      {
-        title: "Usability Testing",
-        description:
-          "Continuous testing and feedback loops to identify usability gaps, refine experiences, and improve overall product performance.",
-      },
-    ],
-  },
-
-  section3: {
-    title: "Our Design Toolkit",
-    technologies: [
-      {
-        name: "Figma",
-        icon: "/service/uiux/figma.svg",
-        description:
-          "Collaborative interface design and real-time prototyping platform",
-      },
-      {
-        name: "Adobe XD",
-        icon: "/service/uiux/xd.svg",
-        description:
-          "Advanced prototyping tool for interactive user experiences",
-      },
-      {
-        name: "Sketch",
-        icon: "/service/uiux/sketch.svg",
-        description:
-          "Vector-based design tool for scalable UI creation",
-      },
-      {
-        name: "Photoshop",
-        icon: "/service/uiux/photoshop.svg",
-        description:
-          "High-end image editing and visual asset creation",
-      },
-      {
-        name: "Illustrator",
-        icon: "/service/uiux/illustrator.svg",
-        description:
-          "Precision vector graphics and iconography design",
-      },
-    ],
-  },
-
-  section4: {
-    otherServices: [
-      {
-        name: "Web Development",
-        path: "/services/web-development",
-        imageUrl: "/service/additionalServices/webDev.jpeg",
-      },
-      {
-        name: "Mobile App Development",
-        path: "/services/mobile-app-development",
-        imageUrl: "/service/additionalServices/mobile.webp",
-      },
-      {
-        name: "Blockchain Development",
-        path: "/services/blockchain-development",
-        imageUrl: "/service/additionalServices/blockchainDev.webp",
-      },
-      {
-        name: "AI Solutions",
-        path: "/services/ai-solutions",
-        imageUrl: "/service/additionalServices/ai.jpeg",
-      },
-    ],
-  },
+export const saasPlatformDevData = {
+  title: "SaaS Platform Development",
+  intro: "We build scalable SaaS products designed for growth and monetisation.",
+  sections: [
+    { title: "WHAT WE BUILD", items: [ { name: "Multi-tenant systems" }, { name: "Subscription platforms" }, { name: "Admin dashboards" } ] },
+    { title: "TECHNOLOGIES", categories: [ { name: "Tech", technologies: [ {name: "Full modern stack (frontend, backend, cloud, database)"} ] } ] },
+    { title: "OUTCOMES", items: [ { name: "Scalable systems" }, { name: "Monetisation-ready" }, { name: "Growth-ready" } ] },
+  ]
 };
 
-  //ai
- export const aiPageData = {
-  section1: {
-    image: "/service/ai/aiBg.jpg",
-    title: "AI That Thinks, Learns, and Delivers",
-    description:
-      "We build intelligent AI systems that transform raw data into actionable insights. From automation to prediction, our solutions leverage machine learning and advanced NLP to streamline operations, enhance decision-making, and unlock new business opportunities.",
-    cta: "View our works",
-  },
-
-  section2: {
-    title: "Our AI Capabilities",
-    services: [
-      {
-        title: "Machine Learning Models",
-        description:
-          "Custom-built predictive models designed to uncover patterns, optimize processes, and drive data-backed decisions.",
-      },
-      {
-        title: "NLP Solutions",
-        description:
-          "Advanced natural language processing for chatbots, summarization, sentiment analysis, and intelligent text understanding.",
-      },
-      {
-        title: "Computer Vision",
-        description:
-          "AI-powered image and video analysis including object detection, recognition, and automated visual inspection systems.",
-      },
-      {
-        title: "AI Chatbots",
-        description:
-          "Context-aware conversational agents that handle real-world queries, automate support, and improve user engagement.",
-      },
-      {
-        title: "Recommendation Systems",
-        description:
-          "Personalized recommendation engines using collaborative filtering and deep learning to boost user retention and conversions.",
-      },
-      {
-        title: "AI Integration",
-        description:
-          "Seamless integration of AI capabilities into your existing products, workflows, and infrastructure for maximum impact.",
-      },
-    ],
-  },
-
-  section3: {
-    title: "AI Tools & Platforms",
-    technologies: [
-      {
-        name: "TensorFlow",
-        icon: "/service/ai/tensflow.png",
-        description:
-          "Scalable machine learning framework for building and deploying production-ready models",
-      },
-      {
-        name: "PyTorch",
-        icon: "/service/ai/pyt.png",
-        description:
-          "Flexible deep learning library for rapid experimentation and research-driven development",
-      },
-      {
-        name: "OpenAI",
-        icon: "/service/ai/openai.webp",
-        description:
-          "State-of-the-art generative AI models for language, automation, and intelligent applications",
-      },
-    ],
-  },
-
-  section4: {
-    otherServices: [
-      {
-        name: "Ui Ux Design",
-        path: "/services/ui-ux-design",
-        imageUrl: "/service/additionalServices/uiux.avif",
-      },
-      {
-        name: "Web Development",
-        path: "/services/web-development",
-        imageUrl: "/service/additionalServices/webDev.jpeg",
-      },
-      {
-        name: "Mobile App Development",
-        path: "/services/mobile-app-development",
-        imageUrl: "/service/additionalServices/mobile.webp",
-      },
-      {
-        name: "Blockchain Development",
-        path: "/services/blockchain-development",
-        imageUrl: "/service/additionalServices/blockchainDev.webp",
-      },
-    ],
-  },
+export const apiIntegrationData = {
+  title: "API Development & Integrations",
+  intro: "We connect systems and enable seamless data exchange.",
+  sections: [
+    { title: "WHAT WE DO", items: [ { name: "API development" }, { name: "Third-party integrations" }, { name: "System connectivity" } ] },
+    { title: "TECHNOLOGIES", categories: [ { name: "Tech", technologies: [ {name: "Node.js"}, {name: "REST APIs"}, {name: "Cloud services"} ] } ] },
+    { title: "OUTCOMES", items: [ { name: "Connected systems" }, { name: "Automation" }, { name: "Efficiency" } ] },
+  ]
 };
 
-  //digital marketing
+export const customSystemsData = {
+  title: "Custom Systems & Dashboards",
+  intro: "We build internal tools that improve efficiency and visibility.",
+  sections: [
+    { title: "WHAT WE BUILD", items: [ { name: "Dashboards" }, { name: "Reporting tools" }, { name: "Workflow systems" } ] },
+    { title: "OUTCOMES", items: [ { name: "Better decisions" }, { name: "Real-time insights" }, { name: "Reduced manual work" } ] },
+  ]
+};
 
-  export const digitalMarketingPageData = {
-  section1: {
-    image: "/marketing.avif",
-    title: "Marketing That Converts, Not Just Clicks",
-    description:
-      "Our digital marketing services combine data science, storytelling, and automation to transform visibility into measurable business growth. We craft campaigns driven by insights, not assumptions — helping you reach the right audience, on the right channels, with the right message.",
-    cta: "View our works",
-  },
+export const itInfrastructureCloudData = {
+  title: "IT Infrastructure & Cloud",
+  intro: "We design and manage infrastructure that ensures performance, scalability, and security.",
+  sections: [
+    {
+      title: "WHAT WE DO",
+      items: [
+        { name: "Cloud architecture" },
+        { name: "Server management" },
+        { name: "Performance optimisation" },
+        { name: "Monitoring" },
+        { name: "Security" }
+      ]
+    },
+    {
+      title: "INFRASTRUCTURE STACK",
+      categories: [
+        { name: "Cloud", technologies: [ { name: "AWS (EC2, RDS, S3, CloudFront, Lambda, VPC)" } ] },
+        { name: "Containers", technologies: [ { name: "Docker" }, { name: "Kubernetes" } ] },
+        { name: "Edge", technologies: [ { name: "Cloudflare" } ] },
+        { name: "Servers", technologies: [ { name: "Linux" }, { name: "DirectAdmin" } ] },
+        { name: "Monitoring", technologies: [ { name: "CloudWatch" } ] },
+        { name: "Security", technologies: [ { name: "IAM" }, { name: "Firewall" } ] }
+      ]
+    },
+    {
+      title: "SUB-SERVICES",
+      items: [
+        { name: "Cloud Architecture", link: "/services/it-infrastructure-cloud/cloud-architecture" },
+        { name: "Server & DevOps Management", link: "/services/it-infrastructure-cloud/server-devops" },
+        { name: "Performance Optimisation", link: "/services/it-infrastructure-cloud/performance-optimisation" },
+        { name: "Security & Monitoring", link: "/services/it-infrastructure-cloud/security-monitoring" }
+      ]
+    },
+    {
+      title: "OUTCOMES",
+      items: [
+        { name: "High availability" },
+        { name: "Faster systems" },
+        { name: "Secure environments" }
+      ]
+    }
+  ]
+};
 
-  section2: {
-    title: "Our Digital Marketing Capabilities",
-    services: [
-      {
-        title: "Search Engine Optimization (SEO)",
-        description:
-          "Improve rankings with technical optimization, keyword intelligence, and content strategies designed for both users and search engines.",
-      },
-      {
-        title: "Paid Advertising (SEM & Social Ads)",
-        description:
-          "High-performance ad campaigns across Google, Meta, LinkedIn, and more with precise targeting, A/B testing, and ROI-driven strategies.",
-      },
-      {
-        title: "Social Media Strategy & Management",
-        description:
-          "Platform-specific strategies, content planning, and daily management to build engagement and strong brand communities.",
-      },
-      {
-        title: "Email Marketing & Automation",
-        description:
-          "Personalized email campaigns and automation flows that nurture leads, improve engagement, and drive conversions.",
-      },
-      {
-        title: "Content Marketing & Copywriting",
-        description:
-          "High-quality blogs, website copy, and marketing assets crafted to tell your brand story and attract the right audience.",
-      },
-      {
-        title: "Analytics, Reporting & Optimization",
-        description:
-          "Data-driven insights, performance tracking, and continuous optimization to maximize ROI and campaign effectiveness.",
-      },
-    ],
-  },
+export const cloudArchData = {
+  title: "Cloud Architecture",
+  intro: "We design scalable, resilient cloud infrastructure tailored to your application and business needs.",
+  sections: [
+    { title: "WHAT WE DO", items: [ { name: "Design cloud architecture from scratch" }, { name: "Migrate systems to AWS" }, { name: "Set up scalable environments" }, { name: "Optimise cloud cost and performance" } ] },
+    { title: "TECHNOLOGIES USED", categories: [ { name: "Tech", technologies: [ {name: "AWS (EC2, RDS, S3, CloudFront, Lambda, VPC)"}, {name: "Infrastructure design patterns"} ] } ] },
+    { title: "USE CASES", items: [ { name: "Migrating legacy systems to cloud" }, { name: "Launching new applications" }, { name: "Scaling platforms for growth" } ] },
+    { title: "OUTCOMES", items: [ { name: "Scalable infrastructure" }, { name: "High availability" }, { name: "Cost-efficient systems" } ] },
+  ]
+};
 
-  section3: {
-    title: "Marketing Tools & Platforms",
-    technologies: [
-      {
-        name: "Google Analytics",
-        icon: "https://play-lh.googleusercontent.com/Ac7UebUnwu5-zLt4gN1HlW5KgZhquPJbNhQk2chzdrMjoTPxKJQkxBL5FGAJgp3lCw",
-        description: "Track user behavior and campaign performance",
-      },
-      {
-        name: "Google Ads",
-        icon: "https://isackdigital.com/wp-content/uploads/2024/09/Google-AdWords-logo-rectangle.png",
-        description: "Search, display, and performance marketing platform",
-      },
-      {
-        name: "Meta Ads",
-        icon: "https://pngimg.com/uploads/meta/meta_PNG12.png",
-        description: "Advertising across Facebook and Instagram",
-      },
-      {
-        name: "HubSpot",
-        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968872.png",
-        description: "CRM and marketing automation platform",
-      },
-      {
-        name: "Mailchimp",
-        icon: "https://yt3.googleusercontent.com/2gOvPzvvd7p6vWxWl3vB7WSv7pve9wW9Xz8JHR_WZQZcVTya0nAwEiHlSkXFR2J0tZJ47vb5kA=s900-c-k-c0x00ffffff-no-rj",
-        description: "Email marketing and automation tool",
-      },
-    ],
-  },
+export const serverDevopsData = {
+  title: "Server & DevOps Management",
+  intro: "We manage and optimise servers and deployment pipelines to ensure stability and efficiency.",
+  sections: [
+    { title: "WHAT WE DO", items: [ { name: "Server setup and configuration" }, { name: "Deployment automation" }, { name: "CI/CD pipeline setup" }, { name: "Environment management" } ] },
+    { title: "TECHNOLOGIES USED", categories: [ { name: "Tech", technologies: [ {name: "Linux"}, {name: "Docker"}, {name: "Kubernetes"}, {name: "DirectAdmin"} ] } ] },
+    { title: "USE CASES", items: [ { name: "Managing production servers" }, { name: "Automating deployments" }, { name: "Improving system reliability" } ] },
+    { title: "OUTCOMES", items: [ { name: "Stable environments" }, { name: "Faster deployments" }, { name: "Reduced downtime" } ] },
+  ]
+};
 
-  section4: {
-    otherServices: [
-      {
-        name: "Ui Ux Design",
-        path: "/services/ui-ux-design",
-        imageUrl: "/service/additionalServices/uiux.avif",
-      },
-      {
-        name: "Web Development",
-        path: "/services/web-development",
-        imageUrl: "/service/additionalServices/webDev.jpeg",
-      },
-      {
-        name: "Mobile App Development",
-        path: "/services/mobile-app-development",
-        imageUrl: "/service/additionalServices/mobile.webp",
-      },
-      {
-        name: "Blockchain Development",
-        path: "/services/blockchain-development",
-        imageUrl: "/service/additionalServices/blockchainDev.webp",
-      },
-    ],
-  },
+export const performanceOptData = {
+  title: "Performance Optimisation",
+  intro: "We improve system speed, responsiveness, and efficiency across applications and infrastructure.",
+  sections: [
+    { title: "WHAT WE DO", items: [ { name: "Identify bottlenecks" }, { name: "Optimise server performance" }, { name: "Improve application speed" }, { name: "Enhance database performance" } ] },
+    { title: "TECHNOLOGIES USED", categories: [ { name: "Tech", technologies: [ {name: "Caching systems"}, {name: "Cloud optimisation tools"}, {name: "Performance monitoring tools"} ] } ] },
+    { title: "USE CASES", items: [ { name: "Slow websites or apps" }, { name: "Scaling under load" }, { name: "Improving user experience" } ] },
+    { title: "OUTCOMES", items: [ { name: "Faster load times" }, { name: "Better user experience" }, { name: "Improved system efficiency" } ] },
+  ]
+};
+
+export const securityMonitoringData = {
+  title: "Security & Monitoring",
+  intro: "We secure your systems and ensure continuous monitoring for uptime and performance.",
+  sections: [
+    { title: "WHAT WE DO", items: [ { name: "System security hardening" }, { name: "Access control management" }, { name: "Monitoring and alert systems" }, { name: "Backup and recovery setup" } ] },
+    { title: "TECHNOLOGIES USED", categories: [ { name: "Tech", technologies: [ {name: "CloudWatch"}, {name: "Cloudflare"}, {name: "Firewall configurations"}, {name: "IAM systems"} ] } ] },
+    { title: "USE CASES", items: [ { name: "Securing production systems" }, { name: "Preventing downtime" }, { name: "Monitoring system health" } ] },
+    { title: "OUTCOMES", items: [ { name: "Secure systems" }, { name: "Reduced risk" }, { name: "Reliable uptime" } ] },
+  ]
+};
+
+export const digitalGrowthData = {
+  title: "Digital Growth",
+  intro: "We help businesses grow through data-driven digital strategies.",
+  sections: [
+    {
+      title: "WHAT WE DO",
+      items: [
+        { name: "Paid campaigns" },
+        { name: "Conversion optimisation" },
+        { name: "Analytics" },
+        { name: "Funnels" }
+      ]
+    },
+    {
+      title: "SUB-SERVICES",
+      items: [
+        { name: "Performance Marketing", link: "/services/digital-growth/performance-marketing" },
+        { name: "Conversion Optimisation", link: "/services/digital-growth/conversion-optimisation" },
+        { name: "Analytics & Tracking", link: "/services/digital-growth/analytics-tracking" },
+        { name: "Funnels & Landing Pages", link: "/services/digital-growth/funnels-landing-pages" }
+      ]
+    },
+    {
+      title: "OUTCOMES",
+      items: [
+        { name: "More leads" },
+        { name: "Better ROI" },
+        { name: "Higher conversions" }
+      ]
+    }
+  ]
+};
+
+export const perfMarketingData = {
+  title: "Performance Marketing",
+  intro: "We run data-driven advertising campaigns focused on measurable results and ROI.",
+  sections: [
+    { title: "WHAT WE DO", items: [ { name: "Paid advertising campaigns" }, { name: "Campaign optimisation" }, { name: "Audience targeting" }, { name: "Budget allocation" } ] },
+    { title: "CHANNELS", categories: [ { name: "Tech", technologies: [ {name: "Google Ads"}, {name: "Meta Ads"}, {name: "Other paid platforms"} ] } ] },
+    { title: "USE CASES", items: [ { name: "Lead generation" }, { name: "Product launches" }, { name: "Scaling marketing campaigns" } ] },
+    { title: "OUTCOMES", items: [ { name: "More leads" }, { name: "Lower cost per acquisition" }, { name: "Improved ROI" } ] },
+  ]
+};
+
+export const convOptData = {
+  title: "Conversion Optimisation",
+  intro: "We improve how users interact with your website to increase conversions and results.",
+  sections: [
+    { title: "WHAT WE DO", items: [ { name: "Landing page optimisation" }, { name: "A/B testing" }, { name: "User journey improvements" }, { name: "UX enhancements" } ] },
+    { title: "USE CASES", items: [ { name: "Low conversion websites" }, { name: "Improving lead generation" }, { name: "Increasing sales" } ] },
+    { title: "OUTCOMES", items: [ { name: "Higher conversion rates" }, { name: "Better user experience" }, { name: "Increased revenue" } ] },
+  ]
+};
+
+export const analyticsTrackData = {
+  title: "Analytics & Tracking",
+  intro: "We implement tracking systems to give you clear visibility into user behaviour and performance.",
+  sections: [
+    { title: "WHAT WE DO", items: [ { name: "Analytics setup" }, { name: "Event tracking" }, { name: "Funnel tracking" }, { name: "Reporting dashboards" } ] },
+    { title: "TOOLS", categories: [ { name: "Tech", technologies: [ {name: "Google Analytics"}, {name: "Tracking tools"}, {name: "Custom dashboards"} ] } ] },
+    { title: "USE CASES", items: [ { name: "Understanding user behaviour" }, { name: "Tracking campaign performance" }, { name: "Measuring ROI" } ] },
+    { title: "OUTCOMES", items: [ { name: "Better decision-making" }, { name: "Clear performance insights" }, { name: "Data-driven strategy" } ] },
+  ]
+};
+
+export const funnelsData = {
+  title: "Funnels & Landing Pages",
+  intro: "We design and optimise funnels that convert visitors into leads and customers.",
+  sections: [
+    { title: "WHAT WE DO", items: [ { name: "Funnel design" }, { name: "Landing page creation" }, { name: "Lead capture systems" }, { name: "Conversion-focused design" } ] },
+    { title: "USE CASES", items: [ { name: "Lead generation funnels" }, { name: "Sales funnels" }, { name: "Campaign landing pages" } ] },
+    { title: "OUTCOMES", items: [ { name: "More qualified leads" }, { name: "Higher conversion rates" }, { name: "Better campaign performance" } ] },
+  ]
 };

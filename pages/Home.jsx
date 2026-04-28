@@ -24,7 +24,7 @@ function Home() {
       <HeroSection />
       <FeatureSection />
       <div ref={timelineRef} className="relative h-fit  ">
-        <Timeline scrollYProgress={scrollYProgress} />
+        {/* <Timeline scrollYProgress={scrollYProgress} /> */}
       </div>
 
       <CompanyVisionMission />

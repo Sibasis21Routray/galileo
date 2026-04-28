@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Link, useLocation } from "react-router-dom";
-import ServicePage from "../../pages/Services";
+import {ServicesMenu} from "../../pages/Services";
 import { servicesData } from "../data/servicesData";
 import { useNavigate } from "react-router-dom";
 import { ourProducts } from "../data/ProductPageData";
@@ -16,10 +16,8 @@ export const navItems = [
   { name: "Contact", href: "/contact" },
 ];
 
-// Filter services data for desktop dropdown
-const filteredServicesData = servicesData.filter(service => 
-  ["SOFTWARE DEVELOPMENT", "SOFTWARE SOLUTIONS", "IT SERVICES", "DIGITAL MARKETING"].includes(service.title)
-);
+// Use servicesData directly for desktop dropdown
+const filteredServicesData = servicesData;
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -77,7 +75,10 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black" style={{ backgroundColor: "#000000" }}>
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 bg-black"
+      style={{ backgroundColor: "#000000" }}
+    >
       {/* Animated Background - Black with subtle shadow */}
       <motion.div
         className="absolute inset-0 bg-black"
@@ -95,9 +96,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
-  to="/"
-  className="z-10 block focus:outline-none focus:ring-0 active:outline-none"
->
+            to="/"
+            className="z-10 block focus:outline-none focus:ring-0 active:outline-none"
+          >
             <motion.div
               whileTap={{
                 scale: 0.95,
@@ -137,14 +138,17 @@ export default function Navbar() {
                   className="relative"
                   onMouseEnter={() => {
                     if (item.hasDropdown) {
-                      if (item.name === "Services") setShowServicesDropdown(true);
+                      if (item.name === "Services")
+                        setShowServicesDropdown(true);
                       if (item.name === "Product") setShowProductDropdown(true);
                     }
                   }}
                   onMouseLeave={() => {
                     if (item.hasDropdown) {
-                      if (item.name === "Services") setShowServicesDropdown(false);
-                      if (item.name === "Product") setShowProductDropdown(false);
+                      if (item.name === "Services")
+                        setShowServicesDropdown(false);
+                      if (item.name === "Product")
+                        setShowProductDropdown(false);
                     }
                   }}
                 >
@@ -153,7 +157,15 @@ export default function Navbar() {
                     className="relative px-4 py-2 flex flex-col items-center"
                     onClick={(e) => {
                       if (item.hasDropdown) {
-                        e.preventDefault();
+                        // Allow navigation to the route
+                        // Don't prevent default - let the Link navigate
+                        // But close any open dropdowns
+                        if (item.name === "Services") {
+                          setShowServicesDropdown(false);
+                        }
+                        if (item.name === "Product") {
+                          setShowProductDropdown(false);
+                        }
                       }
                     }}
                   >
@@ -209,9 +221,9 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full right-40 mt-2 w-[300px]"
+                        className="absolute top-full right-20 mt-2 "
                       >
-                        <ServicePage
+                        <ServicesMenu
                           servicesData={filteredServicesData}
                           onClose={() => setShowServicesDropdown(false)}
                           theme="dark"
@@ -242,7 +254,8 @@ export default function Navbar() {
                         }}
                         className="absolute top-full right-0 mt-2 w-100 bg-black shadow-2xl rounded-xl border border-[#29f67a]/20"
                         style={{
-                          boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                          boxShadow:
+                            "0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                         }}
                       >
                         <div className="flex flex-col py-1.5">
@@ -269,7 +282,9 @@ export default function Navbar() {
                                 >
                                   <span className="mr-3 group-hover:scale-110 transition-transform duration-200 bg-white">
                                     <img
-                                      src={product.productHeadingSection.navIcon}
+                                      src={
+                                        product.productHeadingSection.navIcon
+                                      }
                                       className="rounded-full w-9 h-9 object-contain"
                                       alt="Product Icon"
                                     />
@@ -329,9 +344,7 @@ export default function Navbar() {
           {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <div
-                className="lg:hidden relative z-10 text-gray-300 hover:text-[#29f67a] hover:bg-[#29f67a]/10 cursor-pointer p-2 rounded-lg transition-all"
-              >
+              <div className="lg:hidden relative z-10 text-gray-300 hover:text-[#29f67a] hover:bg-[#29f67a]/10 cursor-pointer p-2 rounded-lg transition-all">
                 {isOpen ? (
                   <X className="h-6 w-6" />
                 ) : (
@@ -341,15 +354,19 @@ export default function Navbar() {
               </div>
             </SheetTrigger>
 
-           <SheetContent
-  side="right"
-  className="w-[320px] sm:w-[380px] bg-black border-l border-[#29f67a]/20 p-0"
-  onOpenAutoFocus={(e) => e.preventDefault()}
->
+            <SheetContent
+              side="right"
+              className="w-[320px] sm:w-[380px] bg-black border-l border-[#29f67a]/20 p-0"
+              onOpenAutoFocus={(e) => e.preventDefault()}
+            >
               <div className="flex flex-col h-full">
                 {/* Mobile Header logo */}
                 <div className="flex items-center justify-between p-4 border-b border-[#29f67a]/20">
-                  <Link to="/" className="z-10 block" onClick={() => setIsOpen(false)}>
+                  <Link
+                    to="/"
+                    className="z-10 block"
+                    onClick={() => setIsOpen(false)}
+                  >
                     <motion.div
                       whileTap={{
                         scale: 0.95,
@@ -385,44 +402,70 @@ export default function Navbar() {
                     const isProduct = item.name === "Product";
 
                     if (isServices || isProduct) {
-                      const isOpenState = isServices ? mobileServicesOpen : mobileProductOpen;
-                      const setIsOpenState = isServices ? setMobileServicesOpen : setMobileProductOpen;
-                      const dataToShow = isServices ? servicesData : ourProducts;
-                      
+                      const isOpenState = isServices
+                        ? mobileServicesOpen
+                        : mobileProductOpen;
+                      const setIsOpenState = isServices
+                        ? setMobileServicesOpen
+                        : setMobileProductOpen;
+                      const dataToShow = isServices
+                        ? servicesData
+                        : ourProducts;
+
                       return (
-                        <div key={item.name} className="border-b border-[#29f67a]/10 mx-2">
-                          {/* Dropdown Header */}
-                          <button
+                        <div
+                          key={item.name}
+                          className="border-b border-[#29f67a]/10 mx-2"
+                        >
+                          {/* Main button that navigates to the page */}
+                          <Link
+                            to={item.href}
                             onClick={() => {
-                              if (isServices && mobileProductOpen) setMobileProductOpen(false);
-                              if (isProduct && mobileServicesOpen) setMobileServicesOpen(false);
-                              setIsOpenState(!isOpenState);
+                              setIsOpen(false);
+                              setIsOpenState(false);
                             }}
-                            className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all ${
-                              active
-                                ? "text-[#29f67a]"
-                                : "text-gray-300 hover:text-[#29f67a]"
-                            }`}
+                            className="w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all"
                           >
-                            <span className="font-medium text-base">{item.name}</span>
-                            <motion.div
-                              animate={{ rotate: isOpenState ? 180 : 0 }}
-                              transition={{ duration: 0.2 }}
+                            <span
+                              className={`font-medium text-base ${
+                                active
+                                  ? "text-[#29f67a]"
+                                  : "text-gray-300 hover:text-[#29f67a]"
+                              }`}
                             >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
+                              {item.name}
+                            </span>
+                            <button
+                              onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                if (isServices && mobileProductOpen)
+                                  setMobileProductOpen(false);
+                                if (isProduct && mobileServicesOpen)
+                                  setMobileServicesOpen(false);
+                                setIsOpenState(!isOpenState);
+                              }}
+                              className="p-1"
+                            >
+                              <motion.div
+                                animate={{ rotate: isOpenState ? 180 : 0 }}
+                                transition={{ duration: 0.2 }}
                               >
-                                <path
-                                  fillRule="evenodd"
-                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                  clipRule="evenodd"
-                                />
-                              </svg>
-                            </motion.div>
-                          </button>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="h-5 w-5 text-gray-400"
+                                  viewBox="0 0 20 20"
+                                  fill="currentColor"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clipRule="evenodd"
+                                  />
+                                </svg>
+                              </motion.div>
+                            </button>
+                          </Link>
 
                           {/* Dropdown Content */}
                           <AnimatePresence>
@@ -436,18 +479,26 @@ export default function Navbar() {
                               >
                                 <div className="pl-8 py-2 space-y-1">
                                   {dataToShow.map((item_data, idx) => {
-                                    const itemPath = isServices ? item_data.path : item_data.productHeadingSection?.pathUrl;
-                                    const itemTitle = isServices ? item_data.title : item_data.productHeadingSection?.name;
-                                    const itemIcon = isServices ? item_data.icon : item_data.productHeadingSection?.navIcon;
-                                    const isItemActive = location.pathname === itemPath;
-                                    
+                                    const itemPath = isServices
+                                      ? item_data.path
+                                      : item_data.productHeadingSection
+                                          ?.pathUrl;
+                                    const itemTitle = isServices
+                                      ? item_data.title
+                                      : item_data.productHeadingSection?.name;
+                                    const isItemActive =
+                                      location.pathname === itemPath;
+
                                     return (
                                       <Link
                                         key={idx}
                                         to={itemPath}
                                         onClick={() => {
                                           setIsOpenState(false);
-                                          setTimeout(() => setIsOpen(false), 100);
+                                          setTimeout(
+                                            () => setIsOpen(false),
+                                            100,
+                                          );
                                         }}
                                         className={`flex items-center gap-2 px-4 py-2 rounded-lg transition text-sm ${
                                           isItemActive
@@ -455,7 +506,6 @@ export default function Navbar() {
                                             : "text-gray-400 hover:text-[#29f67a] hover:bg-[#29f67a]/5"
                                         }`}
                                       >
-                                       
                                         <span>{itemTitle}</span>
                                       </Link>
                                     );

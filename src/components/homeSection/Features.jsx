@@ -13,83 +13,50 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-// Icons for the new structure (using react-icons as fallback)
-import {
-  FiPenTool,
-  FiCode,
-  FiSmartphone,
-  FiCpu,
-  FiActivity,
-} from "react-icons/fi";
+
 import { BrainCircuit, Megaphone, MegaphoneIcon } from "lucide-react";
+import { 
+  FiCode, FiSmartphone, FiTrendingUp, FiCloud, FiServer, 
+  FiGlobe, FiLayout, FiLink, FiCpu, FiBarChart2, FiTarget,
+  FiDatabase, FiShield, FiZap, FiEye, FiActivity, FiUsers,
+  FiDollarSign, FiFlag, FiSettings
+} from "react-icons/fi";
 
 export const servicesData = [
-  
   {
-    title: "Web Development",
+    title: "Software Development",
     icon: <FiCode className="text-[#29f67a] text-2xl" />,
-    path: "/services/web-development",
+    path: "/services/software-development",
     items: [
-      { title: "Frontend & Backend Development" },
-      { title: "Custom Web Applications" },
-      { title: "E-commerce & CMS Integration" },
-      { title: "API Development & Integration" },
+      { title: "Web Applications" },
+      { title: "Mobile Applications" },
+      { title: "SaaS Platforms" },
+      { title: "API & Integration" },
+      { title: "Custom Systems & Dashboards" }
     ],
   },
   {
-    title: "Mobile App Development",
-    icon: <FiSmartphone className="text-[#29f67a] text-2xl" />,
-    path: "/services/mobile-app-development",
+    title: "IT Infrastructure & Cloud",
+    icon: <FiCloud className="text-[#29f67a] text-2xl" />,
+    path: "/services/it-infrastructure-cloud",
     items: [
-      { title: "iOS & Android Development" },
-      { title: "Flutter & React Native" },
-      { title: "App Store Deployment" },
-      { title: "UI/UX for Mobile" },
+      { title: "Cloud Architecture" },
+      { title: "Server Management" },
+      { title: "Performance Optimisation" },
+      { title: "Security & Monitoring" },
+      { title: "DevOps Pipelines" }
     ],
   },
   {
-    title: "AI Solutions",
-    icon: <BrainCircuit className="text-[#29f67a] text-2xl" />,
-    path: "/services/ai-solutions",
+    title: "Digital Growth",
+    icon: <FiTrendingUp className="text-[#29f67a] text-2xl" />,
+    path: "/services/digital-growth",
     items: [
-      { title: "AI Chatbots & Assistants" },
-      { title: "Predictive Analytics" },
-      { title: "Natural Language Processing" },
-      { title: "Machine Learning Models" },
-    ],
-  },
-  {
-    title: "Blockchain Development",
-    icon: <FiCpu className="text-[#29f67a] text-2xl" />,
-    path: "/services/blockchain-development",
-    items: [
-      { title: "Smart Contract Development" },
-      { title: "Ethereum, Polygon, BSC" },
-      { title: "Wallet & Token Integration" },
-      { title: "DApp & NFT Solutions" },
-    ],
-  },
-  
-  {
-    title: "Digital Marketing",
-    icon: <MegaphoneIcon className="text-[#29f67a] text-2xl" />,
-    path: "/services/digital-marketing",
-    items: [
-      { title: "Search Engine Optimization (SEO)" },
-      { title: "Paid Advertising (SEM & Social Ads)" },
-      { title: "Social Media Strategy & Management" },
-      { title: "Email Marketing & Automation" },
-    ],
-  },
-  {
-    title: "UI/UX Design",
-    icon: <FiPenTool className="text-[#29f67a] text-2xl" />,
-    path: "/services/ui-ux-design",
-    items: [
-      { title: "Wireframing & Prototyping" },
-      { title: "User Interface Design" },
-      { title: "User Experience Research" },
-      { title: "Web & Mobile App Design" },
+      { title: "Performance Marketing" },
+      { title: "Conversion Optimisation" },
+      { title: "Analytics & Tracking" },
+      { title: "Funnels & Landing Pages" },
+      { title: "SEO & Content Strategy" }
     ],
   },
 ];
@@ -222,18 +189,7 @@ const FeaturesSection = () => {
             </span>
           </motion.div>
 
-          <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <span className="bg-gradient-to-r from-[#29f67a] to-[#29f67a]/70 bg-clip-text text-transparent">
-              Galileo
-            </span>
-            <span className="text-white"> Differentiators</span>
-          </motion.h2>
+        
 
           <motion.p
             className="text-base text-gray-400 max-w-2xl mx-auto leading-relaxed"

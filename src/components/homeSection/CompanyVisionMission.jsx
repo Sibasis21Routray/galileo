@@ -102,9 +102,18 @@ const MissionVision = () => {
                     <motion.h3 variants={item} className="text-[#29f67a] font-mono text-xs tracking-widest uppercase mb-4">
                         The Edge
                     </motion.h3>
-                    <motion.h2 variants={item} className="text-4xl md:text-5xl font-light text-white">
-                        Why Work With Us
-                    </motion.h2>
+                      <motion.h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <span className="bg-gradient-to-r from-[#29f67a] to-[#29f67a]/70 bg-clip-text text-transparent">
+              Galileo
+            </span>
+            <span className="text-white"> Differentiators</span>
+          </motion.h2>
                 </div>
                 <motion.p variants={item} className="text-gray-500 max-w-sm text-sm">
                     Because we combine logic, creativity, and accountability with the precision Galileo would respect.
