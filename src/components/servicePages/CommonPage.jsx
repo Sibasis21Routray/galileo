@@ -49,12 +49,12 @@ const CommonServicePage = ({ data }) => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24">
         {/* Header Section with Cover Image */}
-  <header ref={headerRef} className="relative pt-32 pb-48">
+  <header ref={headerRef} className="relative pt-8 pb-28">
   <div className="max-w-7xl mx-auto px-6">
     
     {/* Top Navigation-Style Metadata */}
     <div className="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={isHeaderInView ? { opacity: 1 } : {}}
         className="flex items-center gap-8"
@@ -62,7 +62,7 @@ const CommonServicePage = ({ data }) => {
         <span className="text-[10px] font-mono text-[#29f67a] tracking-[0.4em] uppercase font-black">Intel_Brief_v4.0</span>
         <div className="hidden md:block h-3 w-[1px] bg-white/20" />
         <span className="hidden md:block text-[10px] font-mono text-slate-500 tracking-widest uppercase">Classification: Public</span>
-      </motion.div>
+      </motion.div> */}
       
       <div className="text-[10px] font-mono text-slate-500">
         PAGE_REF: {data.title.substring(0, 3).toUpperCase()}_01
@@ -109,7 +109,7 @@ const CommonServicePage = ({ data }) => {
           initial={{ opacity: 0, y: 50 }}
           animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.4, duration: 1 }}
-          className="lg:col-span-5 relative mt-12 lg:mt-0"
+          className="lg:col-span-5 relative mt-12 lg:mt-3"
         >
           {/* Background Structural Lines */}
           <div className="absolute -top-12 -left-12 w-24 h-24 border-t border-l border-[#29f67a]/20" />
