@@ -7,7 +7,7 @@ const PlatformCard = ({ platform, index }) => {
 
   return (
     <motion.div
-      className="relative rounded-lg border shadow-sm"
+      className="relative rounded-lg border shadow-sm "
       style={{ 
         backgroundColor: "rgba(0, 0, 0, 0.6)",
         borderColor: isHovered ? themeColor : "rgba(41, 246, 122, 0.2)",
@@ -160,7 +160,7 @@ const FeedoraPlatform = ({ platformIntegratins }) => {
 
       {/* Platform cards grid */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 w-full relative z-10"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 w-full relative z-10 max-w-7xl mx-auto"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.4 }}

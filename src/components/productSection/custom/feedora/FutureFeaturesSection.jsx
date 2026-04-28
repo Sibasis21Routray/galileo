@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
- import { FcGoogle } from "react-icons/fc";
- import { FaRobot, FaLinkedin } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { FaRobot, FaLinkedin } from "react-icons/fa";
 
 const FutureFeaturesSection = ({ upcomingFeatures }) => {
- 
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
+    <section className="py-16 ">
+      <div className="container mx-auto px-4 max-w-7xl">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -26,22 +25,21 @@ const FutureFeaturesSection = ({ upcomingFeatures }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {upcomingFeatures.map((feature, index) => (
-           <motion.div
-  key={index}
-  className="rounded-xl overflow-hidden shadow-lg border border-green-400/30 transition-all duration-300"
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5, delay: index * 0.1 }}
-  viewport={{ once: true }}
-  whileHover={{
-    y: -5,
-    backgroundColor: "rgba(34,197,94,0.05)", // light green tint
-    borderColor: "rgba(34,197,94,0.4)",
-    // boxShadow: "0px 10px 25px rgba(34,197,94,0.25)",
-    transition: { duration: 0.2 }
-  }}
->
-
+            <motion.div
+              key={index}
+              className="rounded-xl overflow-hidden shadow-lg border border-green-400/30 transition-all duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{
+                y: -5,
+                backgroundColor: "rgba(34,197,94,0.05)", // light green tint
+                borderColor: "rgba(34,197,94,0.4)",
+                // boxShadow: "0px 10px 25px rgba(34,197,94,0.25)",
+                transition: { duration: 0.2 },
+              }}
+            >
               <div className="p-6">
                 <div className="flex items-center mb-4">
                   <div className={`rounded-lg p-3 mr-4 ${feature.color}`}>
@@ -54,7 +52,9 @@ const FutureFeaturesSection = ({ upcomingFeatures }) => {
                   </div>
                 </div>
 
-                <p className="text-gray-600 mb-4 text-lg">{feature.description}</p>
+                <p className="text-gray-600 mb-4 text-lg">
+                  {feature.description}
+                </p>
 
                 <div className="flex items-center text-md text-gray-500">
                   <svg
@@ -79,7 +79,5 @@ const FutureFeaturesSection = ({ upcomingFeatures }) => {
     </section>
   );
 };
-
-
 
 export default FutureFeaturesSection;
