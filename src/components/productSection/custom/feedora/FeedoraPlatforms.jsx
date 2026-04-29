@@ -140,7 +140,7 @@ const FeedoraPlatform = ({ platformIntegratins }) => {
         >
           <span className="text-3xl md:text-4xl font-bold mb-4 inline-block">
             <span 
-              className="bg-clip-text text-transparent bg-gradient-to-r from-[#29f67a] to-emerald-300"
+              className=""
             >
               Feedora : Integrate with Your Favorite Platforms
             </span>

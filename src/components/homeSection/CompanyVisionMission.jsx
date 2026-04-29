@@ -47,8 +47,8 @@ const MissionVision = () => {
                   </span>
                 </motion.div>
                 
-                <motion.h2 variants={item} className="text-5xl md:text-7xl font-light text-white leading-tight mb-8">
-                  Who We <span className="text-[#29f67a] font-medium italic">Are</span>
+                <motion.h2 variants={item} className="text-5xl md:text-6xl font-light text-white leading-tight mb-8">
+                  Who We <span className="text-[#29f67a] font-bold ">Are</span>
                 </motion.h2>
 
                 <motion.div variants={item} className="space-y-6 text-gray-400 text-lg font-light leading-relaxed">
@@ -103,16 +103,16 @@ const MissionVision = () => {
                         The Edge
                     </motion.h3>
                       <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
+            className="text-3xl sm:text-5xl md:text-6xl mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <span className="bg-gradient-to-r from-[#29f67a] to-[#29f67a]/70 bg-clip-text text-transparent">
+            <span className=" text-white font-light">
               Galileo
             </span>
-            <span className="text-white"> Differentiators</span>
+            <span className="bg-gradient-to-r from-[#29f67a] to-[#29f67a]/70 bg-clip-text text-transparent font-bold"> Differentiators</span>
           </motion.h2>
                 </div>
                 <motion.p variants={item} className="text-gray-500 max-w-sm text-sm">

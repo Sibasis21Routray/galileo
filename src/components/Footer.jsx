@@ -8,6 +8,7 @@ import {
 import { FaHome, FaInfoCircle, FaEnvelope } from "react-icons/fa";
 import { servicesData } from "../data/servicesData";
 import { ourProducts } from "../data/ProductPageData";
+import { solutionsList } from '../data/solutionPageData';
 
 const Footer = () => {
   const location = useLocation();
@@ -15,6 +16,7 @@ const Footer = () => {
     corporate: false,
     services: false,
     products: false,
+    solutions: false,
     contact: false
   });
 
@@ -26,6 +28,7 @@ const Footer = () => {
           corporate: false,
           services: false,
           products: false,
+          solutions: false,
           contact: false
         });
       }
@@ -81,6 +84,13 @@ const Footer = () => {
     name: product.productHeadingSection.name,
     href: product.productHeadingSection.pathUrl,
     description: product.productHeadingSection.heading
+  }));
+
+  // Solution items from solutionsList data
+  const solutionItems = solutionsList.map(solution => ({
+    name: solution.title,
+    href: solution.path,
+    shortDescription: solution.shortDescription
   }));
 
   return (
@@ -142,7 +152,7 @@ const Footer = () => {
         variants={footerVariants}
         viewport={{ once: true, margin: "-50px" }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-12">
           {/* Company Info */}
           <motion.div variants={itemVariants} className="lg:col-span-1 space-y-6">
             <div className="flex items-center gap-3">
@@ -461,6 +471,102 @@ const Footer = () => {
             </AnimatePresence>
           </div>
 
+          {/* Solutions - Desktop */}
+          <motion.div variants={itemVariants} className="hidden lg:block">
+            <h3 className="text-lg font-bold text-white mb-6 relative inline-block">
+              Solutions
+              <motion.div 
+                className="absolute bottom-0 left-0 h-0.5 bg-[#29f67a] mt-2"
+                initial={{ width: 0 }}
+                whileInView={{ width: "40px" }}
+                transition={{ duration: 0.5, delay: 0.45 }}
+              />
+            </h3>
+            <ul className="space-y-3">
+              {solutionItems && solutionItems.map((solution) => {
+                const active = isActive(solution.href);
+                return (
+                  <motion.li
+                    key={solution.name}
+                    whileHover={{ x: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <Link
+                      to={solution.href}
+                      className={`text-md flex items-start group transition-all duration-300 ${
+                        active ? 'text-[#29f67a] font-semibold' : 'text-white/60 hover:text-[#29f67a]'
+                      }`}
+                    >
+                        <div className="flex items-center">
+                          {solution.name}
+                        </div>
+                      
+                    </Link>
+                  </motion.li>
+                );
+              })}
+            </ul>
+          </motion.div>
+
+          {/* Solutions - Mobile Accordion */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => toggleSection('solutions')}
+              className="w-full flex items-center justify-between py-3 border-b border-white/20 hover:border-white/40 transition-colors"
+            >
+              <h3 className="text-lg font-bold text-white">Solutions</h3>
+              {openSections.solutions ? (
+                <FiChevronUp className="text-[#29f67a]" />
+              ) : (
+                <FiChevronDown className="text-[#29f67a]" />
+              )}
+            </button>
+            <AnimatePresence>
+              {openSections.solutions && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <ul className="space-y-3 py-4">
+                    {solutionItems && solutionItems.map((solution) => {
+                      const active = isActive(solution.href);
+                      return (
+                        <motion.li
+                          key={solution.name}
+                          whileHover={{ x: 5 }}
+                          transition={{ type: "spring", stiffness: 300 }}
+                        >
+                          <Link
+                            to={solution.href}
+                            className={`text-md flex items-start group transition-all duration-300 ${
+                              active ? 'text-[#29f67a] font-semibold' : 'text-white/60 hover:text-[#29f67a]'
+                            }`}
+                          >
+                            <div>
+                              <div className="flex items-center">
+                                {solution.name}
+                              </div>
+                              {solution.shortDescription && (
+                                <p className="text-xs text-white/40 mt-1 group-hover:text-white/60 transition-colors">
+                                  {solution.shortDescription.length > 60 
+                                    ? solution.shortDescription.substring(0, 60) + '...' 
+                                    : solution.shortDescription}
+                                </p>
+                              )}
+                            </div>
+                          </Link>
+                        </motion.li>
+                      );
+                    })}
+                  </ul>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           {/* Contact Info */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <h3 className="text-lg font-bold text-white mb-6 relative inline-block">
@@ -474,7 +580,6 @@ const Footer = () => {
             </h3>
             <address className="not-italic text-white/60 space-y-4">
               <motion.p whileHover={{ x: 5 }} className="flex items-center text-md">
-                <FiMail className="mr-3 text-[#29f67a]" size={18} />
                 <Link
                   to="mailto:connect@galileonext.com"
                   className="hover:text-[#29f67a] transition-colors duration-300"

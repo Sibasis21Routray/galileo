@@ -41,10 +41,10 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-[1.1]"
+            className="text-5xl md:text-7xl font-light text-white tracking-tighter leading-[1.1]"
           >
             We bridge the gap between<br/>
-            <span className="text-slate-500">ideas</span> and <span className="text-[#29f67a]">execution.</span>
+            <span className="text-slate-500 font-bold">ideas</span> and <span className="text-[#29f67a] font-bold">execution.</span>
           </motion.h1>
         </header>
 

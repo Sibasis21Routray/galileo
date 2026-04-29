@@ -49,7 +49,7 @@ function CTA() {
         >
           {/* Tagline */}
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="text-[#29f67a] font-mono text-xs tracking-[0.5em] uppercase border border-[#29f67a]/30 px-4 py-1.5 rounded-full">
+            <span className="text-[#29f67a]  text-xs tracking-[0.5em] uppercase border border-[#29f67a]/30 px-4 py-1.5 rounded-full">
               Get Started
             </span>
           </motion.div>
@@ -59,7 +59,7 @@ function CTA() {
             variants={itemVariants}
             className="text-4xl md:text-6xl font-light text-white mb-6 tracking-tight"
           >
-            Galileo Ventures: <span className="font-medium text-[#29f67a] italic">See Further.</span>
+            Galileo Ventures: <span className="font-bold text-[#29f67a] ">See Further.</span>
           </motion.h2>
 
           {/* Subtext */}

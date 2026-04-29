@@ -14,7 +14,7 @@ import {
 import { Link } from "react-router-dom";
 
 
-import { BrainCircuit, Megaphone, MegaphoneIcon } from "lucide-react";
+import { BrainCircuit, Check, CircleSmall, Megaphone, MegaphoneIcon } from "lucide-react";
 import { 
   FiCode, FiSmartphone, FiTrendingUp, FiCloud, FiServer, 
   FiGlobe, FiLayout, FiLink, FiCpu, FiBarChart2, FiTarget,
@@ -115,7 +115,7 @@ const FeatureCard = ({ title, icon, path, items, delay }) => {
       >
         {items.map((item, idx) => (
           <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
-            <span className="text-[#29f67a] mt-1 text-xs">▹</span>
+            <Check />
             <span className="leading-relaxed">{item.title}</span>
           </li>
         ))}

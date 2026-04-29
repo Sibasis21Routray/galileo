@@ -35,8 +35,8 @@ const ContactSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-light text-white mb-4">
-            Let's work together
+          <h1 className="text-4xl md:text-6xl font-light text-white mb-4">
+            Let's work <span className="text-[#29f67a] font-bold">Together</span>
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Have a project in mind? We'd love to hear from you.

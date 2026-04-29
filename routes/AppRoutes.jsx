@@ -2,11 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Home from "../pages/Home";
 import Services from "../pages/Services";
+import Solutions from "../pages/Solutions";
 
 const About = lazy(() => import("../pages/About"));
-const Team = lazy(() => import("../pages/Team"));
-const Gallery = lazy(() => import("../pages/Gallery"));
-const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const Product = lazy(() => import("../pages/Product"));
 const Contact = lazy(() => import("../pages/Contact"));
 const PageNotFound = lazy(() => import("../pages/PageNotFound"));
@@ -51,7 +49,13 @@ export default function AppRoutes() {
         <Route path="/product/agrieye" element={<Product />} />
         <Route path="/product/feedora" element={<Product />} />
         <Route path="/product/cv-builder" element={<Product />} />
+
+        // Add this line with your other routes
+<Route path="/solutions" element={<Solutions />} />
+<Route path="/solutions/:solutionId" element={<Solutions />} />
         
+
+
         {/* Level 2 service routes */}
         <Route path="/services/software-development" element={<SoftwareDevelopment />} />
         <Route path="/services/it-infrastructure-cloud" element={<ItInfrastructureAndCloud />} />

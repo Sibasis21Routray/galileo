@@ -1,21 +1,33 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AppRoutes from '../routes/AppRoutes';
 import SmoothScroll from './components/overlays/SmoothScroll';
-import ScrollToTop from './components/overlays/ScrollToTop';
 import ScrollToTopButton from './components/ui/ScrollToTopButton';
 
 function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
+  }, [pathname]);
+
   return (
     <>
-      <ScrollToTop />   {/* resets page on route change */}
-      <SmoothScroll/>
+      <SmoothScroll />
+
       <div className="min-h-screen w-screen bg-black">
         <Navbar />
         <AppRoutes />
         <Footer />
       </div>
-      <ScrollToTopButton />  {/* floating arrow button */}
+
+      <ScrollToTopButton />
     </>
   );
 }
