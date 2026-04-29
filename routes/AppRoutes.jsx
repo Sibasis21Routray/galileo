@@ -50,7 +50,7 @@ export default function AppRoutes() {
         <Route path="/product/feedora" element={<Product />} />
         <Route path="/product/cv-builder" element={<Product />} />
 
-        // Add this line with your other routes
+      
 <Route path="/solutions" element={<Solutions />} />
 <Route path="/solutions/:solutionId" element={<Solutions />} />
         
