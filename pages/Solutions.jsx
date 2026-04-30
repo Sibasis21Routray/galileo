@@ -117,7 +117,7 @@ function SolutionDetail({ solution }) {
   return (
     <div className="bg-[#050505] text-slate-300 min-h-screen">
       {/* 1. CINEMATIC OVERLAY HEADER (Full Width Image BG) */}
-<header ref={headerRef} className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-48 overflow-hidden">
+<header ref={headerRef} className="relative flex items-center justify-center pt-32  overflow-hidden ">
   
   {/* The Full Width Background Image */}
   {data.heroImage && (
@@ -204,13 +204,13 @@ function SolutionDetail({ solution }) {
         if (section.type === 'faq') return null;
         
         return (
-          <section key={idx} className={`py-18 ${idx % 2 === 0 ? 'bg-black' : 'bg-[#080808] border-y border-white/5'}`}>
+          <section key={idx} className={`py-10 md:py-18 ${idx % 2 === 0 ? 'bg-black' : 'bg-[#080808] border-y border-white/5'}`}>
             <div className="container mx-auto px-6 max-w-7xl text-center ">
               <div className="flex flex-col md:flex-row   text-center justify-center mb-20 gap-8">
               <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight items-center text-center">{section.heading}</h2>
                 
               </div>
-              <div className='flex items-center justify-center'>
+              <div className='flex items-center justify-center mb-12'>
                 {section.subtext && <p className="text-slate-500 max-w-sm text-lg">{section.subtext}</p>}
               </div>
 
@@ -218,7 +218,7 @@ function SolutionDetail({ solution }) {
               {section.type === 'features' && (
                 <div className="grid md:grid-cols-3 gap-8">
                   {section.items.map((item, fIdx) => (
-                    <div key={fIdx} className="group p-8 rounded-3xl border border-white/5 hover:border-[#29f67a]/20 transition-all bg-white/[0.01]">
+                    <div key={fIdx} className="group p-8 rounded-3xl border border-white/15 hover:border-[#29f67a]/20 transition-all bg-white/[0.01]">
                       <div className="mb-6 text-[#29f67a]">{item.icon}</div>
                       <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{item.name}</h3>
                       <p className="text-slate-400 text-sm font-light leading-relaxed">{item.description}</p>
@@ -229,21 +229,40 @@ function SolutionDetail({ solution }) {
 
               {/* Capabilities */}
               {section.type === 'capabilities' && (
-                <div className="grid md:grid-cols-2 gap-6">
-                  {section.items.map((cap, cIdx) => (
-                    <div key={cIdx} className="flex items-center gap-4 p-6 border-b border-white/5 group">
-                      <FiCheck className="text-[#29f67a] group-hover:scale-125 transition-transform" />
-                      <span className="text-lg text-slate-300 font-light">{cap}</span>
-                    </div>
-                  ))}
-                  {section.outcomeLine && (
-                    <div className="md:col-span-2 mt-8 p-6 bg-[#29f67a]/5 rounded-2xl border border-[#29f67a]/10">
-                      <p className="text-center text-[#29f67a] font-light italic">{section.outcomeLine}</p>
-                    </div>
-                  )}
-                </div>
-              )}
+  <div className="grid md:grid-cols-2 gap-2">
+    {section.items.map((cap, cIdx) => (
+      <div
+        key={cIdx}
+        className="flex items-center gap-4 p-2 border-b border-white/5 group"
+      >
+        {/* Fixed icon container */}
+        <span className="flex items-center justify-center w-6 h-6 shrink-0">
+  <FiCheck
+    className="text-[#29f67a] group-hover:scale-110 transition-transform"
+    size={20}
+    style={{
+      minWidth: "20px",
+      minHeight: "20px",
+      display: "block",
+    }}
+  />
+</span>
 
+        <span className="text-lg text-slate-300 font-light">
+          {cap}
+        </span>
+      </div>
+    ))}
+
+    {section.outcomeLine && (
+      <div className="md:col-span-2 mt-8 p-6 bg-[#29f67a]/5 rounded-2xl border border-[#29f67a]/10">
+        <p className="text-center text-[#29f67a] font-light italic">
+          {section.outcomeLine}
+        </p>
+      </div>
+    )}
+  </div>
+)}
               {/* Steps */}
               {section.type === 'steps' && (
                 <div className="grid md:grid-cols-4 gap-8">
