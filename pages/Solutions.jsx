@@ -130,7 +130,7 @@ function SolutionDetail({ solution }) {
       <img 
         src={data.heroImage} 
         alt="background visual"
-        className="w-full h-full object-cover brightness-[0.35] scale-105" // Deep darkening for text contrast
+        className="w-full h-full object-cover brightness-[0.55] scale-105" // Deep darkening for text contrast
       />
       
       {/* Cinematic Overlays (Top/Bottom gradients and vignette) */}

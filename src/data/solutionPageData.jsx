@@ -15,7 +15,7 @@ export const calmSolutionData = {
   heroSubtext: "Deliver training, enforce compliance, and track performance across your organisation — all in one fully customisable, enterprise-ready platform.",
   trustLine: "Trusted by organisations with 9,000+ active users",
   ctaText: "Request a Demo",
-  heroImage: "../../public/solutions/learning-compliance.jpg",
+  heroImage: "https://cdn.pixabay.com/photo/2016/11/21/06/53/beautiful-natural-image-1844362_1280.jpg",
   ctaPath: "/contact",
 
   sections: [
