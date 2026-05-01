@@ -19,7 +19,7 @@ export const ProductDetails = ({ productData }) => {
 
 const IMG_PADDING = 1;
 
-const TextParallaxContent = ({
+export const TextParallaxContent = ({
   imgUrl,
   subheading,
   heading,

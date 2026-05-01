@@ -73,6 +73,23 @@ export default function Navbar() {
     }
   }, [isOpen]);
 
+  // Helper function to toggle dropdowns
+  const toggleMobileDropdown = (type) => {
+    if (type === 'services') {
+      setMobileProductsOpen(false);
+      setMobileSolutionsOpen(false);
+      setMobileServicesOpen(!mobileServicesOpen);
+    } else if (type === 'products') {
+      setMobileServicesOpen(false);
+      setMobileSolutionsOpen(false);
+      setMobileProductsOpen(!mobileProductsOpen);
+    } else if (type === 'solutions') {
+      setMobileServicesOpen(false);
+      setMobileProductsOpen(false);
+      setMobileSolutionsOpen(!mobileSolutionsOpen);
+    }
+  };
+
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 bg-black"
@@ -365,7 +382,7 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Mobile Menu - Keep as is (mobile clicking works) */}
+          {/* Mobile Menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <div className="lg:hidden relative z-10 text-gray-300 hover:text-[#29f67a] hover:bg-[#29f67a]/10 cursor-pointer p-2 rounded-lg transition-all">
@@ -413,20 +430,20 @@ export default function Navbar() {
                         : isProducts
                         ? mobileProductsOpen
                         : mobileSolutionsOpen;
-                      const setIsOpenState = isServices
-                        ? setMobileServicesOpen
-                        : isProducts
-                        ? setMobileProductsOpen
-                        : setMobileSolutionsOpen;
                       const dataToShow = isServices
                         ? servicesData
                         : isProducts
                         ? ourProducts
                         : solutionsList;
+                      const dropdownType = isServices ? 'services' : isProducts ? 'products' : 'solutions';
 
                       return (
                         <div key={item.name} className="border-b border-[#29f67a]/10 mx-2">
-                          <div className="w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all">
+                          {/* Entire row is clickable for toggling dropdown */}
+                          <div 
+                            className="w-full flex items-center justify-between px-4 py-3 rounded-lg transition-all cursor-pointer hover:bg-[#29f67a]/5"
+                            onClick={() => toggleMobileDropdown(dropdownType)}
+                          >
                             <span
                               className={`font-medium text-base ${
                                 active ? "text-[#29f67a]" : "text-gray-300"
@@ -434,44 +451,28 @@ export default function Navbar() {
                             >
                               {item.name}
                             </span>
-                            <button
-                              onClick={(e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                if (isServices) {
-                                  setMobileProductsOpen(false);
-                                  setMobileSolutionsOpen(false);
-                                }
-                                if (isProducts) {
-                                  setMobileServicesOpen(false);
-                                  setMobileSolutionsOpen(false);
-                                }
-                                if (isSolutions) {
-                                  setMobileServicesOpen(false);
-                                  setMobileProductsOpen(false);
-                                }
-                                setIsOpenState(!isOpenState);
-                              }}
+                            <motion.button
+                              animate={{ rotate: isOpenState ? 180 : 0 }}
+                              transition={{ duration: 0.2 }}
                               className="p-1"
+                              onClick={(e) => {
+                                e.stopPropagation(); // Prevent double trigger
+                                toggleMobileDropdown(dropdownType);
+                              }}
                             >
-                              <motion.div
-                                animate={{ rotate: isOpenState ? 180 : 0 }}
-                                transition={{ duration: 0.2 }}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5 text-gray-400"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
                               >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  className="h-5 w-5 text-gray-400"
-                                  viewBox="0 0 20 20"
-                                  fill="currentColor"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clipRule="evenodd"
-                                  />
-                                </svg>
-                              </motion.div>
-                            </button>
+                                <path
+                                  fillRule="evenodd"
+                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </motion.button>
                           </div>
 
                           <AnimatePresence>

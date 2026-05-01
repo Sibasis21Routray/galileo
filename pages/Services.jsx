@@ -211,84 +211,88 @@ function Services() {
         {/* ================================================================ */}
         {/* SECTION 2: SERVICE PILLARS */}
         {/* ================================================================ */}
+       <motion.div
+  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-32"
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+>
+  {servicesData.map((service, index) => (
+    <motion.div
+      key={index}
+      variants={cardVariants}
+      whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.15, ease: "easeOut" } }}
+      onClick={() => navigate(service.path)}
+      className="group relative cursor-pointer"
+    >
+      <div
+        className="relative bg-black/60 backdrop-blur-sm rounded-2xl p-8 h-full border transition-all duration-300 overflow-hidden"
+        style={{
+          borderColor: "rgba(41, 246, 122, 0.2)",
+          boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.5)",
+        }}
+      >
+        {/* Animated Gradient Overlay - Same as other cards */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+        {/* Glow effect on hover - Enhanced */}
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+          style={{
+            background: "radial-gradient(circle at 50% 0%, rgba(41, 246, 122, 0.2), transparent 70%)",
+          }}
+        />
+
+        {/* Icon */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-32"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          className="mb-6 inline-block relative z-10"
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          transition={{ type: "spring", stiffness: 400, duration: 0.2 }}
         >
-          {servicesData.map((service, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              onClick={() => navigate(service.path)}
-              className="group relative cursor-pointer"
-            >
-              <div
-                className="relative bg-black/60 backdrop-blur-sm rounded-2xl p-8 h-full border transition-all duration-300 overflow-hidden"
-                style={{
-                  borderColor: "rgba(41, 246, 122, 0.2)",
-                  boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.5)",
-                }}
-              >
-                {/* Glow effect on hover */}
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{
-                    background: "radial-gradient(circle at 50% 0%, rgba(41, 246, 122, 0.15), transparent 70%)",
-                  }}
-                />
-
-                {/* Icon */}
-                <motion.div
-                  className="mb-6 inline-block"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <div
-                    className="p-4 rounded-xl inline-flex"
-                    style={{
-                      backgroundColor: "rgba(41, 246, 122, 0.1)",
-                      border: "1px solid rgba(41, 246, 122, 0.2)",
-                    }}
-                  >
-                    {service.icon}
-                  </div>
-                </motion.div>
-
-                {/* Title */}
-                <h3 className="text-2xl font-bold mb-4 text-white transition-colors duration-300">
-                  {service.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-gray-400 leading-relaxed mb-6">
-                  {service.description}
-                </p>
-
-                {/* Learn More Link */}
-                <motion.div
-                  className="flex items-center gap-2 text-sm font-semibold text-[#29f67a]"
-                  initial={{ x: 0 }}
-                  whileHover={{ x: 5 }}
-                >
-                  <span>Explore</span>
-                  <FiArrowRight size={16} />
-                </motion.div>
-
-                {/* Decorative bottom line */}
-                <motion.div
-                  className="absolute bottom-0 left-0 h-0.5 bg-[#29f67a]"
-                  initial={{ width: "0%" }}
-                  whileHover={{ width: "100%" }}
-                  transition={{ duration: 0.3 }}
-                />
-              </div>
-            </motion.div>
-          ))}
+          <div
+            className="p-4 rounded-xl inline-flex group-hover:bg-[#29f67a]/20 transition-all duration-200"
+            style={{
+              backgroundColor: "rgba(41, 246, 122, 0.1)",
+              border: "1px solid rgba(41, 246, 122, 0.2)",
+            }}
+          >
+            {service.icon}
+          </div>
         </motion.div>
+
+        {/* Title */}
+        <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-[#29f67a] transition-colors duration-300 relative z-10">
+          {service.title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-gray-400 group-hover:text-gray-300 leading-relaxed mb-6 transition-colors duration-300 relative z-10">
+          {service.description}
+        </p>
+
+        {/* Learn More Link */}
+        <motion.div
+          className="flex items-center gap-2 text-sm font-semibold text-[#29f67a] relative z-10"
+          initial={{ x: 0 }}
+          whileHover={{ x: 5, gap: "0.75rem" }}
+          transition={{ duration: 0.2 }}
+        >
+          <span>Explore</span>
+          <FiArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
+        </motion.div>
+
+        {/* Decorative bottom line - Enhanced */}
+        <motion.div
+          className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#29f67a] to-[#29f67a]/50"
+          initial={{ width: "0%" }}
+          whileHover={{ width: "100%" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        />
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
 
        
 
@@ -296,73 +300,163 @@ function Services() {
         {/* SECTION 3: HOW TO CHOOSE THE RIGHT SERVICE */}
         {/* ================================================================ */}
         <motion.div
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="mb-32"
-        >
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
-                How to Choose the Right Service
-              </h2>
-              <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#29f67a]/50 to-transparent mx-auto" />
+  variants={sectionVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  className="mb-32"
+>
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
+        How to Choose the Right Service
+      </h2>
+      <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-[#29f67a]/50 to-transparent mx-auto" />
+    </div>
+
+    <p className="text-slate-400 text-lg leading-relaxed text-center mb-12 font-light">
+      Our services are designed to work together, but most clients typically start in one area depending on their current needs.
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Software Development */}
+      <motion.div 
+        className="group relative p-8 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 hover:border-[#29f67a]/50 transition-all duration-300 overflow-hidden cursor-pointer"
+        whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.15, ease: "easeOut" } }}
+      >
+        {/* Animated Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        
+        {/* Glow effect */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ background: "radial-gradient(circle at 50% 0%, rgba(41, 246, 122, 0.15), transparent 70%)" }} />
+        
+        <div className="relative z-10">
+          <motion.div 
+            className="flex items-center gap-3 mb-4"
+            whileHover={{ x: 3 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="p-2 rounded-lg bg-[#29f67a]/10 group-hover:bg-[#29f67a]/20 transition-all duration-200 group-hover:scale-110 group-hover:rotate-3">
+              <FiLifeBuoy className="w-4 h-4 text-[#29f67a]" />
             </div>
+            <motion.span 
+              className="text-xs font-bold text-[#29f67a] uppercase tracking-wider group-hover:tracking-wider transition-all duration-300"
+              whileHover={{ letterSpacing: "0.1em" }}
+            >
+              BUILD
+            </motion.span>
+          </motion.div>
+          <p className="text-slate-300 leading-relaxed text-sm group-hover:text-slate-200 transition-colors duration-300">
+            If you're building a product or internal system →{" "}
+            <span className="text-white font-semibold group-hover:text-[#29f67a] transition-colors duration-300">Software Development</span>
+          </p>
+        </div>
+        
+        {/* Decorative bottom line */}
+        <motion.div
+          className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#29f67a] to-[#29f67a]/50"
+          initial={{ width: "0%" }}
+          whileHover={{ width: "100%" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        />
+      </motion.div>
 
-            <p className="text-slate-400 text-lg leading-relaxed text-center mb-12 font-light">
-              Our services are designed to work together, but most clients typically start in one area depending on their current needs.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Software Development */}
-              <div className="group p-8 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 hover:border-[#29f67a]/30 transition-all duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-[#29f67a]/10">
-                    <FiLifeBuoy  className="w-4 h-4 text-[#29f67a]" />
-                  </div>
-                  <span className="text-xs font-bold text-[#29f67a] uppercase tracking-wider">BUILD</span>
-                </div>
-                <p className="text-slate-300 leading-relaxed text-sm">
-                  If you're building a product or internal system →{" "}
-                  <span className="text-white font-semibold">Software Development</span>
-                </p>
-              </div>
-
-              {/* IT Infrastructure */}
-              <div className="group p-8 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 hover:border-[#29f67a]/30 transition-all duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-[#29f67a]/10">
-                    <FiCloud className="w-4 h-4 text-[#29f67a]" />
-                  </div>
-                  <span className="text-xs font-bold text-[#29f67a] uppercase tracking-wider">SCALE</span>
-                </div>
-                <p className="text-slate-300 leading-relaxed text-sm">
-                  If you're facing performance, scaling, or hosting challenges →{" "}
-                  <span className="text-white font-semibold">IT Infrastructure & Cloud</span>
-                </p>
-              </div>
-
-              {/* Digital Growth */}
-              <div className="group p-8 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 hover:border-[#29f67a]/30 transition-all duration-300">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-lg bg-[#29f67a]/10">
-                    <FiTrendingUp className="w-4 h-4 text-[#29f67a]" />
-                  </div>
-                  <span className="text-xs font-bold text-[#29f67a] uppercase tracking-wider">GROW</span>
-                </div>
-                <p className="text-slate-300 leading-relaxed text-sm">
-                  If you're focused on growth, leads, or conversions →{" "}
-                  <span className="text-white font-semibold">Digital Growth</span>
-                </p>
-              </div>
+      {/* IT Infrastructure */}
+      <motion.div 
+        className="group relative p-8 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 hover:border-[#29f67a]/50 transition-all duration-300 overflow-hidden cursor-pointer"
+        whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.15, ease: "easeOut" } }}
+      >
+        {/* Animated Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        
+        {/* Glow effect */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ background: "radial-gradient(circle at 50% 0%, rgba(41, 246, 122, 0.15), transparent 70%)" }} />
+        
+        <div className="relative z-10">
+          <motion.div 
+            className="flex items-center gap-3 mb-4"
+            whileHover={{ x: 3 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="p-2 rounded-lg bg-[#29f67a]/10 group-hover:bg-[#29f67a]/20 transition-all duration-200 group-hover:scale-110 group-hover:rotate-3">
+              <FiCloud className="w-4 h-4 text-[#29f67a]" />
             </div>
+            <motion.span 
+              className="text-xs font-bold text-[#29f67a] uppercase tracking-wider group-hover:tracking-wider transition-all duration-300"
+              whileHover={{ letterSpacing: "0.1em" }}
+            >
+              SCALE
+            </motion.span>
+          </motion.div>
+          <p className="text-slate-300 leading-relaxed text-sm group-hover:text-slate-200 transition-colors duration-300">
+            If you're facing performance, scaling, or hosting challenges →{" "}
+            <span className="text-white font-semibold group-hover:text-[#29f67a] transition-colors duration-300">IT Infrastructure & Cloud</span>
+          </p>
+        </div>
+        
+        {/* Decorative bottom line */}
+        <motion.div
+          className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#29f67a] to-[#29f67a]/50"
+          initial={{ width: "0%" }}
+          whileHover={{ width: "100%" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        />
+      </motion.div>
 
-            <p className="text-slate-500 text-sm text-center mt-8 font-light italic">
-              In many cases, we support clients across multiple areas as their needs evolve.
-            </p>
-          </div>
-        </motion.div>
+      {/* Digital Growth */}
+      <motion.div 
+        className="group relative p-8 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 hover:border-[#29f67a]/50 transition-all duration-300 overflow-hidden cursor-pointer"
+        whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.15, ease: "easeOut" } }}
+      >
+        {/* Animated Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        
+        {/* Glow effect */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ background: "radial-gradient(circle at 50% 0%, rgba(41, 246, 122, 0.15), transparent 70%)" }} />
+        
+        <div className="relative z-10">
+          <motion.div 
+            className="flex items-center gap-3 mb-4"
+            whileHover={{ x: 3 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="p-2 rounded-lg bg-[#29f67a]/10 group-hover:bg-[#29f67a]/20 transition-all duration-200 group-hover:scale-110 group-hover:rotate-3">
+              <FiTrendingUp className="w-4 h-4 text-[#29f67a]" />
+            </div>
+            <motion.span 
+              className="text-xs font-bold text-[#29f67a] uppercase tracking-wider group-hover:tracking-wider transition-all duration-300"
+              whileHover={{ letterSpacing: "0.1em" }}
+            >
+              GROW
+            </motion.span>
+          </motion.div>
+          <p className="text-slate-300 leading-relaxed text-sm group-hover:text-slate-200 transition-colors duration-300">
+            If you're focused on growth, leads, or conversions →{" "}
+            <span className="text-white font-semibold group-hover:text-[#29f67a] transition-colors duration-300">Digital Growth</span>
+          </p>
+        </div>
+        
+        {/* Decorative bottom line */}
+        <motion.div
+          className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#29f67a] to-[#29f67a]/50"
+          initial={{ width: "0%" }}
+          whileHover={{ width: "100%" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        />
+      </motion.div>
+    </div>
+
+    <motion.p 
+      className="text-slate-500 text-sm text-center mt-8 font-light italic"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3, duration: 0.5 }}
+      viewport={{ once: true }}
+    >
+      In many cases, we support clients across multiple areas as their needs evolve.
+    </motion.p>
+  </div>
+</motion.div>
 
         {/* ================================================================ */}
         {/* SECTION 4: HOW WE WORK */}

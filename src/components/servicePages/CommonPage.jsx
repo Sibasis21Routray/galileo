@@ -181,41 +181,48 @@ const restWords = words.slice(1).join(" ")
                   </div>
 
                   {/* SUB-SERVICES - Card Grid Layout */}
-                  {section.items &&
-                    section.items.length > 0 &&
-                    isServiceSection && (
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {section.items.map((item, idx) => (
-                          <motion.div
-                            key={idx}
-                            whileHover={{ y: -8, scale: 1.02 }}
-                            className="group relative p-6 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 hover:border-[#29f67a]/50 transition-all duration-300 cursor-pointer overflow-hidden"
-                            onClick={() => item.link && navigate(item.link)}
-                          >
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+{section.items &&
+  section.items.length > 0 &&
+  isServiceSection && (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {section.items.map((item, idx) => (
+        <motion.div
+          key={idx}
+          whileHover={{ y: -8, scale: 1.02 }}
+          className="group relative p-6 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 hover:border-[#29f67a]/50 transition-all duration-300 cursor-pointer overflow-hidden"
+          onClick={() => item.link && navigate(item.link)}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                            <div className="relative z-10">
-                              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#29f67a] transition-colors">
-                                {item.name}
-                              </h3>
+          <div className="relative z-10">
+            {/* Icon Section - Added here */}
+            {item.icon && (
+              <div className="mb-4 p-3 rounded-xl bg-[#29f67a]/10 inline-flex items-center justify-center group-hover:bg-[#29f67a]/20 transition-all duration-300">
+                {item.icon}
+              </div>
+            )}
 
-                              {item.description && (
-                                <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                                  {item.description}
-                                </p>
-                              )}
+            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#29f67a] transition-colors">
+              {item.name}
+            </h3>
 
-                              {item.link && (
-                                <div className="flex items-center gap-2 text-xs font-semibold text-[#29f67a] opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all">
-                                  Learn More{" "}
-                                  <FiArrowRight className="w-3 h-3" />
-                                </div>
-                              )}
-                            </div>
-                          </motion.div>
-                        ))}
-                      </div>
-                    )}
+            {item.description && (
+              <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                {item.description}
+              </p>
+            )}
+
+            {item.link && (
+              <div className="flex items-center gap-2 text-xs font-semibold text-[#29f67a] opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all">
+                Learn More{" "}
+                <FiArrowRight className="w-3 h-3" />
+              </div>
+            )}
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  )}
 
                   {/* COMBINED SECTIONS LOGIC */}
                   <motion.section

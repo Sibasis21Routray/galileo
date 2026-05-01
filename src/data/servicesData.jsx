@@ -7,36 +7,25 @@ import {
   FiUsers,
 } from "react-icons/fi";
 import {
-  // From first set
   Gauge, Scale, Users, Shield,
-  // From second set  
   Rocket, Smartphone,
-  // From third set
   Zap, UserMinus, TrendingUp, Eye, Smile, Timer,
-  // From fourth set
   Building2, CreditCard, LineChart, Activity,
-  // From fifth set
   Network, Brain,
-  // From sixth set
   Bot,
-  // From seventh set
   DollarSign,
-  // From eighth set
   ClipboardList,
-  // From ninth set
   Server, Code2,
-  // From tenth set
   Sparkles, Battery,
-  // From eleventh set
   ShieldAlert, FileCheck,
-  // From twelfth set
   Target,
-  // From thirteenth set
   LayoutGrid,
-  // From fourteenth set
   BarChart3,
-  // From fifteenth set
-  RefreshCw
+  RefreshCw,
+  Globe, Box, Layers, Plug, LayoutDashboard,
+  Cloud, Terminal, Zap as ZapIcon, Lock,
+  BarChart, MousePointer, PieChart, Funnel,
+  ShoppingCart, Mail, Calendar, Download, Megaphone
 } from "lucide-react";
 
 
@@ -73,30 +62,7 @@ export const softwareDevelopmentData = {
   description: "Every business faces unique challenges that off-the-shelf software can't always solve. We take the time to understand your workflows, pain points, and goals before writing a single line of code. The result is software that fits your business like a glove — intuitive, efficient, and built to scale as you grow.",
   coverImage: "/service/serviceNew/softwareDev.jpg",
   sections: [
-      // {
-      //   title: "ADVANCED CAPABILITIES",
-      //   description: "We go beyond standard development to integrate cutting-edge technologies that give your business a genuine competitive advantage in the market.",
-
-      //   items: [
-      //     { 
-      //       name: "AI-driven automation", 
-      //       description: "Integrate intelligent automation into your workflows to eliminate repetitive tasks, reduce human error, and free your team to focus on high-value strategic work that drives growth."
-      //     },
-      //     { 
-      //       name: "Machine learning integrations", 
-      //       description: "Leverage predictive models and data-driven insights to make smarter business decisions. From recommendation engines to anomaly detection, we help you harness the power of your data."
-      //     },
-      //     { 
-      //       name: "Blockchain-based applications", 
-      //       description: "Build transparent, secure, and decentralised solutions for industries that require immutable records, smart contracts, or trustless verification systems."
-      //     },
-      //     { 
-      //       name: "Data processing pipelines", 
-      //       description: "Handle large-scale data ingestion, transformation, and analysis with robust pipeline architecture designed for reliability and real-time processing capabilities."
-      //     }
-      //   ]
-      // },
-      {
+    {
       title: "SUB-SERVICES",
       description: "Explore our specialised development services, each tailored to specific business needs and technical requirements. Every sub-service is delivered with the same commitment to quality, scalability, and long-term thinking.",
       
@@ -104,27 +70,32 @@ export const softwareDevelopmentData = {
         { 
           name: "Web Applications", 
           description: "Fast, scalable web platforms built with modern frameworks like React and Next.js. From customer-facing portals to complex SaaS dashboards, we build web apps that perform at scale and delight users with intuitive interfaces.", 
-          link: "/services/software-development/web-applications", 
+          link: "/services/software-development/web-applications",
+          icon: <Globe className="w-6 h-6 text-[#29f67a]" />
         },
         { 
           name: "Mobile Applications", 
           description: "Native and cross-platform iOS and Android apps that deliver exceptional user experiences. We help you reach your customers wherever they are with polished, performant mobile solutions that work flawlessly across devices.", 
-          link: "/services/software-development/mobile-applications", 
+          link: "/services/software-development/mobile-applications",
+          icon: <Smartphone className="w-6 h-6 text-[#29f67a]" />
         },
         { 
           name: "SaaS Platforms", 
           description: "Subscription-based solutions designed for growth and monetisation. We build multi-tenant architectures that scale effortlessly while keeping your operational costs predictable and under control.", 
-          link: "/services/software-development/saas-platforms", 
+          link: "/services/software-development/saas-platforms",
+          icon: <Box className="w-6 h-6 text-[#29f67a]" />
         },
         { 
           name: "API & Integrations", 
           description: "Connect your systems and enable seamless data exchange. Our APIs are designed for reliability, security, and performance — ensuring your tools and services work together flawlessly.", 
-          link: "/services/software-development/api-integrations", 
+          link: "/services/software-development/api-integrations",
+          icon: <Plug className="w-6 h-6 text-[#29f67a]" />
         },
         { 
           name: "Custom Systems & Dashboards", 
           description: "Internal tooling and reporting dashboards that give your team real-time visibility into business performance. Stop wrestling with spreadsheets and start making confident, data-driven decisions.", 
-          link: "/services/software-development/custom-systems", 
+          link: "/services/software-development/custom-systems",
+          icon: <LayoutDashboard className="w-6 h-6 text-[#29f67a]" />
         }
       ]
     },
@@ -190,55 +161,52 @@ export const softwareDevelopmentData = {
       ]
     },
     
-  
-// ============================================================
-// OUTCOMES SECTION
-// ============================================================
-{
-  title: "OUTCOMES",
-  description: "The tangible results you can expect when you partner with us for software development. We measure our success by the impact we have on your business.",
-  
-  items: [
-    { 
-      name: "Faster operations", 
-      description: "Streamlined workflows that eliminate bottlenecks and reduce time-to-completion for critical business processes by up to 40%.",
-      icon: <Zap className="w-8 h-8 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
-    },
-    { 
-      name: "Reduced manual work", 
-      description: "Intelligent automation that frees your team from repetitive tasks, allowing them to focus on strategic initiatives that move the needle.",
-      icon: <UserMinus className="w-8 h-8 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
-    },
-    { 
-      name: "Scalable systems", 
-      description: "Architecture designed to handle 10x or 100x growth without requiring a complete rebuild or causing performance degradation.",
-      icon: <TrendingUp className="w-8 h-8 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
-    },
-    { 
-      name: "Better data visibility", 
-      description: "Real-time dashboards and reporting tools that give stakeholders clear insight into business performance at a glance.",
-      icon: <Eye className="w-8 h-8 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
-    },
-    { 
-      name: "Improved user satisfaction", 
-      description: "Intuitive interfaces and smooth performance that keep users engaged and reduce churn across your platforms.",
-      icon: <Smile className="w-8 h-8 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
-    },
-    { 
-      name: "Faster time to market", 
-      description: "Efficient development processes that help you launch new features and products ahead of the competition.",
-      icon: <Timer className="w-8 h-8 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
+    {
+      title: "OUTCOMES",
+      description: "The tangible results you can expect when you partner with us for software development. We measure our success by the impact we have on your business.",
+      
+      items: [
+        { 
+          name: "Faster operations", 
+          description: "Streamlined workflows that eliminate bottlenecks and reduce time-to-completion for critical business processes by up to 40%.",
+          icon: <Zap className="w-8 h-8 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        },
+        { 
+          name: "Reduced manual work", 
+          description: "Intelligent automation that frees your team from repetitive tasks, allowing them to focus on strategic initiatives that move the needle.",
+          icon: <UserMinus className="w-8 h-8 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        },
+        { 
+          name: "Scalable systems", 
+          description: "Architecture designed to handle 10x or 100x growth without requiring a complete rebuild or causing performance degradation.",
+          icon: <TrendingUp className="w-8 h-8 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        },
+        { 
+          name: "Better data visibility", 
+          description: "Real-time dashboards and reporting tools that give stakeholders clear insight into business performance at a glance.",
+          icon: <Eye className="w-8 h-8 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        },
+        { 
+          name: "Improved user satisfaction", 
+          description: "Intuitive interfaces and smooth performance that keep users engaged and reduce churn across your platforms.",
+          icon: <Smile className="w-8 h-8 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        },
+        { 
+          name: "Faster time to market", 
+          description: "Efficient development processes that help you launch new features and products ahead of the competition.",
+          icon: <Timer className="w-8 h-8 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        }
+      ]
     }
   ]
-}
-  ]
 };
+
 
 // ============================================================
 // WEB APPLICATION DEVELOPMENT DATA
@@ -674,22 +642,26 @@ export const itInfraData = {
         { 
           name: "Cloud Architecture", 
           description: "Design scalable, resilient cloud infrastructure from scratch or migrate existing systems to the cloud with minimal disruption to your operations.", 
-          link: "/services/it-infrastructure-cloud/cloud-architecture", 
+          link: "/services/it-infrastructure-cloud/cloud-architecture",
+          icon: <Cloud className="w-6 h-6 text-[#29f67a]" />
         },
         { 
           name: "Server & DevOps Management", 
           description: "Comprehensive server management and deployment pipeline automation to ensure your systems stay stable, secure, and efficient around the clock.", 
-          link: "/services/it-infrastructure-cloud/server-devops", 
+          link: "/services/it-infrastructure-cloud/server-devops",
+          icon: <Terminal className="w-6 h-6 text-[#29f67a]" />
         },
         { 
           name: "Performance Optimisation", 
           description: "Identify and eliminate bottlenecks across your entire stack — from frontend load times to database query performance and server response times.", 
-          link: "/services/it-infrastructure-cloud/performance-optimisation", 
+          link: "/services/it-infrastructure-cloud/performance-optimisation",
+          icon: <ZapIcon className="w-6 h-6 text-[#29f67a]" />
         },
         { 
           name: "Security & Monitoring", 
           description: "Implement defence-in-depth security measures and comprehensive monitoring to protect your systems and ensure continuous uptime.", 
-          link: "/services/it-infrastructure-cloud/security-monitoring", 
+          link: "/services/it-infrastructure-cloud/security-monitoring",
+          icon: <Lock className="w-6 h-6 text-[#29f67a]" />
         }
       ]
     },
@@ -740,43 +712,40 @@ export const itInfraData = {
       ]
     },
     
-
-// ============================================================
-// OUTCOMES SECTION - IT INFRASTRUCTURE & CLOUD
-// ============================================================
-{
-  title: "OUTCOMES",
-  description: "The results of well-designed and properly managed infrastructure. We measure success by reliability, performance, and security metrics.",
-  
-  items: [
-    { 
-      name: "High availability", 
-      description: "Your systems stay online when it matters most, with redundancy and failover strategies that minimise downtime and protect revenue.",
-      icon: <Activity className="w-7 h-7 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
-    },
-    { 
-      name: "Optimised performance", 
-      description: "Applications that load quickly and respond instantly, delivering the experience your users expect and deserve.",
-      icon: <Gauge className="w-7 h-7 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
-    },
-    { 
-      name: "Robust security", 
-      description: "Multi-layered protection against threats, with proper access controls, encryption, and monitoring to keep your data safe.",
-      icon: <Shield className="w-7 h-7 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
-    },
-    { 
-      name: "Cost efficiency", 
-      description: "Right-sized resources and intelligent architecture decisions that keep your infrastructure costs predictable and under control.",
-      icon: <DollarSign className="w-7 h-7 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
+    {
+      title: "OUTCOMES",
+      description: "The results of well-designed and properly managed infrastructure. We measure success by reliability, performance, and security metrics.",
+      
+      items: [
+        { 
+          name: "High availability", 
+          description: "Your systems stay online when it matters most, with redundancy and failover strategies that minimise downtime and protect revenue.",
+          icon: <Activity className="w-7 h-7 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        },
+        { 
+          name: "Optimised performance", 
+          description: "Applications that load quickly and respond instantly, delivering the experience your users expect and deserve.",
+          icon: <Gauge className="w-7 h-7 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        },
+        { 
+          name: "Robust security", 
+          description: "Multi-layered protection against threats, with proper access controls, encryption, and monitoring to keep your data safe.",
+          icon: <Shield className="w-7 h-7 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        },
+        { 
+          name: "Cost efficiency", 
+          description: "Right-sized resources and intelligent architecture decisions that keep your infrastructure costs predictable and under control.",
+          icon: <DollarSign className="w-7 h-7 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        }
+      ]
     }
   ]
-}
-  ]
 };
+
 
 // Cloud Architecture
 export const cloudArchData = {
@@ -1090,63 +1059,64 @@ export const digitalGrowthData = {
         { 
           name: "Performance Marketing", 
           description: "Data-driven advertising campaigns across multiple channels, continuously optimised to lower acquisition costs and maximise return on your marketing investment.", 
-          link: "/services/digital-growth/performance-marketing", 
+          link: "/services/digital-growth/performance-marketing",
+          icon: <BarChart className="w-6 h-6 text-[#29f67a]" />
         },
         { 
           name: "Conversion Optimisation", 
           description: "Systematic testing and improvement of your website's user experience to turn more visitors into leads and customers without increasing your ad spend.", 
-          link: "/services/digital-growth/conversion-optimisation", 
+          link: "/services/digital-growth/conversion-optimisation",
+          icon: <MousePointer className="w-6 h-6 text-[#29f67a]" />
         },
         { 
           name: "Analytics & Tracking", 
           description: "Complete visibility into user behaviour and campaign performance through properly implemented tracking, custom dashboards, and actionable reporting.", 
-          link: "/services/digital-growth/analytics-tracking", 
+          link: "/services/digital-growth/analytics-tracking",
+          icon: <PieChart className="w-6 h-6 text-[#29f67a]" />
         },
         { 
           name: "Funnels & Landing Pages", 
           description: "Strategic funnel design and high-converting landing pages that guide visitors through a seamless journey from first click to completed purchase.", 
-          link: "/services/digital-growth/funnels-landing-pages", 
+          link: "/services/digital-growth/funnels-landing-pages",
+          icon: <Funnel className="w-6 h-6 text-[#29f67a]" />
         }
       ]
     },
 
-
-// ============================================================
-// OUTCOMES SECTION - DIGITAL GROWTH
-// ============================================================
-{
-  title: "OUTCOMES",
-  description: "The measurable business results our digital growth strategies consistently deliver for clients across industries.",
-  
-  items: [
-    { 
-      name: "Increased lead volume", 
-      description: "More qualified prospects entering your pipeline through optimised campaigns and conversion-focused strategies.",
-      icon: <Users className="w-7 h-7 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
-    },
-    { 
-      name: "Better marketing ROI", 
-      description: "Every dollar works harder with data-driven targeting, continuous optimisation, and systematic performance improvement.",
-      icon: <TrendingUp className="w-7 h-7 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
-    },
-    { 
-      name: "Higher conversion rates", 
-      description: "Turn more of your existing traffic into paying customers through strategic optimisation of every step in the user journey.",
-      icon: <Target className="w-7 h-7 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
-    },
-    { 
-      name: "Scalable growth engine", 
-      description: "Systems and processes that allow you to increase marketing spend while maintaining or improving efficiency metrics.",
-      icon: <Gauge className="w-7 h-7 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
+    {
+      title: "OUTCOMES",
+      description: "The measurable business results our digital growth strategies consistently deliver for clients across industries.",
+      
+      items: [
+        { 
+          name: "Increased lead volume", 
+          description: "More qualified prospects entering your pipeline through optimised campaigns and conversion-focused strategies.",
+          icon: <Users className="w-7 h-7 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        },
+        { 
+          name: "Better marketing ROI", 
+          description: "Every dollar works harder with data-driven targeting, continuous optimisation, and systematic performance improvement.",
+          icon: <TrendingUp className="w-7 h-7 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        },
+        { 
+          name: "Higher conversion rates", 
+          description: "Turn more of your existing traffic into paying customers through strategic optimisation of every step in the user journey.",
+          icon: <Target className="w-7 h-7 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        },
+        { 
+          name: "Scalable growth engine", 
+          description: "Systems and processes that allow you to increase marketing spend while maintaining or improving efficiency metrics.",
+          icon: <Gauge className="w-7 h-7 text-[#29f67a]" />,
+          iconBg: "bg-[#29f67a]/10"
+        }
+      ]
     }
   ]
-}
-  ]
 };
+
 
 // Performance Marketing
 export const perfMarketingData = {

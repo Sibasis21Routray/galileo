@@ -52,63 +52,82 @@ const FeatureSection = ({ productData }) => {
 
         {/* Feature Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {productData.features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -4 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              viewport={{ once: true, margin: "-50px" }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative bg-black border border-gray-800 rounded-xl p-6 hover:border-[#29f67a]/50 transition-all duration-300"
-            >
-              {/* Animated Border Glow */}
-              <motion.div
-                className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#29f67a]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              />
+  {productData.features.map((feature, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.15, ease: "easeOut" } }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.1,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      viewport={{ once: true, margin: "-50px" }}
+      onMouseEnter={() => setHoveredIndex(index)}
+      onMouseLeave={() => setHoveredIndex(null)}
+      className="group relative bg-black border border-gray-800 rounded-xl p-6 hover:border-[#29f67a]/50 transition-all duration-300 overflow-hidden cursor-pointer"
+    >
+      {/* Animated Gradient Overlay - Same as other cards */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      
+      {/* Enhanced Border Glow */}
+      <motion.div
+        className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#29f67a]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+      />
 
-              {/* Icon */}
-              <motion.div
-                className="w-14 h-14 rounded-xl border border-gray-800 flex items-center justify-center mb-5 group-hover:border-[#29f67a]/50 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <img 
-                  src={feature.icon} 
-                  alt={feature.title}
-                  className="w-8 h-8 object-contain"
-                />
-              </motion.div>
+      {/* Radial Glow Effect */}
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        style={{
+          background: "radial-gradient(circle at 50% 0%, rgba(41, 246, 122, 0.15), transparent 70%)",
+        }}
+      />
 
-              {/* Content */}
-              <div className="flex-1">
-                <motion.h3
-                  className="text-xl font-semibold text-white mb-2 group-hover:text-[#29f67a] transition-colors duration-300"
-                >
-                  {feature.title}
-                </motion.h3>
+      {/* Icon */}
+      <motion.div
+        className="w-14 h-14 rounded-xl border border-gray-800 flex items-center justify-center mb-5 group-hover:border-[#29f67a]/50 group-hover:bg-[#29f67a]/10 transition-all duration-200 relative z-10"
+        whileHover={{ scale: 1.1, rotate: 5 }}
+        transition={{ type: "spring", stiffness: 400, duration: 0.2 }}
+      >
+        <img 
+          src={feature.icon} 
+          alt={feature.title}
+          className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-200"
+        />
+      </motion.div>
 
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                  {feature.description}
-                </p>
+      {/* Content */}
+      <div className="flex-1 relative z-10">
+        <motion.h3
+          className="text-xl font-semibold text-white mb-2 group-hover:text-[#29f67a] transition-colors duration-300"
+        >
+          {feature.title}
+        </motion.h3>
 
-                {/* Optional: Feature highlight indicator */}
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "30px" }}
-                  transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-                  className="h-0.5 bg-[#29f67a]"
-                />
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <p className="text-gray-500 group-hover:text-gray-300 text-sm leading-relaxed mb-4 transition-colors duration-300">
+          {feature.description}
+        </p>
+
+        {/* Optional: Feature highlight indicator - Enhanced */}
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "30px" }}
+          transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
+          className="h-0.5 bg-gradient-to-r from-[#29f67a] to-[#29f67a]/50 group-hover:w-full transition-all duration-300"
+        />
+      </div>
+
+      {/* Decorative bottom line */}
+      <motion.div
+        className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#29f67a] to-[#29f67a]/50"
+        initial={{ width: "0%" }}
+        whileHover={{ width: "100%" }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      />
+    </motion.div>
+  ))}
+</div>
 
         {/* Bottom CTA (Optional) */}
         {productData.cta && (

@@ -66,51 +66,65 @@ const About = () => {
             </p>
           </motion.section>
 
-          {/* Grid Layout for Our Approach, What Makes Us Different, Who We Work With */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Our Approach */}
-            <motion.div variants={itemVariants} className="p-10 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#29f67a]/30 transition-all text-center">
-              <FiZap className="w-8 h-8 text-[#29f67a] mx-auto mb-6" />
-              <h3 className="text-xl font-bold text-white mb-8 tracking-wide">OUR APPROACH</h3>
-              <ul className="space-y-4">
-                {["No overengineering", "No unnecessary complexity", "No buzzwords"].map((item, idx) => (
-                  <li key={idx} className="flex flex-col items-center gap-2 text-slate-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#29f67a] opacity-50" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+         {/* Grid Layout */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+  {[
+    {
+      title: "OUR APPROACH",
+      icon: <FiZap />,
+      items: ["No overengineering", "No unnecessary complexity", "No buzzwords"],
+      delay: 0.1
+    },
+    {
+      title: "WHAT MAKES US DIFFERENT",
+      icon: <FiCheckCircle />,
+      items: ["Built by practitioners", "Execution-first", "Business-first"],
+      delay: 0.2
+    },
+    {
+      title: "WHO WE WORK WITH",
+      icon: <FiUsers />,
+      items: ["Growing companies", "Product builders", "Operations teams"],
+      delay: 0.3
+    }
+  ].map((card, index) => (
+    <motion.div
+      key={index}
+      variants={itemVariants}
+      whileHover={{ y: -5 }}
+      className="group relative p-8 rounded-3xl bg-gradient-to-b from-white/[0.05] to-transparent border border-white/10 hover:border-[#29f67a]/40 transition-all duration-300 overflow-hidden"
+    >
+      {/* Background Glow Effect on Hover */}
+      <div className="absolute inset-0 bg-[#29f67a]/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      {/* Icon with Soft Glow */}
+      <div className="relative z-10 mb-8">
+        <div className="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/[0.03] text-[#29f67a] text-2xl group-hover:scale-110 group-hover:bg-[#29f67a]/10 transition-all duration-300">
+          {card.icon}
+        </div>
+      </div>
 
-            {/* What Makes Us Different */}
-            <motion.div variants={itemVariants} className="p-10 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#29f67a]/30 transition-all text-center relative overflow-hidden">
-               <div className="absolute top-0 right-0 p-32 bg-[#29f67a] opacity-[0.02] blur-3xl pointer-events-none rounded-full" />
-              <FiCheckCircle className="w-8 h-8 text-[#29f67a] mx-auto mb-6" />
-              <h3 className="text-xl font-bold text-white mb-8 tracking-wide">WHAT MAKES US DIFFERENT</h3>
-              <ul className="space-y-4 relative z-10">
-                {["Built by practitioners", "Execution-first", "Business-first"].map((item, idx) => (
-                  <li key={idx} className="flex flex-col items-center gap-2 text-slate-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#29f67a] opacity-50" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+      {/* Content */}
+      <div className="relative z-10">
+        <h3 className="text-sm font-black tracking-[0.15em] text-white/90 mb-6 uppercase">
+          {card.title}
+        </h3>
+        
+        <ul className="space-y-4">
+          {card.items.map((item, idx) => (
+            <li key={idx} className="flex items-center gap-3 text-slate-400 group-hover:text-slate-200 transition-colors">
+              <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#29f67a] shadow-[0_0_8px_rgba(41,246,122,0.6)]" />
+              <span className="text-sm lg:text-base font-medium tracking-tight">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-            {/* Who We Work With */}
-            <motion.div variants={itemVariants} className="p-10 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#29f67a]/30 transition-all text-center">
-              <FiUsers className="w-8 h-8 text-[#29f67a] mx-auto mb-6" />
-              <h3 className="text-xl font-bold text-white mb-8 tracking-wide">WHO WE WORK WITH</h3>
-              <ul className="space-y-4">
-                {["Growing companies", "Product builders", "Operations teams"].map((item, idx) => (
-                  <li key={idx} className="flex flex-col items-center gap-2 text-slate-400">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#29f67a] opacity-50" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
+      {/* Bottom Accent Line */}
+      <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#29f67a] group-hover:w-full transition-all duration-500 opacity-50" />
+    </motion.div>
+  ))}
+</div>
         </motion.div>
 
         {/* CTA */}

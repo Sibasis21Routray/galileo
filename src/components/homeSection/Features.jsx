@@ -78,27 +78,31 @@ const FeatureCard = ({ title, icon, path, items, delay }) => {
         delay: delay * 0.1,
         ease: "easeOut",
       }}
-      whileHover={{
-        y: -6,
-        transition: { duration: 0.25 },
+      whileHover={{ 
+        y: -8, 
+        scale: 1.02,
+        transition: { duration: 0.15, ease: "easeOut" } // Faster scale animation
       }}
-      className="group relative bg-gradient-to-br from-black to-gray-900 rounded-2xl border border-[#29f67a]/10 hover:border-[#29f67a]/30 transition-all duration-300 p-6 md:p-7 flex flex-col h-full"
+      className="group relative bg-gradient-to-br from-black to-gray-900 rounded-2xl border border-[#29f67a]/10 hover:border-[#29f67a]/50 transition-all duration-300 p-6 md:p-7 flex flex-col h-full overflow-hidden cursor-pointer"
     >
-      {/* Icon Section - Larger */}
+      {/* Animated Gradient Overlay - Same as cards */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+      {/* Icon Section */}
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={inView ? { scale: 1, opacity: 1 } : {}}
         transition={{ delay: delay * 0.1 + 0.1, type: "spring", stiffness: 200 }}
-        className="mb-5"
+        className="mb-5 relative z-10"
       >
-        <div className="w-14 h-14 flex items-center justify-center bg-[#29f67a]/10 rounded-xl group-hover:bg-[#29f67a]/20 transition-all duration-300">
+        <div className="w-14 h-14 flex items-center justify-center bg-[#29f67a]/10 rounded-xl group-hover:bg-[#29f67a]/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
           {icon}
         </div>
       </motion.div>
 
-      {/* Title - Larger */}
+      {/* Title */}
       <motion.h3
-        className="text-xl md:text-2xl font-bold text-white mb-3 tracking-tight"
+        className="text-xl md:text-2xl font-bold text-white mb-3 tracking-tight group-hover:text-[#29f67a] transition-colors duration-300 relative z-10"
         initial={{ opacity: 0, x: -10 }}
         animate={inView ? { opacity: 1, x: 0 } : {}}
         transition={{ delay: delay * 0.1 + 0.15 }}
@@ -108,24 +112,25 @@ const FeatureCard = ({ title, icon, path, items, delay }) => {
 
       {/* Sub-items List */}
       <motion.ul
-        className="space-y-2 mb-5 flex-grow"
+        className="space-y-2 mb-5 flex-grow relative z-10"
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: delay * 0.1 + 0.2 }}
       >
         {items.map((item, idx) => (
-          <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
-            <Check />
+          <li key={idx} className="flex items-start gap-2 text-sm text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
+            <Check className="w-4 h-4 text-[#29f67a] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-200" />
             <span className="leading-relaxed">{item.title}</span>
           </li>
         ))}
       </motion.ul>
 
-      {/* Link - Larger */}
+      {/* Link */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: delay * 0.1 + 0.25 }}
+        className="relative z-10"
       >
         <Link to={path}>
           <motion.div
@@ -133,19 +138,19 @@ const FeatureCard = ({ title, icon, path, items, delay }) => {
             whileHover={{ x: 4 }}
           >
             <span>Explore Services</span>
-            <FaArrowRight className="w-3.5 h-3.5" />
+            <FaArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" />
           </motion.div>
         </Link>
       </motion.div>
 
-      {/* Animated Border Glow */}
+      {/* Animated Border Glow - Enhanced */}
       <motion.div
         className="absolute inset-0 rounded-2xl pointer-events-none"
         initial={{ opacity: 0 }}
         whileHover={{
           opacity: 1,
-          boxShadow: "0 0 24px rgba(41, 246, 122, 0.12)",
-          transition: { duration: 0.3 },
+          boxShadow: "0 0 32px rgba(41, 246, 122, 0.15)",
+          transition: { duration: 0.2 },
         }}
       />
     </motion.div>
@@ -176,19 +181,15 @@ const FeaturesSection = () => {
           className="text-center mb-14 md:mb-20"
         >
           {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+        
+<motion.h2
+initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#29f67a]/10 border border-[#29f67a]/20 mb-5"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-[#29f67a] animate-pulse" />
-            <span className="text-xs font-medium text-[#29f67a] tracking-wider uppercase">
-              Our Capabilities
-            </span>
-          </motion.div>
-
+  className="text-5xl md:text-6xl font-light text-white leading-tight mb-8">
+                  Our <span className="text-[#29f67a] font-bold ">Capabilities</span>
+                </motion.h2>
         
 
           <motion.p

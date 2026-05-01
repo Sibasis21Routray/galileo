@@ -375,7 +375,7 @@ export const solutionsList = [
   },
   {
     id: "sonar",
-    title: "SONAR — Operations & Resource Management",
+    title: "SONAR — System for Operations, Navigation and Resource Management",
     shortDescription: "Manage HR, operations, scheduling, and resources in one unified system.",
     path: "/solutions/sonar",
     data: sonarSolutionData

@@ -16,11 +16,11 @@ const ContactSection = () => {
     //   title: "Location",
     //   value: "Arena-3, 3rd Floor, STPI ELITE Building, Gothapatna, Khordha, Odisha - 751003"
     // },
-    {
-      icon: FiClock,
-      title: "Response Time",
-      value: "< 24 hours"
-    }
+    // {
+    //   icon: FiClock,
+    //   title: "Response Time",
+    //   value: "< 24 hours"
+    // }
   ];
 
   return (
@@ -66,7 +66,7 @@ const ContactSection = () => {
           >
             {/* Contact Details */}
             <div className="border border-gray-800 rounded-xl p-6 md:p-8">
-              <img src="/contactImg.jpg" alt="Contact Us" className="w-full h-90 object-cover rounded-lg mb-6" />
+              <img src="/contactImg.jpg" alt="Contact Us" className="w-full h-107 object-cover rounded-lg mb-6" />
               <h2 className="text-white text-lg font-medium mb-6">Contact info</h2>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
