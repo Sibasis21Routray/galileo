@@ -11,7 +11,7 @@ import {
 export const calmSolutionData = {
   title: "Compliance & Learning Management Platform",
   subtitle: "Enterprise Learning & Compliance Platform",
-  heroTitle: "A Scalable Learning & Compliance Platform Built for Real-World Organisations",
+  heroTitle: "Compliance & Learning Management Platform",
   heroSubtext: "Deliver training, enforce compliance, and track performance across your organisation — all in one fully customisable, enterprise-ready platform.",
   trustLine: "Trusted by organisations with 9,000+ active users",
   ctaText: "Request a Demo",
@@ -187,7 +187,7 @@ export const calmSolutionData = {
 export const sonarSolutionData = {
   title: "SONAR",
   subtitle: "Enterprise Operations Platform",
-  heroTitle: "One Platform to Manage People, Operations, and Resources",
+  heroTitle: "SONAR — System for Operations, Navigation and Resource Management",
   heroSubtext: "SONAR brings together HR, operations, scheduling, and resource management into a single, unified system — designed to simplify complex workflows and improve organisational efficiency.",
   trustLine: "Built for organisations managing large teams, multiple processes, and operational complexity",
   ctaText: "Request a Demo",

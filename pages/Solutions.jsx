@@ -146,7 +146,7 @@ function SolutionDetail({ solution }) {
       {/* 1. CINEMATIC OVERLAY HEADER (Full Width Image BG) */}
 <header
   ref={headerRef}
-  className="relative flex items-center justify-center pt-32 overflow-hidden bg-black"
+  className="relative flex items-center justify-center  overflow-hidden bg-black"
 >
   {/* Use TextParallaxContent as the main container */}
   <div className="w-full">
@@ -155,7 +155,7 @@ function SolutionDetail({ solution }) {
       subheading={data.subheading || "FEATURED SOLUTION"}
       heading={data.heroTitle}
       productUrl={data.productUrl}
-      description={data.description}
+      description={data.heroSubtext}
     >
       {/* Additional content can be added here if needed */}
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center mt-16">
