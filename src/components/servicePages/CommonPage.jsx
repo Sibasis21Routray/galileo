@@ -1,17 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  FiArrowRight,
-  FiCheckCircle,
-} from "react-icons/fi";
-
+import { FiArrowRight, FiCheckCircle } from "react-icons/fi";
 
 const CommonServicePage = ({ data }) => {
   const navigate = useNavigate();
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: true, amount: 0.3 });
-
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -27,9 +22,9 @@ const CommonServicePage = ({ data }) => {
     },
   };
 
-  const words = data.title.split(" ")
-const firstWord = words[0]
-const restWords = words.slice(1).join(" ")
+  const words = data.title.split(" ");
+  const firstWord = words[0];
+  const restWords = words.slice(1).join(" ");
 
   return (
     <div className="min-h-screen bg-[#050505] text-slate-200 selection:bg-[#29f67a]/30 selection:text-[#29f67a]">
@@ -40,14 +35,12 @@ const restWords = words.slice(1).join(" ")
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-50 contrast-150" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-22 pb-4">
         {/* Header Section with Cover Image */}
         <header ref={headerRef} className="relative pt-8 pb-28">
           <div className="max-w-7xl mx-auto px-6">
             {/* Top Navigation-Style Metadata */}
             <div className="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
-             
-
               <div className="text-[10px] font-mono text-slate-500">
                 PAGE_REF: {data.title.substring(0, 3).toUpperCase()}_01
               </div>
@@ -57,16 +50,14 @@ const restWords = words.slice(1).join(" ")
               {/* LEFT: TEXT STACK */}
               <div className="lg:col-span-7 pr-12">
                 <motion.h1
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  className="text-5xl md:text-5xl lg:text-7xl font-light text-white leading-[0.9] tracking-tighter mb-8"
->
-  {firstWord} <br />
-  <span className="font-bold text-[#29f67a]">
-    {restWords}
-  </span>
-</motion.h1>
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="text-5xl md:text-5xl lg:text-7xl font-light text-white leading-[0.9] tracking-tighter mb-8"
+                >
+                  {firstWord} <br />
+                  <span className="font-bold text-[#29f67a]">{restWords}</span>
+                </motion.h1>
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -137,7 +128,7 @@ const restWords = words.slice(1).join(" ")
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.05 }}
-          className="space-y-40"
+          className="space-y-30"
         >
           {data.sections &&
             data.sections.map((section, sectionIdx) => {
@@ -155,9 +146,6 @@ const restWords = words.slice(1).join(" ")
               const isUseCaseSection =
                 section.title.includes("USE CASE") ||
                 section.title.includes("APPROACH");
-
-
-                
 
               return (
                 <motion.section
@@ -181,48 +169,48 @@ const restWords = words.slice(1).join(" ")
                   </div>
 
                   {/* SUB-SERVICES - Card Grid Layout */}
-{section.items &&
-  section.items.length > 0 &&
-  isServiceSection && (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {section.items.map((item, idx) => (
-        <motion.div
-          key={idx}
-          whileHover={{ y: -8, scale: 1.02 }}
-          className="group relative p-6 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 hover:border-[#29f67a]/50 transition-all duration-300 cursor-pointer overflow-hidden"
-          onClick={() => item.link && navigate(item.link)}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  {section.items &&
+                    section.items.length > 0 &&
+                    isServiceSection && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {section.items.map((item, idx) => (
+                          <motion.div
+                            key={idx}
+                            whileHover={{ y: -8, scale: 1.02 }}
+                            className="group relative p-6 rounded-2xl bg-gradient-to-br from-white/[0.03] to-transparent border border-white/10 hover:border-[#29f67a]/50 transition-all duration-300 cursor-pointer overflow-hidden"
+                            onClick={() => item.link && navigate(item.link)}
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-          <div className="relative z-10">
-            {/* Icon Section - Added here */}
-            {item.icon && (
-              <div className="mb-4 p-3 rounded-xl bg-[#29f67a]/10 inline-flex items-center justify-center group-hover:bg-[#29f67a]/20 transition-all duration-300">
-                {item.icon}
-              </div>
-            )}
+                            <div className="relative z-10">
+                              {/* Icon Section - Added here */}
+                              {item.icon && (
+                                <div className="mb-4 p-3 rounded-xl bg-[#29f67a]/10 inline-flex items-center justify-center group-hover:bg-[#29f67a]/20 transition-all duration-300">
+                                  {item.icon}
+                                </div>
+                              )}
 
-            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#29f67a] transition-colors">
-              {item.name}
-            </h3>
+                              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#29f67a] transition-colors">
+                                {item.name}
+                              </h3>
 
-            {item.description && (
-              <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                {item.description}
-              </p>
-            )}
+                              {item.description && (
+                                <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                                  {item.description}
+                                </p>
+                              )}
 
-            {item.link && (
-              <div className="flex items-center gap-2 text-xs font-semibold text-[#29f67a] opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all">
-                Learn More{" "}
-                <FiArrowRight className="w-3 h-3" />
-              </div>
-            )}
-          </div>
-        </motion.div>
-      ))}
-    </div>
-  )}
+                              {item.link && (
+                                <div className="flex items-center gap-2 text-xs font-semibold text-[#29f67a] opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all">
+                                  Learn More{" "}
+                                  <FiArrowRight className="w-3 h-3" />
+                                </div>
+                              )}
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    )}
 
                   {/* COMBINED SECTIONS LOGIC */}
                   <motion.section
@@ -394,7 +382,7 @@ const restWords = words.slice(1).join(" ")
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-40 relative rounded-[3rem] bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 p-12 md:p-24 overflow-hidden text-center"
+          className="mt-20 relative rounded-[3rem] bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 p-12 md:p-24 overflow-hidden text-center"
         >
           <div className="absolute inset-0 bg-[#29f67a]/5 blur-3xl rounded-full translate-y-1/2" />
 

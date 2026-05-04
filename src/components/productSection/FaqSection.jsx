@@ -34,7 +34,7 @@ const FaqSection = ({ productData }) => {
   };
 
   return (
-    <section className="py-20 bg-black">
+    <section className="py-5 bg-black">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         {/* Header Section */}
         <motion.div
@@ -45,7 +45,7 @@ const FaqSection = ({ productData }) => {
           className="text-center mb-12"
         >
           {/* Badge */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
@@ -55,7 +55,7 @@ const FaqSection = ({ productData }) => {
             <span className="text-[10px] font-mono tracking-wider text-[#29f67a] uppercase">
               Help Center
             </span>
-          </motion.div>
+          </motion.div> */}
 
           <motion.h2
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"

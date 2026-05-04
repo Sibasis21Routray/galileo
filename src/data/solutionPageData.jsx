@@ -15,7 +15,7 @@ export const calmSolutionData = {
   heroSubtext: "Deliver training, enforce compliance, and track performance across your organisation — all in one fully customisable, enterprise-ready platform.",
   trustLine: "Trusted by organisations with 9,000+ active users",
   ctaText: "Request a Demo",
-  heroImage: "../../public/solutions/learning-compliance.jpg",
+  heroImage: "/solutions/learning-compliance.jpg",
   ctaPath: "/contact",
 
   sections: [
@@ -191,7 +191,7 @@ export const sonarSolutionData = {
   heroSubtext: "SONAR brings together HR, operations, scheduling, and resource management into a single, unified system — designed to simplify complex workflows and improve organisational efficiency.",
   trustLine: "Built for organisations managing large teams, multiple processes, and operational complexity",
   ctaText: "Request a Demo",
-  heroImage: "../../public/solutions/erp.jpg",
+  heroImage: "/solutions/erp.jpg",
   ctaPath: "/contact",
 
   sections: [

@@ -15,6 +15,7 @@ import { solutionsList } from "../src/data/solutionPageData";
 import FaqSection from "../src/components/productSection/FaqSection";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { TextParallaxContent } from "../src/components/productSection/ProductDetails";
+
 // --- ANIMATION VARIANTS ---
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -72,45 +73,45 @@ function SolutionsListing() {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto"
+          className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto"
         >
           {solutionsList.map((solution) => (
             <motion.div
               key={solution.id}
               variants={fadeInUp}
-              className="group relative p-1 bg-white/[0.02] border border-white/10 rounded-[2rem] hover:border-[#29f67a]/30 transition-all duration-500 overflow-hidden"
+              className="group relative p-1 bg-white/[0.02] border border-white/10 rounded-2xl hover:border-[#29f67a]/30 transition-all duration-500 overflow-hidden"
             >
-              <div className="p-8 md:p-12 relative z-10">
-                <div className="flex justify-between items-start mb-12">
-                  <div className="w-16 h-16 rounded-2xl bg-[#29f67a]/10 flex items-center justify-center border border-[#29f67a]/20">
+              <div className="p-6 md:p-8 relative z-10">
+                <div className="flex justify-between items-start mb-8">
+                  <div className="w-14 h-14 rounded-xl bg-[#29f67a]/10 flex items-center justify-center border border-[#29f67a]/20">
                     {solution.id === "calm" ? (
-                      <FiBox className="w-8 h-8 text-[#29f67a]" />
+                      <FiBox className="w-6 h-6 text-[#29f67a]" />
                     ) : (
-                      <FiCpu className="w-8 h-8 text-[#29f67a]" />
+                      <FiCpu className="w-6 h-6 text-[#29f67a]" />
                     )}
                   </div>
-                  <span className="font-mono text-[10px] text-slate-600 tracking-widest uppercase mt-2">
+                  <span className="font-mono text-[10px] text-slate-600 tracking-widest uppercase">
                     REF_{solution.id.toUpperCase()}
                   </span>
                 </div>
 
-                <h2 className="text-3xl font-bold mb-4 text-white group-hover:text-[#29f67a] transition-colors tracking-tight">
+                <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white group-hover:text-[#29f67a] transition-colors tracking-tight">
                   {solution.title}
                 </h2>
-                <p className="text-slate-400 mb-8 leading-relaxed font-light text-lg">
+                <p className="text-slate-400 mb-6 leading-relaxed font-light text-base">
                   {solution.shortDescription}
                 </p>
 
                 <Link
                   to={`/solutions/${solution.id}`}
-                  className="inline-flex items-center gap-3 text-white font-mono text-xs tracking-widest group/btn hover:text-[#29f67a] transition-colors"
+                  className="inline-flex items-center gap-2 text-white font-mono text-xs tracking-widest group/btn hover:text-[#29f67a] transition-colors"
                 >
                   EXPLORE_CAPABILITIES
-                  <ArrowRight className="w-4 h-4 text-[#29f67a] group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3 h-3 text-[#29f67a] group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
               </div>
-              <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
-                <FiLayers className="w-40 h-40" />
+              <div className="absolute top-0 right-0 p-6 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity">
+                <FiLayers className="w-32 h-32" />
               </div>
             </motion.div>
           ))}
@@ -135,76 +136,70 @@ function SolutionDetail({ solution }) {
         id: index,
         question: item.question,
         answer: item.answer,
-        category: "General", // You can add category logic here if needed
+        category: "General",
       })) || [],
     description: "Find answers to common questions about our platform",
   };
 
   return (
-    <div className="bg-[#050505] text-slate-300 min-h-screen">
+    <div className="bg-[#050505] text-slate-300 min-h-screen ">
       {/* 1. CINEMATIC OVERLAY HEADER (Full Width Image BG) */}
-      {/* 1. CINEMATIC OVERLAY HEADER (Full Width Image BG) */}
-<header
-  ref={headerRef}
-  className="relative flex items-center justify-center  overflow-hidden bg-black"
->
-  {/* Use TextParallaxContent as the main container */}
-  <div className="w-full">
-    <TextParallaxContent
-      imgUrl={data.heroImage}
-      subheading={data.subheading || "FEATURED SOLUTION"}
-      heading={data.heroTitle}
-      productUrl={data.productUrl}
-      description={data.heroSubtext}
-    >
-      {/* Additional content can be added here if needed */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center mt-16">
-        {/* Primary CTA Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mt-16"
-        >
-          <button
-            onClick={() => {
-              navigate("/contact");
-            }}
-            className="px-12 py-5 bg-[#29f67a] text-black rounded-full font-black uppercase tracking-widest text-xs hover:scale-105 active:scale-95 transition-all shadow-[0_20px_40px_-10px_rgba(41,246,122,0.3)]"
+      <header
+        ref={headerRef}
+        className="relative flex items-center justify-center overflow-hidden bg-black"
+      >
+        <div className="w-full">
+          <TextParallaxContent
+            imgUrl={data.heroImage}
+            subheading={data.subheading || "FEATURED SOLUTION"}
+            heading={data.heroTitle}
+            productUrl={data.productUrl}
+            description={data.heroSubtext}
           >
-            {data.ctaText || "Get Started"}
-          </button>
-        </motion.div>
-      </div>
-    </TextParallaxContent>
-  </div>
-</header>
+            <div className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center mt-16">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="mt-16"
+              >
+                <button
+                  onClick={() => navigate("/contact")}
+                  className="px-12 py-5 bg-[#29f67a] text-black rounded-full font-black uppercase tracking-widest text-xs hover:scale-105 active:scale-95 transition-all shadow-[0_20px_40px_-10px_rgba(41,246,122,0.3)]"
+                >
+                  {data.ctaText || "Get Started"}
+                </button>
+              </motion.div>
+            </div>
+          </TextParallaxContent>
+        </div>
+      </header>
 
       {/* 2. DYNAMIC CONTENT SECTIONS */}
       {data.sections.map((section, idx) => {
-        // Skip FAQ section as it will be rendered separately with the FaqSection component
         if (section.type === "faq") return null;
 
         return (
           <section
             key={idx}
-            className={`py-10 md:py-18 ${idx % 2 === 0 ? "bg-black" : "bg-[#080808] border-y border-white/5"}`}
+            className={`py-12 md:py-16 ${idx % 2 === 0 ? "bg-black" : "bg-[#080808] border-y border-white/5"}`}
           >
-            <div className="container mx-auto px-6 max-w-7xl text-center ">
-              <div className="flex flex-col md:flex-row   text-center justify-center mb-20 gap-8">
-                <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight items-center text-center">
+            <div className="container mx-auto px-6 max-w-6xl">
+              {/* Section Header - Centered */}
+              <div className="text-center mb-10">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight">
                   {section.heading}
                 </h2>
-              </div>
-              <div className="flex items-center justify-center mb-12">
                 {section.subtext && (
-                  <p className="text-slate-500 max-w-sm text-lg">
+                  <p className="text-slate-400 text-base md:text-lg mt-3 max-w-2xl mx-auto">
                     {section.subtext}
                   </p>
                 )}
+                <div className="w-12 h-px bg-[#29f67a]/30 mx-auto mt-5" />
               </div>
 
               {/* Features */}
+             {/* Features */}
               {section.type === "features" && (
                 <div className="grid md:grid-cols-3 gap-8">
                   {section.items.map((item, fIdx) => (
@@ -236,52 +231,47 @@ function SolutionDetail({ solution }) {
                   ))}
                 </div>
               )}
-
               {/* Capabilities */}
               {section.type === "capabilities" && (
-                <div className="grid md:grid-cols-2 gap-2">
-                  {section.items.map((cap, cIdx) => (
-                    <div
-                      key={cIdx}
-                      className="flex items-center gap-4 p-2 border-b border-white/5 group"
-                    >
-                      {/* Fixed icon container */}
-                      <span className="flex items-center justify-center w-6 h-6 shrink-0">
-                        <FiCheck
-                          className="text-[#29f67a] group-hover:scale-110 transition-transform"
-                          size={20}
-                          style={{
-                            minWidth: "20px",
-                            minHeight: "20px",
-                            display: "block",
-                          }}
-                        />
-                      </span>
-
-                      <span className="text-lg text-slate-300 font-light">
-                        {cap}
-                      </span>
-                    </div>
-                  ))}
+                <div>
+                  <div className="grid md:grid-cols-2 gap-2 max-w-3xl mx-auto">
+                    {section.items.map((cap, cIdx) => (
+                      <div
+                        key={cIdx}
+                        className="flex items-center gap-3 p-2 border-b border-white/5 group"
+                      >
+                        <span className="flex items-center justify-center w-5 h-5 shrink-0">
+                          <FiCheck
+                            className="text-[#29f67a] group-hover:scale-110 transition-transform"
+                            size={16}
+                          />
+                        </span>
+                        <span className="text-slate-300 text-sm font-light">
+                          {cap}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
 
                   {section.outcomeLine && (
-                    <div className="md:col-span-2 mt-8 p-6 bg-[#29f67a]/5 rounded-2xl border border-[#29f67a]/10">
-                      <p className="text-center text-[#29f67a] font-light italic">
+                    <div className="mt-6 p-4 bg-[#29f67a]/5 rounded-xl border border-[#29f67a]/10 text-center max-w-2xl mx-auto">
+                      <p className="text-[#29f67a] text-sm font-light italic">
                         {section.outcomeLine}
                       </p>
                     </div>
                   )}
                 </div>
               )}
+
               {/* Steps */}
               {section.type === "steps" && (
-                <div className="grid md:grid-cols-4 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
                   {section.items.map((step, sIdx) => (
                     <div key={sIdx} className="text-center group">
-                      <div className="text-5xl font-black text-[#29f67a]/20 group-hover:text-[#29f67a]/40 transition-colors mb-4">
+                      <div className="text-4xl font-black text-[#29f67a]/20 group-hover:text-[#29f67a]/40 transition-colors mb-3">
                         {step.step}
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-2">
+                      <h3 className="text-lg font-semibold text-white mb-2">
                         {step.name}
                       </h3>
                       <p className="text-slate-400 text-sm">
@@ -294,14 +284,14 @@ function SolutionDetail({ solution }) {
 
               {/* Use Cases */}
               {section.type === "usecases" && (
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
                   {section.items.map((useCase, uIdx) => (
-                    <div
+                    <span
                       key={uIdx}
-                      className="flex items-center gap-4 p-4 border border-white/10 rounded-xl hover:border-[#29f67a]/30 transition-all bg-white/[0.01]"
+                      className="px-3 py-1.5 bg-white/[0.03] border border-white/10 rounded-full text-slate-300 text-xs"
                     >
-                      <span className="text-slate-300">{useCase}</span>
-                    </div>
+                      {useCase}
+                    </span>
                   ))}
                 </div>
               )}
@@ -310,27 +300,27 @@ function SolutionDetail({ solution }) {
               {section.type === "deployment" && (
                 <div>
                   {section.description && (
-                    <p className="text-center text-slate-400 mb-12 text-lg">
+                    <p className="text-center text-slate-400 mb-8 max-w-2xl mx-auto">
                       {section.description}
                     </p>
                   )}
-                  <div className="grid md:grid-cols-2 gap-6 mb-10">
+                  <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-8">
                     {section.items.map((item, dIdx) => (
                       <div
                         key={dIdx}
-                        className="flex items-center  gap-4 p-5 bg-white/[0.02] rounded-xl border border-white/5"
+                        className="flex items-center gap-3 p-4 bg-white/[0.02] rounded-lg border border-white/5"
                       >
                         <div className="text-[#29f67a]">{item.icon}</div>
-                        <span className="text-slate-300">{item.text}</span>
+                        <span className="text-slate-300 text-sm">{item.text}</span>
                       </div>
                     ))}
                   </div>
                   {section.deploymentOptions && (
-                    <div className="flex flex-wrap justify-center gap-3">
+                    <div className="flex flex-wrap justify-center gap-2">
                       {section.deploymentOptions.map((option, oIdx) => (
                         <span
                           key={oIdx}
-                          className="px-4 py-2 bg-[#29f67a]/10 text-[#29f67a] rounded-full text-sm font-mono"
+                          className="px-3 py-1.5 bg-[#29f67a]/10 text-[#29f67a] rounded-full text-xs font-mono"
                         >
                           {option}
                         </span>
@@ -338,12 +328,12 @@ function SolutionDetail({ solution }) {
                     </div>
                   )}
                   {section.outcomeLine && (
-                    <p className="text-center text-slate-400 mt-10 italic">
+                    <p className="text-center text-slate-400 mt-6 text-sm italic">
                       {section.outcomeLine}
                     </p>
                   )}
                   {section.proofLine && (
-                    <p className="text-center text-slate-500 text-sm mt-6">
+                    <p className="text-center text-slate-500 text-xs mt-4">
                       {section.proofLine}
                     </p>
                   )}
@@ -354,8 +344,13 @@ function SolutionDetail({ solution }) {
         );
       })}
 
-      {/* FAQ Section - Using your FaqSection component */}
-      <FaqSection productData={productDataForFaq} />
+      {/* FAQ Section */}
+      <div className="w-full flex justify-center">
+        <div className="flex items-center justify-center max-w-4xl">
+       <FaqSection productData={productDataForFaq} />  
+      </div>
+      </div>
+       
     </div>
   );
 }
@@ -363,7 +358,7 @@ function SolutionDetail({ solution }) {
 // --- 404 ---
 function SolutionNotFound() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white px-6">
       <h1 className="text-[15vw] font-black text-white/5 absolute">404</h1>
       <div className="relative z-10 text-center">
         <FiShield className="w-20 h-20 text-[#29f67a] mx-auto mb-8" />

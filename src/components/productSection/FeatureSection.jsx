@@ -17,7 +17,7 @@ const FeatureSection = ({ productData }) => {
           className="text-center mb-16"
         >
           {/* Badge */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
@@ -27,7 +27,7 @@ const FeatureSection = ({ productData }) => {
             <span className="text-[10px] font-mono tracking-wider text-[#29f67a] uppercase">
               Key Features
             </span>
-          </motion.div>
+          </motion.div> */}
 
           <motion.h2
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"

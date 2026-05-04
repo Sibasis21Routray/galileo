@@ -48,11 +48,11 @@ function CTA() {
           className="text-center"
         >
           {/* Tagline */}
-          <motion.div variants={itemVariants} className="mb-6">
+          {/* <motion.div variants={itemVariants} className="mb-6">
             <span className="text-[#29f67a]  text-xs tracking-[0.5em] uppercase border border-[#29f67a]/30 px-4 py-1.5 rounded-full">
               Get Started
             </span>
-          </motion.div>
+          </motion.div> */}
 
           {/* Main Heading */}
           <motion.h2
