@@ -448,6 +448,14 @@ export default function Navbar() {
                               className={`font-medium text-base ${
                                 active ? "text-[#29f67a]" : "text-gray-300"
                               }`}
+                              onClick={() => {
+  if (item.name.toLowerCase() === "services") {
+    navigate(item.href)
+    setIsOpen(false);
+  } else {
+    console.log("Not services")
+  }
+}}
                             >
                               {item.name}
                             </span>

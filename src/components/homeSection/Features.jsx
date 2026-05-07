@@ -18,7 +18,7 @@ import { BrainCircuit, Check, CircleSmall, Megaphone, MegaphoneIcon } from "luci
 import { 
   FiCode, FiSmartphone, FiTrendingUp, FiCloud, FiServer, 
   FiGlobe, FiLayout, FiLink, FiCpu, FiBarChart2, FiTarget,
-  FiDatabase, FiShield, FiZap, FiEye, FiActivity, FiUsers,
+  FiDatabase, FiShield, FiZap, FiEye, FiUsers,
   FiDollarSign, FiFlag, FiSettings
 } from "react-icons/fi";
 

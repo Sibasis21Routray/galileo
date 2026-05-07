@@ -25,7 +25,8 @@ import {
   Globe, Box, Layers, Plug, LayoutDashboard,
   Cloud, Terminal, Zap as ZapIcon, Lock,
   BarChart, MousePointer, PieChart, Funnel,
-  ShoppingCart, Mail, Calendar, Download, Megaphone
+  ShoppingCart, Mail, Calendar, Download, Megaphone,
+  ChartNoAxesCombined
 } from "lucide-react";
 
 
@@ -48,7 +49,7 @@ export const servicesData = [
   {
     title: "Digital Growth",
     description: "Drive measurable growth through data-driven strategies, performance marketing, and conversion-focused digital optimisation.",
-    icon: <FiActivity className="text-[#29f67a]" size={32} />,
+    icon: <ChartNoAxesCombined className="text-[#29f67a]" size={32} />,
     path: "/services/digital-growth",
   },
 ];

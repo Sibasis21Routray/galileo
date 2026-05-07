@@ -373,11 +373,7 @@ const Footer = () => {
                               active ? 'text-[#29f67a] font-semibold' : 'text-white/60 hover:text-[#29f67a]'
                             }`}
                           >
-                            {service.icon && (
-                              <span className="mr-2 text-[#29f67a]/50 group-hover:text-[#29f67a] transition-opacity">
-                                {service.icon}
-                              </span>
-                            )}
+                            
                             {service.title}
                           </Link>
                         </motion.li>

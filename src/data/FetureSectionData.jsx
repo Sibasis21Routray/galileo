@@ -7,6 +7,7 @@ import {
   FiGlobe, 
 } from "react-icons/fi";
 import { BiWorld } from "react-icons/bi";
+import { ChartNoAxesCombined } from "lucide-react";
 
 
 export const features = [
@@ -35,7 +36,7 @@ export const features = [
       "We build scalable, cloud-native applications using containers, microservices, and serverless technologies.",
   },
   {
-    icon: <FiActivity className="w-6 h-6 text-[#1f0079]" />,
+    icon: <ChartNoAxesCombined className="w-6 h-6 text-[#1f0079]" />,
     title: "Real-Time Monitoring",
     description:
       "We ensure continuous monitoring, reporting, and uptime tracking for mission-critical systems with zero compromise.",
