@@ -172,8 +172,8 @@ const Footer = () => {
             </p>
             <div className="flex space-x-3">
               <motion.a
-                href="https://www.linkedin.com/company/galileo"
-                target="_blank"
+                // href="https://www.linkedin.com/company/galileo"
+                // target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#29f67a] hover:text-black transition-all duration-300"
                 whileHover={{ y: -3, scale: 1.05 }}
@@ -182,8 +182,8 @@ const Footer = () => {
                 <FiLinkedin className="w-4 h-4" />
               </motion.a>
               <motion.a
-                href="https://www.instagram.com/galileo"
-                target="_blank"
+                // href="https://www.instagram.com/galileo"
+                // target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#29f67a] hover:text-black transition-all duration-300"
                 whileHover={{ y: -3, scale: 1.05 }}
@@ -192,8 +192,8 @@ const Footer = () => {
                 <FiInstagram className="w-4 h-4" />
               </motion.a>
               <motion.a
-                href="https://twitter.com/galileo"
-                target="_blank"
+                // href="https://twitter.com/galileo"
+                // target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#29f67a] hover:text-black transition-all duration-300"
                 whileHover={{ y: -3, scale: 1.05 }}
@@ -202,8 +202,8 @@ const Footer = () => {
                 <FiTwitter className="w-4 h-4" />
               </motion.a>
               <motion.a
-                href="https://facebook.com/galileo"
-                target="_blank"
+                // href="https://facebook.com/galileo"
+                // target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#29f67a] hover:text-black transition-all duration-300"
                 whileHover={{ y: -3, scale: 1.05 }}
