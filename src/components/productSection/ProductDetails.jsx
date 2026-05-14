@@ -33,7 +33,7 @@ export const TextParallaxContent = ({
         paddingLeft: IMG_PADDING,
         paddingRight: IMG_PADDING,
       }}
-      className="bg-black"
+      className=""
     >
       <div className="relative h-fit">
         <StickyImage imgUrl={imgUrl} />
@@ -70,7 +70,7 @@ const StickyImage = ({ imgUrl }) => {
         scale,
       }}
       ref={targetRef}
-      className="sticky z-0 overflow-hidden rounded-2xl"
+      className="sticky z-0 overflow-hidden rounded-2xl "
     >
       <motion.div
         className="absolute inset-0 bg-black/60"

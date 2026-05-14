@@ -340,6 +340,7 @@ function Services() {
                   scale: 1.02,
                   transition: { duration: 0.15, ease: "easeOut" },
                 }}
+                 onClick={() => navigate("/services/software-development")}
               >
                 {/* Animated Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -394,6 +395,7 @@ function Services() {
                   scale: 1.02,
                   transition: { duration: 0.15, ease: "easeOut" },
                 }}
+                onClick={() => navigate("/services/it-infrastructure-cloud")}
               >
                 {/* Animated Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -448,7 +450,8 @@ function Services() {
                   y: -8,
                   scale: 1.02,
                   transition: { duration: 0.15, ease: "easeOut" },
-                }}
+                }}                
+                onClick={() => navigate("/services/digital-growth")}
               >
                 {/* Animated Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

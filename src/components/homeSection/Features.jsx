@@ -69,7 +69,7 @@ const FeatureCard = ({ title, icon, path, items, delay }) => {
   });
 
   return (
-    <motion.div
+    <Link to={path}
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -126,13 +126,13 @@ const FeatureCard = ({ title, icon, path, items, delay }) => {
       </motion.ul>
 
       {/* Link */}
-      <motion.div
+      <motion.div 
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : {}}
         transition={{ delay: delay * 0.1 + 0.25 }}
         className="relative z-10"
       >
-        <Link to={path}>
+        
           <motion.div
             className="inline-flex items-center gap-2 text-[#29f67a] text-sm font-medium group-hover:gap-3 transition-all duration-300"
             whileHover={{ x: 4 }}
@@ -140,7 +140,7 @@ const FeatureCard = ({ title, icon, path, items, delay }) => {
             <span>Explore Services</span>
             <FaArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" />
           </motion.div>
-        </Link>
+        
       </motion.div>
 
       {/* Animated Border Glow - Enhanced */}
@@ -153,7 +153,7 @@ const FeatureCard = ({ title, icon, path, items, delay }) => {
           transition: { duration: 0.2 },
         }}
       />
-    </motion.div>
+    </Link>
   );
 };
 

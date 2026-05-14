@@ -27,32 +27,32 @@ export const calmSolutionData = {
       type: "features",
       items: [
         {
-          icon: <FiLayers className="w-6 h-6 text-[#29f67a]" />,
+          icon: "/solutions/Features/Learning.png",
           name: "Learning & Course Management",
           description: "Create and manage engaging courses with multimedia content, quizzes, and structured learning paths."
         },
         {
-          icon: <FiShield className="w-6 h-6 text-[#29f67a]" />,
+          icon: "/solutions/Features/compliant.png",
           name: "Compliance & Policy Tracking",
           description: "Ensure policies are reviewed and accepted through structured modules, with full audit trails and tracking."
         },
         {
-          icon: <FiClipboard className="w-6 h-6 text-[#29f67a]" />,
+          icon: "/solutions/Features/advancement.png",
           name: "Advanced Assessments",
           description: "Run quizzes, tests, and evaluations with timed assessments, grading systems, and automated scoring."
         },
         {
-          icon: <FiBarChart2 className="w-6 h-6 text-[#29f67a]" />,
+          icon: "/solutions/Features/report.png",
           name: "Custom Reporting & Insights",
           description: "Access powerful, real-time reports on user progress, compliance status, and performance metrics."
         },
         {
-          icon: <FiLink className="w-6 h-6 text-[#29f67a]" />,
+          icon: "/solutions/Features/automation.png",
           name: "Integrations & Automation",
           description: "Seamlessly integrate with corporate systems, HR platforms, and email tools to automate workflows."
         },
         {
-          icon: <FiLayout className="w-6 h-6 text-[#29f67a]" />,
+          icon: "/solutions/Features/gear.png",
           name: "Fully Customisable & Branded",
           description: "White-label the platform with your branding, customise workflows, and tailor features to your organisation."
         }
@@ -203,32 +203,32 @@ export const sonarSolutionData = {
       type: "features",
       items: [
         {
-          icon: <FiUsers className="w-6 h-6 text-[#29f67a]" />,
+          icon: "/solutions/Features/onboarding.png",
           name: "Employee Onboarding & HR Management",
           description: "Manage employee lifecycle from onboarding to core HR processes in a structured, centralised system."
         },
         {
-          icon: <FiFileText className="w-6 h-6 text-[#29f67a]" />,
+          icon: "/solutions/Features/boarding-pass.png",
           name: "Visa & Compliance Management",
           description: "Handle visa processing, documentation, and compliance workflows with full visibility and tracking."
         },
         {
-          icon: <FiDollarSign className="w-6 h-6 text-[#29f67a]" />,
+          icon: "/solutions/Features/money.png",
           name: "Payroll & Performance Management",
           description: "Streamline payroll operations and track employee performance through structured evaluation systems."
         },
         {
-          icon: <FiBriefcase className="w-6 h-6 text-[#29f67a]" />,
+          icon: "/solutions/Features/service.png",
           name: "Client & Contract Management",
           description: "Manage client relationships, contracts, and associated workflows within a unified system."
         },
         {
-          icon: <FiHome className="w-6 h-6 text-[#29f67a]" />,
+          icon: "/solutions/Features/facility.png",
           name: "Facility & Resource Management",
           description: "Handle room bookings, facility usage, and resource allocation with real-time availability tracking."
         },
         {
-          icon: <FiCalendar className="w-6 h-6 text-[#29f67a]" />,
+          icon: "/solutions/Features/timetable.png",
           name: "Scheduling & Appointments",
           description: "Manage appointments, staff schedules, and operational timelines efficiently."
         }

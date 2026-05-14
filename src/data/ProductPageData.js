@@ -879,10 +879,10 @@ export const ourProducts = [
 
 {
   slug: "Cv-Builder",
-  name: "Cv-Builder",
+  name: "CV-Builder",
 
   productHeadingSection: {
-    name: "Cv-Builder",
+    name: "CV-Builder",
     navIcon: "/product/allProducts/cv-builder/icon.png",
     pathUrl: "/product/cv-builder",
     productUrl: "",

@@ -142,13 +142,19 @@ function SolutionDetail({ solution }) {
   };
 
   return (
-    <div className="bg-[#050505] text-slate-300 min-h-screen ">
+    <div className=" text-slate-300 min-h-screen ">
+       {/* Dynamic Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute top-[-10%] left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] bg-[#29f67a]/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[10%] left-1/2 transform -translate-x-1/2 w-[400px] h-[400px] bg-emerald-900/10 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-50 contrast-150" />
+      </div>
       {/* 1. CINEMATIC OVERLAY HEADER (Full Width Image BG) */}
       <header
         ref={headerRef}
         className="relative flex items-center justify-center overflow-hidden bg-black"
       >
-        <div className="w-full">
+        <div className="w-full mx-5 lg:mx-15">
           <TextParallaxContent
             imgUrl={data.heroImage}
             subheading={data.subheading || "FEATURED SOLUTION"}
@@ -199,7 +205,7 @@ function SolutionDetail({ solution }) {
               </div>
 
               {/* Features */}
-             {/* Features */}
+              {/* Features */}
               {section.type === "features" && (
                 <div className="grid md:grid-cols-3 gap-8">
                   {section.items.map((item, fIdx) => (
@@ -215,7 +221,11 @@ function SolutionDetail({ solution }) {
                         {/* Icon with enhanced hover animation */}
                         <div className="mb-6 transition-all duration-300 group-hover:scale-110 group-hover:translate-x-1">
                           <div className="text-[#29f67a] group-hover:text-[#29f67a]/80 transition-colors">
-                            {item.icon}
+                            <img
+                              src={item.icon}
+                              alt="icon"
+                              className="w-10 h-10 object-contain"
+                            />
                           </div>
                         </div>
 
@@ -311,7 +321,9 @@ function SolutionDetail({ solution }) {
                         className="flex items-center gap-3 p-4 bg-white/[0.02] rounded-lg border border-white/5"
                       >
                         <div className="text-[#29f67a]">{item.icon}</div>
-                        <span className="text-slate-300 text-sm">{item.text}</span>
+                        <span className="text-slate-300 text-sm">
+                          {item.text}
+                        </span>
                       </div>
                     ))}
                   </div>

@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiArrowRight, FiCheckCircle } from "react-icons/fi";
+import { TextParallaxContent } from "../productSection/ProductDetails";
 
 const CommonServicePage = ({ data }) => {
   const navigate = useNavigate();
@@ -35,93 +36,21 @@ const CommonServicePage = ({ data }) => {
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-50 contrast-150" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-22 pb-4">
-        {/* Header Section with Cover Image */}
-        <header ref={headerRef} className="relative pt-8 pb-28">
-          <div className="max-w-7xl mx-auto px-6">
-            {/* Top Navigation-Style Metadata */}
-            <div className="flex justify-between items-end mb-12 border-b border-white/10 pb-6">
-              <div className="text-[10px] font-mono text-slate-500">
-                PAGE_REF: {data.title.substring(0, 3).toUpperCase()}_01
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-              {/* LEFT: TEXT STACK */}
-              <div className="lg:col-span-7 pr-12">
-                <motion.h1
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="text-5xl md:text-5xl lg:text-7xl font-light text-white leading-[0.9] tracking-tighter mb-8"
-                >
-                  {firstWord} <br />
-                  <span className="font-bold text-[#29f67a]">{restWords}</span>
-                </motion.h1>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.2 }}
-                  className="max-w-xl"
-                >
-                  <p className="text-xl md:text-3xl text-slate-300 font-light leading-tight mb-8">
-                    {data.intro}
-                  </p>
-
-                  {data.description && (
-                    <div className="flex gap-6">
-                      <div className="w-1 bg-[#29f67a] h-auto rounded-full" />
-                      <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-mono uppercase tracking-tight">
-                        // {data.description}
-                      </p>
-                    </div>
-                  )}
-                </motion.div>
-              </div>
-
-              {/* RIGHT: THE STACKED VISUAL */}
-              {data.coverImage && (
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.4, duration: 1 }}
-                  className="lg:col-span-5 relative mt-12 lg:mt-3"
-                >
-                  {/* Background Structural Lines */}
-                  <div className="absolute -top-12 -left-12 w-24 h-24 border-t border-l border-[#29f67a]/20" />
-
-                  <div className="relative group">
-                    <div className="absolute inset-0 bg-[#29f67a] translate-x-3 translate-y-3 -z-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform duration-500 opacity-20" />
-
-                    <div className="relative  overflow-hidden border border-white/10 bg-black">
-                      <img
-                        src={data.coverImage}
-                        className="w-full h-full object-cover filter contrast-125 brightness-100 group-hover:brightness-100 transition-all duration-700"
-                        alt="cover"
-                      />
-
-                      {/* Overlay Metadata */}
-                      <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent">
-                        <div className="flex justify-between items-end">
-                          <div className="flex flex-col">
-                            <span className="text-[10px] font-mono text-[#29f67a]">
-                              TARGET_ACQUIRED
-                            </span>
-                            <span className="text-xs font-bold text-white uppercase tracking-widest">
-                              {data.title}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </div>
+      <div className="relative z-10   pb-4 mx-5 lg:mx-18">
+        <header
+          ref={headerRef}
+          className="relative flex items-center justify-center overflow-hidden  "
+        >
+          <div className="w-full">
+            <TextParallaxContent
+              imgUrl={data.coverImage}
+              subheading={`PAGE_REF: ${data.title?.substring(0, 3).toUpperCase() || "PRJ"}_01`}
+              heading={data.title}
+              productUrl={data.productUrl}
+              description={data.description}
+            ></TextParallaxContent>
           </div>
         </header>
-
         {/* Sections */}
         <motion.div
           variants={containerVariants}
