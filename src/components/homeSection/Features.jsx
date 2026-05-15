@@ -171,7 +171,7 @@ const FeaturesSection = () => {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
         {/* Section Header - Enhanced */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

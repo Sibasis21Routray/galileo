@@ -66,7 +66,7 @@ const FeatureSection = ({ productData }) => {
       viewport={{ once: true, margin: "-50px" }}
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
-      className="group relative bg-black border border-gray-800 rounded-xl p-6 hover:border-[#29f67a]/50 transition-all duration-300 overflow-hidden cursor-pointer"
+      className="group relative  border border-gray-800 rounded-xl p-6 hover:border-[#29f67a]/50 transition-all duration-300 overflow-hidden cursor-pointer"
     >
       {/* Animated Gradient Overlay - Same as other cards */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#29f67a]/0 via-[#29f67a]/5 to-[#29f67a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -86,14 +86,14 @@ const FeatureSection = ({ productData }) => {
 
       {/* Icon */}
       <motion.div
-        className="w-14 h-14 rounded-xl border border-gray-800 flex items-center justify-center mb-5 group-hover:border-[#29f67a]/50 group-hover:bg-[#29f67a]/10 transition-all duration-200 relative z-10"
+        className="w-14 h-14 rounded-xl  flex items-center justify-center mb-5 group-hover:scale-110 group-hover:translate-x-1 transition-all duration-200 relative z-10"
         whileHover={{ scale: 1.1, rotate: 5 }}
         transition={{ type: "spring", stiffness: 400, duration: 0.2 }}
       >
         <img 
           src={feature.icon} 
           alt={feature.title}
-          className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-200"
+          className="w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-200 "
         />
       </motion.div>
 
@@ -109,13 +109,6 @@ const FeatureSection = ({ productData }) => {
           {feature.description}
         </p>
 
-        {/* Optional: Feature highlight indicator - Enhanced */}
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: "30px" }}
-          transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-          className="h-0.5 bg-gradient-to-r from-[#29f67a] to-[#29f67a]/50 group-hover:w-full transition-all duration-300"
-        />
       </div>
 
       {/* Decorative bottom line */}

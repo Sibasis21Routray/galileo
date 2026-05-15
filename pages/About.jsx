@@ -121,7 +121,7 @@ const About = () => {
       </div>
 
       {/* Bottom Accent Line */}
-      <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#29f67a] group-hover:w-full transition-all duration-500 opacity-50" />
+      {/* <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#29f67a] group-hover:w-full transition-all duration-500 opacity-50" /> */}
     </motion.div>
   ))}
 </div>

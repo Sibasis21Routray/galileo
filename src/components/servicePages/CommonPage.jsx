@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiArrowRight, FiCheckCircle } from "react-icons/fi";
 import { TextParallaxContent } from "../productSection/ProductDetails";
+import { ArrowLeft } from "lucide-react";
 
 const CommonServicePage = ({ data }) => {
   const navigate = useNavigate();
@@ -38,19 +39,41 @@ const CommonServicePage = ({ data }) => {
 
       <div className="relative z-10   pb-4 mx-5 lg:mx-18">
         <header
-          ref={headerRef}
-          className="relative flex items-center justify-center overflow-hidden  "
-        >
-          <div className="w-full">
-            <TextParallaxContent
-              imgUrl={data.coverImage}
-              subheading={`PAGE_REF: ${data.title?.substring(0, 3).toUpperCase() || "PRJ"}_01`}
-              heading={data.title}
-              productUrl={data.productUrl}
-              description={data.description}
-            ></TextParallaxContent>
-          </div>
-        </header>
+  ref={headerRef}
+  className="relative flex items-center justify-center overflow-hidden"
+>
+  {/* Back Button */}
+ <button
+  onClick={() => navigate(-1)}
+  className="
+    absolute top-30 left-4 z-[9999]
+    group flex items-center gap-2
+    px-4 py-1
+    rounded-full
+    bg-white/10
+    backdrop-blur-xl
+    border border-white/20
+    shadow-[0_8px_30px_rgba(0,0,0,0.18)]
+    hover:bg-white/20
+    hover:scale-105
+    transition-all duration-300
+  "
+>
+  <div className="flex items-center justify-center w-8 h-8   transition-all duration-300">
+    <ArrowLeft className="w-4 h-4 text-white" />
+  </div>
+  </button>
+
+  <div className="w-full">
+    <TextParallaxContent
+      imgUrl={data.coverImage}
+      subheading={`PAGE_REF: ${data.title?.substring(0, 3).toUpperCase() || "PRJ"}_01`}
+      heading={data.title}
+      productUrl={data.productUrl}
+      description={data.description}
+    />
+  </div>
+</header>
         {/* Sections */}
         <motion.div
           variants={containerVariants}
@@ -114,8 +137,12 @@ const CommonServicePage = ({ data }) => {
                             <div className="relative z-10">
                               {/* Icon Section - Added here */}
                               {item.icon && (
-                                <div className="mb-4 p-3 rounded-xl bg-[#29f67a]/10 inline-flex items-center justify-center group-hover:bg-[#29f67a]/20 transition-all duration-300">
-                                  {item.icon}
+                                <div className="mb-4 p-3 rounded-xl  inline-flex items-center justify-center group-hover:scale-110 group-hover:translate-x-1 transition-all duration-300">
+                                  <img
+                                    src={item.icon}
+                                    alt="icon"
+                                    className="w-10 h-10 object-contain"
+                                  />
                                 </div>
                               )}
 
@@ -159,8 +186,12 @@ const CommonServicePage = ({ data }) => {
                                 className="group relative flex flex-col"
                               >
                                 <div className="flex items-center gap-4 mb-4">
-                                  <div className="flex-shrink-0 w-8 h-8 rounded-full  flex items-center justify-center bg-[#29f67a]/5  transition-all">
-                                    {item.icon}
+                                  <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-[#29f67a]/5 transition-all">
+                                    <img
+                                      src={item.icon}
+                                      alt="icon"
+                                      className="w-10 h-10 object-contain"
+                                    />
                                   </div>
                                   <h3 className="text-xl font-bold text-white group-hover:text-[#29f67a] transition-colors">
                                     {item.name}

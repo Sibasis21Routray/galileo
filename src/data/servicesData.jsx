@@ -72,31 +72,31 @@ export const softwareDevelopmentData = {
           name: "Web Applications", 
           description: "Fast, scalable web platforms built with modern frameworks like React and Next.js. From customer-facing portals to complex SaaS dashboards, we build web apps that perform at scale and delight users with intuitive interfaces.", 
           link: "/services/software-development/web-applications",
-          icon: <Globe className="w-6 h-6 text-[#29f67a]" />
+          icon: "/service/serviceData/webdevelopement.png"
         },
         { 
           name: "Mobile Applications", 
           description: "Native and cross-platform iOS and Android apps that deliver exceptional user experiences. We help you reach your customers wherever they are with polished, performant mobile solutions that work flawlessly across devices.", 
           link: "/services/software-development/mobile-applications",
-          icon: <Smartphone className="w-6 h-6 text-[#29f67a]" />
+          icon: "/service/serviceData/user-interface.png"
         },
         { 
           name: "SaaS Platforms", 
           description: "Subscription-based solutions designed for growth and monetisation. We build multi-tenant architectures that scale effortlessly while keeping your operational costs predictable and under control.", 
           link: "/services/software-development/saas-platforms",
-          icon: <Box className="w-6 h-6 text-[#29f67a]" />
+          icon: "/service/serviceData/saas.png"
         },
         { 
           name: "API & Integrations", 
           description: "Connect your systems and enable seamless data exchange. Our APIs are designed for reliability, security, and performance — ensuring your tools and services work together flawlessly.", 
           link: "/services/software-development/api-integrations",
-          icon: <Plug className="w-6 h-6 text-[#29f67a]" />
+          icon: "/service/serviceData/api.png"
         },
         { 
           name: "Custom Systems & Dashboards", 
           description: "Internal tooling and reporting dashboards that give your team real-time visibility into business performance. Stop wrestling with spreadsheets and start making confident, data-driven decisions.", 
           link: "/services/software-development/custom-systems",
-          icon: <LayoutDashboard className="w-6 h-6 text-[#29f67a]" />
+          icon: "/service/serviceData/data.png"
         }
       ]
     },
@@ -170,37 +170,37 @@ export const softwareDevelopmentData = {
         { 
           name: "Faster operations", 
           description: "Streamlined workflows that eliminate bottlenecks and reduce time-to-completion for critical business processes by up to 40%.",
-          icon: <Zap className="w-8 h-8 text-[#29f67a]" />,
+          icon: "/service/outcomes/innovation.png",
           iconBg: "bg-[#29f67a]/10"
         },
         { 
           name: "Reduced manual work", 
           description: "Intelligent automation that frees your team from repetitive tasks, allowing them to focus on strategic initiatives that move the needle.",
-          icon: <UserMinus className="w-8 h-8 text-[#29f67a]" />,
+          icon: "/service/outcomes/hard-work.png",
           iconBg: "bg-[#29f67a]/10"
         },
         { 
           name: "Scalable systems", 
           description: "Architecture designed to handle 10x or 100x growth without requiring a complete rebuild or causing performance degradation.",
-          icon: <TrendingUp className="w-8 h-8 text-[#29f67a]" />,
+          icon: "/service/outcomes/scalable.png",
           iconBg: "bg-[#29f67a]/10"
         },
         { 
           name: "Better data visibility", 
           description: "Real-time dashboards and reporting tools that give stakeholders clear insight into business performance at a glance.",
-          icon: <Eye className="w-8 h-8 text-[#29f67a]" />,
+          icon: "/service/outcomes/view.png",
           iconBg: "bg-[#29f67a]/10"
         },
         { 
           name: "Improved user satisfaction", 
           description: "Intuitive interfaces and smooth performance that keep users engaged and reduce churn across your platforms.",
-          icon: <Smile className="w-8 h-8 text-[#29f67a]" />,
+          icon: "/service/outcomes/person.png",
           iconBg: "bg-[#29f67a]/10"
         },
         { 
           name: "Faster time to market", 
           description: "Efficient development processes that help you launch new features and products ahead of the competition.",
-          icon: <Timer className="w-8 h-8 text-[#29f67a]" />,
+          icon: "/service/outcomes/innovation.png",
           iconBg: "bg-[#29f67a]/10"
         }
       ]
@@ -286,25 +286,25 @@ export const webAppDevData = {
     { 
       name: "High performance", 
       description: "Lightning-fast load times and smooth interactions that keep users engaged and improve conversion rates across every page.",
-      icon: <Gauge className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/innovation.png",
       iconBg: "bg-[#29f67a]/10"
     }, 
     { 
       name: "Scalable architecture", 
       description: "Systems designed to handle growth from hundreds to millions of users without requiring fundamental rearchitecture.",
-      icon: <Scale className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/scalability.png",
       iconBg: "bg-[#29f67a]/10"
     }, 
     { 
       name: "Strong user experience", 
       description: "Intuitive interfaces that users love, reducing training time and support requests while increasing satisfaction.",
-      icon: <Users className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/recommend.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Security by default", 
       description: "Built-in protection against common vulnerabilities with proper authentication, encryption, and security best practices.",
-      icon: <Shield className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/security.png",
       iconBg: "bg-[#29f67a]/10"
     }
   ] 
@@ -390,25 +390,25 @@ export const mobileAppDevData = {
     { 
       name: "Faster time to market", 
       description: "Efficient development processes and smart technology choices help you launch quickly without sacrificing quality.",
-      icon: <Rocket className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/innovation.png",
       iconBg: "bg-[#29f67a]/10"
     }, 
     { 
       name: "Optimised performance", 
       description: "Smooth animations, fast load times, and responsive interactions that keep users engaged and app store ratings high.",
-      icon: <Gauge className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/arrows.png",
       iconBg: "bg-[#29f67a]/10"
     }, 
     { 
       name: "Scalable applications", 
       description: "Architecture that supports feature expansion and growing user bases without performance degradation.",
-      icon: <Scale className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/scalable.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Cross-platform consistency", 
       description: "Uniform experience across iOS and Android devices while respecting platform-specific design conventions.",
-      icon: <Smartphone className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/cross-platform.png",
       iconBg: "bg-[#29f67a]/10"
     }
   ] 
@@ -468,25 +468,25 @@ export const saasPlatformDevData = {
     { 
       name: "Scalable multi-tenant systems", 
       description: "Architecture that efficiently serves multiple customers from a single codebase while maintaining data isolation and security.",
-      icon: <Building2 className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/cross-platform.png",
       iconBg: "bg-[#29f67a]/10"
     }, 
     { 
       name: "Monetisation-ready platform", 
       description: "Built-in subscription management, billing integration, and pricing flexibility to support your revenue model from day one.",
-      icon: <CreditCard className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/coins.png",
       iconBg: "bg-[#29f67a]/10"
     }, 
     { 
       name: "Growth-ready foundation", 
       description: "Designed for feature expansion, user growth, and increasing transaction volumes without requiring architectural overhauls.",
-      icon: <LineChart className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/scalability.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Reliable uptime", 
       description: "Production systems with proper monitoring, error handling, and disaster recovery procedures to ensure business continuity.",
-      icon: <Activity className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/punctuality.png",
       iconBg: "bg-[#29f67a]/10"
     }
   ] 
@@ -542,25 +542,25 @@ export const apiIntegrationData = {
     { 
       name: "Connected ecosystem", 
       description: "Seamless data flow between all your business tools, eliminating silos and ensuring everyone works with accurate, up-to-date information.",
-      icon: <Network className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/link.png",
       iconBg: "bg-[#29f67a]/10"
     }, 
     { 
       name: "Process automation", 
       description: "Reduce manual data entry and the errors that come with it by automating data transfer between your critical systems.",
-      icon: <Brain className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/arrows.png",
       iconBg: "bg-[#29f67a]/10"
     }, 
     { 
       name: "Operational efficiency", 
       description: "Faster processes, better data accuracy, and reduced operational overhead through intelligent system integration.",
-      icon: <Gauge className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/energy.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Scalable architecture", 
       description: "Well-designed APIs that can handle increasing load without degradation, supporting your business growth.",
-      icon: <Building2 className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/scalable.png",
       iconBg: "bg-[#29f67a]/10"
     }
   ] 
@@ -600,25 +600,25 @@ export const customSystemsData = {
     { 
       name: "Better decision-making", 
       description: "Data-driven insights delivered through intuitive dashboards that surface the metrics that matter most to your business.",
-      icon: <TrendingUp className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/leadership.png",
       iconBg: "bg-[#29f67a]/10"
     }, 
     { 
       name: "Real-time visibility", 
       description: "Live dashboards that reflect your current business state, not yesterday's data, so you can spot trends and issues as they happen.",
-      icon: <Activity className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/view.png",
       iconBg: "bg-[#29f67a]/10"
     }, 
     { 
       name: "Reduced manual overhead", 
       description: "Automate reporting, data consolidation, and routine tasks so your team can focus on work that actually moves the needle.",
-      icon: <Bot className="w-7 h-7 text-[#29f67a]" />,
-      iconBg: "bg-[#29f67a]/10"
+      icon: "/service/outcomes/risk.png",
+      iconBg: "bg-[#111111]"
     },
     { 
       name: "Improved team alignment", 
       description: "Shared visibility into goals, progress, and performance that keeps everyone working toward the same objectives.",
-      icon: <Users className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/partners.png",
       iconBg: "bg-[#29f67a]/10"
     }
   ] 
@@ -644,25 +644,25 @@ export const itInfraData = {
           name: "Cloud Architecture", 
           description: "Design scalable, resilient cloud infrastructure from scratch or migrate existing systems to the cloud with minimal disruption to your operations.", 
           link: "/services/it-infrastructure-cloud/cloud-architecture",
-          icon: <Cloud className="w-6 h-6 text-[#29f67a]" />
+          icon: "/service/serviceData/server.png"
         },
         { 
           name: "Server & DevOps Management", 
           description: "Comprehensive server management and deployment pipeline automation to ensure your systems stay stable, secure, and efficient around the clock.", 
           link: "/services/it-infrastructure-cloud/server-devops",
-          icon: <Terminal className="w-6 h-6 text-[#29f67a]" />
+          icon: "/service/serviceData/devops.png"
         },
         { 
           name: "Performance Optimisation", 
           description: "Identify and eliminate bottlenecks across your entire stack — from frontend load times to database query performance and server response times.", 
           link: "/services/it-infrastructure-cloud/performance-optimisation",
-          icon: <ZapIcon className="w-6 h-6 text-[#29f67a]" />
+          icon: "/service/serviceData/speed-radar (1).png"
         },
         { 
           name: "Security & Monitoring", 
           description: "Implement defence-in-depth security measures and comprehensive monitoring to protect your systems and ensure continuous uptime.", 
           link: "/services/it-infrastructure-cloud/security-monitoring",
-          icon: <Lock className="w-6 h-6 text-[#29f67a]" />
+          icon: "/service/serviceData/encrypted.png"
         }
       ]
     },
@@ -721,25 +721,25 @@ export const itInfraData = {
         { 
           name: "High availability", 
           description: "Your systems stay online when it matters most, with redundancy and failover strategies that minimise downtime and protect revenue.",
-          icon: <Activity className="w-7 h-7 text-[#29f67a]" />,
+          icon: "/service/outcomes/24.png",
           iconBg: "bg-[#29f67a]/10"
         },
         { 
           name: "Optimised performance", 
           description: "Applications that load quickly and respond instantly, delivering the experience your users expect and deserve.",
-          icon: <Gauge className="w-7 h-7 text-[#29f67a]" />,
+          icon: "/service/outcomes/arrows.png",
           iconBg: "bg-[#29f67a]/10"
         },
         { 
           name: "Robust security", 
           description: "Multi-layered protection against threats, with proper access controls, encryption, and monitoring to keep your data safe.",
-          icon: <Shield className="w-7 h-7 text-[#29f67a]" />,
+          icon: "/service/outcomes/security.png",
           iconBg: "bg-[#29f67a]/10"
         },
         { 
           name: "Cost efficiency", 
           description: "Right-sized resources and intelligent architecture decisions that keep your infrastructure costs predictable and under control.",
-          icon: <DollarSign className="w-7 h-7 text-[#29f67a]" />,
+          icon: "/service/outcomes/efficiency.png",
           iconBg: "bg-[#29f67a]/10"
         }
       ]
@@ -796,25 +796,25 @@ export const cloudArchData = {
     { 
       name: "Elastic scalability", 
       description: "Infrastructure that automatically adjusts to demand, so you never pay for idle resources or struggle during traffic peaks.",
-      icon: <Scale className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/scalability.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "High availability", 
       description: "Multi-zone redundancy and automated failover that keeps your applications running even when individual components fail.",
-      icon: <Activity className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/24.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Cost optimisation", 
       description: "Right-sized resources and intelligent architecture decisions that keep your cloud costs predictable and under control.",
-      icon: <DollarSign className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/efficiency.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Operational clarity", 
       description: "Well-documented architecture with clear runbooks, monitoring dashboards, and alerting for your operations team.",
-      icon: <ClipboardList className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/arrows.png",
       iconBg: "bg-[#29f67a]/10"
     }
   ] 
@@ -871,25 +871,25 @@ export const serverDevopsData = {
     { 
       name: "Stable production environments", 
       description: "Fewer outages, faster recovery times, and consistent performance your users can rely on.",
-      icon: <Server className="w-7 h-7 text-[#29f67a]" />,
+     icon: "/service/outcomes/arrows.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Accelerated deployments", 
       description: "Ship features and fixes faster with automated pipelines that reduce manual work and human error.",
-      icon: <Rocket className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/innovation.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Minimised downtime", 
       description: "Proactive monitoring and alerting that catches potential issues before they impact your users.",
-      icon: <Activity className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/punctuality.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Improved developer experience", 
       description: "Self-service infrastructure and streamlined workflows that let developers focus on writing code.",
-      icon: <Code2 className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/recommend.png",
       iconBg: "bg-[#29f67a]/10"
     }
   ] 
@@ -944,25 +944,25 @@ export const performanceOptData = {
     { 
       name: "Faster load times", 
       description: "Pages that load in under two seconds, keeping users engaged and reducing abandonment rates significantly.",
-      icon: <Timer className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/innovation.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Improved user experience", 
       description: "Smooth, responsive interactions that make your application a pleasure to use and keep users coming back.",
-      icon: <Sparkles className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/person.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Better resource efficiency", 
       description: "Do more with less — optimised systems that reduce infrastructure costs while improving performance.",
-      icon: <Battery className="w-7 h-7 text-[#29f67a]" />,
+     icon: "/service/outcomes/efficiency.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Higher conversion rates", 
       description: "Fast-loading pages and responsive interfaces that directly contribute to increased conversions and revenue.",
-      icon: <TrendingUp className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/high.png",
       iconBg: "bg-[#29f67a]/10"
     }
   ] 
@@ -1017,25 +1017,25 @@ export const securityMonitoringData = {
     { 
       name: "Protected assets", 
       description: "Your data and infrastructure secured with multiple layers of defence against external threats and internal risks.",
-      icon: <Shield className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/security.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Reduced risk profile", 
       description: "Fewer vulnerabilities, faster patching, and robust incident response capabilities that minimise potential damage.",
-      icon: <ShieldAlert className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/risk.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Consistent uptime", 
       description: "Systems that stay online and perform well, backed by alerting that ensures problems are addressed before users notice.",
-      icon: <Activity className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/punctuality.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Compliance confidence", 
       description: "Documentation and controls that give you confidence during audits and when answering security questionnaires from clients.",
-      icon: <FileCheck className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/person.png",
       iconBg: "bg-[#29f67a]/10"
     }
   ] 
@@ -1061,25 +1061,24 @@ export const digitalGrowthData = {
           name: "Performance Marketing", 
           description: "Data-driven advertising campaigns across multiple channels, continuously optimised to lower acquisition costs and maximise return on your marketing investment.", 
           link: "/services/digital-growth/performance-marketing",
-          icon: <BarChart className="w-6 h-6 text-[#29f67a]" />
+          icon: "/service/serviceData/promotion.png"
         },
         { 
           name: "Conversion Optimisation", 
           description: "Systematic testing and improvement of your website's user experience to turn more visitors into leads and customers without increasing your ad spend.", 
           link: "/services/digital-growth/conversion-optimisation",
-          icon: <MousePointer className="w-6 h-6 text-[#29f67a]" />
+          icon: "/service/serviceData/optimisation.png"
         },
         { 
           name: "Analytics & Tracking", 
           description: "Complete visibility into user behaviour and campaign performance through properly implemented tracking, custom dashboards, and actionable reporting.", 
           link: "/services/digital-growth/analytics-tracking",
-          icon: <PieChart className="w-6 h-6 text-[#29f67a]" />
-        },
+          icon: "/service/serviceData/analysis.png"        },
         { 
           name: "Funnels & Landing Pages", 
           description: "Strategic funnel design and high-converting landing pages that guide visitors through a seamless journey from first click to completed purchase.", 
           link: "/services/digital-growth/funnels-landing-pages",
-          icon: <Funnel className="w-6 h-6 text-[#29f67a]" />
+          icon: "/service/serviceData/funnel.png"
         }
       ]
     },
@@ -1092,25 +1091,25 @@ export const digitalGrowthData = {
         { 
           name: "Increased lead volume", 
           description: "More qualified prospects entering your pipeline through optimised campaigns and conversion-focused strategies.",
-          icon: <Users className="w-7 h-7 text-[#29f67a]" />,
+          icon: "/service/outcomes/efficiency.png",
           iconBg: "bg-[#29f67a]/10"
         },
         { 
           name: "Better marketing ROI", 
           description: "Every dollar works harder with data-driven targeting, continuous optimisation, and systematic performance improvement.",
-          icon: <TrendingUp className="w-7 h-7 text-[#29f67a]" />,
+          icon: "/service/outcomes/bullhorn.png",
           iconBg: "bg-[#29f67a]/10"
         },
         { 
           name: "Higher conversion rates", 
           description: "Turn more of your existing traffic into paying customers through strategic optimisation of every step in the user journey.",
-          icon: <Target className="w-7 h-7 text-[#29f67a]" />,
+          icon: "/service/outcomes/innovation.png",
           iconBg: "bg-[#29f67a]/10"
         },
         { 
           name: "Scalable growth engine", 
           description: "Systems and processes that allow you to increase marketing spend while maintaining or improving efficiency metrics.",
-          icon: <Gauge className="w-7 h-7 text-[#29f67a]" />,
+          icon: "/service/outcomes/scalable.png",
           iconBg: "bg-[#29f67a]/10"
         }
       ]
@@ -1165,25 +1164,25 @@ export const perfMarketingData = {
     { 
       name: "Increased lead flow", 
       description: "Consistent, predictable lead generation that keeps your sales team busy with qualified opportunities.",
-      icon: <TrendingUp className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/high.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Lower acquisition costs", 
       description: "Continuous optimisation that drives down your cost per lead or cost per acquisition over time.",
-      icon: <DollarSign className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/coins.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Improved return on ad spend", 
       description: "Better results from every dollar invested, with clear attribution between spend and revenue.",
-      icon: <LineChart className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/bullhorn.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Scalable campaign structure", 
       description: "Well-organised accounts and campaigns that can grow efficiently without hitting performance ceilings.",
-      icon: <LayoutGrid className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/scalable.png",
       iconBg: "bg-[#29f67a]/10"
     }
   ] 
@@ -1224,25 +1223,25 @@ export const convOptData = {
     { 
       name: "Higher conversion rates", 
       description: "More of your visitors take the actions that matter — whether that's purchasing, signing up, or booking a consultation.",
-      icon: <Target className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/high.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Improved user experience", 
       description: "Smoother, more intuitive journeys that build trust and make it easy for users to accomplish their goals.",
-      icon: <Sparkles className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/person.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Revenue growth", 
       description: "Grow your bottom line by converting more of the traffic you already have, maximising the value of every visitor.",
-      icon: <TrendingUp className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/scalability.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Data-informed culture", 
       description: "Establish a testing mindset across your organisation, where decisions are based on evidence rather than opinions.",
-      icon: <BarChart3 className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/view.png",
       iconBg: "bg-[#29f67a]/10"
     }
   ] 
@@ -1297,22 +1296,22 @@ export const analyticsTrackData = {
     { 
       name: "Data-driven decisions", 
       description: "Base your strategy on real data, not assumptions or gut feelings, leading to better outcomes and fewer costly mistakes.",
-      icon: <FiTrendingUp className="w-7 h-7 text-[#29f67a]" />
+      icon: "/service/outcomes/decisionmaking.png",
     },
     { 
       name: "Clear performance visibility", 
       description: "Know exactly what's working, what isn't, and where to focus your resources for maximum impact.",
-      icon: <FiEye className="w-7 h-7 text-[#29f67a]" />
+      icon: "/service/outcomes/visibility.png",
     },
     { 
       name: "Optimised marketing strategy", 
       description: "Continuously improve your marketing based on performance data, allocating budget to what delivers the best results.",
-      icon: <FiBarChart2 className="w-7 h-7 text-[#29f67a]" />
+      icon: "/service/outcomes/bullhorn.png",
     },
     { 
       name: "Stakeholder confidence", 
       description: "Present clear, reliable data to investors, board members, and leadership that demonstrates marketing's impact.",
-      icon: <FiUsers className="w-7 h-7 text-[#29f67a]" />
+      icon: "/service/outcomes/engagement.png",
     }
   ] 
 }
@@ -1352,25 +1351,25 @@ export const funnelsData = {
     { 
       name: "More qualified leads", 
       description: "Landing pages and funnels that attract and convert prospects who are genuinely interested in your offering.",
-      icon: <Users className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/engagement.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Higher conversion rates", 
       description: "Purpose-built pages that remove friction and guide visitors toward conversion with clear, compelling calls to action.",
-      icon: <Target className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/high.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Better campaign performance", 
       description: "Tighter alignment between ad creative and landing page content, resulting in higher quality scores and lower costs.",
-      icon: <TrendingUp className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/punctuality.png",
       iconBg: "bg-[#29f67a]/10"
     },
     { 
       name: "Faster iteration cycles", 
       description: "Well-structured funnels that make it easy to test variations and continuously improve performance over time.",
-      icon: <RefreshCw className="w-7 h-7 text-[#29f67a]" />,
+      icon: "/service/outcomes/innovation.png",
       iconBg: "bg-[#29f67a]/10"
     }
   ] 
