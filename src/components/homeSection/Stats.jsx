@@ -5,10 +5,10 @@ import { InView } from 'react-intersection-observer';
 
 function Stats() {
   const stats = [
-    { value: 42, label: "Global Partners", suffix: "+" },
-    { value: 128, label: "Systems Deployed", suffix: "" },
-    { value: 99, label: "Success Rate", suffix: "%" },
-    { value: "24/7", label: "Availability", suffix: "" }
+    { value: 10, label: "Global Partners", suffix: "+" },
+    { value: 20, label: "SYSTEMS & SOLUTIONS DEPLOYED", suffix: "+" },
+    { value: 11000, label: "USERS SUPPORTED ACROSS SYSTEMS", suffix: "+" },
+    { value: "95%", label: "PROJECTS DELIVERED ON TIME", suffix: "+" }
   ];
 
   return (
@@ -56,8 +56,10 @@ function Stats() {
                           <span className="text-[#29f67a] text-3xl ml-1">{stat.suffix}</span>
                         </div>
                       ) : (
-                        <span className="text-white italic">{stat.value}</span>
-                      )}
+<div className="flex items-baseline justify-center">
+    <span className="text-white italic">{stat.value}</span>
+    <span className="text-[#29f67a] text-3xl ml-1">{stat.suffix}</span>
+  </div>                      )}
                     </div>
                   </div>
 
