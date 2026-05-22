@@ -57,7 +57,7 @@ function Stats() {
                         </div>
                       ) : (
 <div className="flex items-baseline justify-center">
-    <span className="text-white italic">{stat.value}</span>
+    <span className="text-white ">{stat.value}</span>
     <span className="text-[#29f67a] text-3xl ml-1">{stat.suffix}</span>
   </div>                      )}
                     </div>
