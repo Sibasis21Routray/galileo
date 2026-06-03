@@ -131,7 +131,7 @@ const OverlayCopy = ({ subheading, heading, productUrl, description }) => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center mb-4 leading-tight"
+        className="text-3xl md:text-6xl lg:text-7xl font-bold text-white text-center mb-4 leading-tight "
       >
         {heading}
       </motion.h1>

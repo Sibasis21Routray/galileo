@@ -9,9 +9,9 @@ import {
 // SOLUTION 1: COMPLIANCE & LEARNING MANAGEMENT PLATFORM (CALM)
 // ============================================================
 export const calmSolutionData = {
-  title: "Compliance & Learning Management Platform",
+  title: "Calm — Compliance & Learning Management Platform",
   subtitle: "Enterprise Learning & Compliance Platform",
-  heroTitle: "Compliance & Learning Management Platform",
+  heroTitle: "Calm — Compliance & Learning Management Platform",
   heroSubtext: "Deliver training, enforce compliance, and track performance across your organisation — all in one fully customisable, enterprise-ready platform.",
   trustLine: "Trusted by organisations with 9,000+ active users",
   ctaText: "Request a Demo",
@@ -368,7 +368,7 @@ export const sonarSolutionData = {
 export const solutionsList = [
   {
     id: "calm",
-    title: "Compliance & Learning Management Platform",
+    title: "CALM — Compliance & Learning Management Platform",
     shortDescription: "Deliver training, enforce compliance, and track performance across your organisation.",
     path: "/solutions/calm",
     data: calmSolutionData
