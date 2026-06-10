@@ -202,9 +202,9 @@ At Galileo Ventures, Helmar advises clients on organizational transformation, pr
                     <p className="text-[#29f67a] text-sm sm:text-md font-medium mb-1 min-h-[24px]">
                       {member.position}
                     </p>
-                    <p className="text-white text-[12px] sm:text-[14px] font-bold  tracking-wider leading-tight  group-hover:text-[#29f67a]/80 transition-colors">
-                      {member.role}
-                    </p>
+                    <p className="text-white text-[12px] sm:text-[14px] font-bold tracking-wider leading-tight group-hover:text-[#29f67a]/80 transition-colors min-h-[40px]">
+  {member.role || "\u00A0"}
+</p>
                   </div>
 
                   {/* Show first paragraph - split by double newline and take first */}
