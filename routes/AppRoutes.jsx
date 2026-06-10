@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import Home from "../pages/Home";
 import Services from "../pages/Services";
 import Solutions from "../pages/Solutions";
+import Leadership from "../pages/Leadership";
 
 const About = lazy(() => import("../pages/About"));
 const Product = lazy(() => import("../pages/Product"));
@@ -39,6 +40,8 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+         <Route path="/leadership" element={<Leadership />} />
+
         <Route path="/services" element={<Services />} />
 
         
@@ -50,10 +53,10 @@ export default function AppRoutes() {
         <Route path="/product/feedora" element={<Product />} />
         <Route path="/product/cv-builder" element={<Product />} />
 
-      
-<Route path="/solutions" element={<Solutions />} />
-<Route path="/solutions/:solutionId" element={<Solutions />} />
-        
+              
+        <Route path="/solutions" element={<Solutions />} />
+        <Route path="/solutions/:solutionId" element={<Solutions />} />
+                
 
 
         {/* Level 2 service routes */}

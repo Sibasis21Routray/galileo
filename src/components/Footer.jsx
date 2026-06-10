@@ -4,7 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FiLinkedin, FiInstagram, FiMail, FiFacebook, FiTwitter, 
   FiChevronDown, FiChevronUp 
+
 } from 'react-icons/fi';
+import { MdOutlineLeaderboard } from "react-icons/md";
+
 import { FaHome, FaInfoCircle, FaEnvelope } from "react-icons/fa";
 import { servicesData } from "../data/servicesData";
 import { ourProducts } from "../data/ProductPageData";
@@ -77,6 +80,7 @@ const Footer = () => {
     { name: "Home", href: "/", icon: FaHome },
     { name: "About", href: "/about", icon: FaInfoCircle },
     { name: "Contact", href: "/contact", icon: FaEnvelope },
+    {name : "Leadership", href: "/leadership", icon: MdOutlineLeaderboard}
   ];
 
   // Product items from ourProducts data
