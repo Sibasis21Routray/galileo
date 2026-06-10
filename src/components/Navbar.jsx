@@ -14,11 +14,25 @@ export const navItems = [
   { name: "Services", href: "/services", hasDropdown: true },
   { name: "Products", href: "/product", hasDropdown: true },
   { name: "Solutions", href: "/solutions", hasDropdown: true },
-  { name: "About", href: "/about" },
+  { name: "About", href: "/about", hasDropdown: true  },
   { name: "Contact", href: "/contact" },
 ];
 
 const filteredServicesData = servicesData;
+
+// About dropdown items
+const aboutDropdownItems = [
+  { 
+    name: "Company Overview", 
+    path: "/about",
+    description: "Learn about our mission and vision"
+  },
+  { 
+    name: "Leadership", 
+    path: "/leadership",
+    description: "Meet our experienced leadership team"
+  },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,9 +41,11 @@ export default function Navbar() {
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
   const [showProductsDropdown, setShowProductsDropdown] = useState(false);
   const [showSolutionsDropdown, setShowSolutionsDropdown] = useState(false);
+  const [showAboutDropdown, setShowAboutDropdown] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const navigate = useNavigate();
   const [itemWidths, setItemWidths] = useState({});
 
@@ -60,7 +76,13 @@ export default function Navbar() {
     }
   }, []);
 
-  const isActive = (href) => {
+  const isActive = (href, itemName) => {
+    // Special handling for About section - highlight when on any about subpage
+    if (itemName === "About") {
+      const aboutPaths = ["/about", "/leadership"];
+      return aboutPaths.some(path => location.pathname === path || location.pathname.startsWith(path + "/"));
+    }
+    
     if (href === "/") return location.pathname === href;
     return location.pathname.startsWith(href);
   };
@@ -70,6 +92,7 @@ export default function Navbar() {
       setMobileServicesOpen(false);
       setMobileProductsOpen(false);
       setMobileSolutionsOpen(false);
+      setMobileAboutOpen(false);
     }
   }, [isOpen]);
 
@@ -78,15 +101,23 @@ export default function Navbar() {
     if (type === 'services') {
       setMobileProductsOpen(false);
       setMobileSolutionsOpen(false);
+      setMobileAboutOpen(false);
       setMobileServicesOpen(!mobileServicesOpen);
     } else if (type === 'products') {
       setMobileServicesOpen(false);
       setMobileSolutionsOpen(false);
+      setMobileAboutOpen(false);
       setMobileProductsOpen(!mobileProductsOpen);
     } else if (type === 'solutions') {
       setMobileServicesOpen(false);
       setMobileProductsOpen(false);
+      setMobileAboutOpen(false);
       setMobileSolutionsOpen(!mobileSolutionsOpen);
+    } else if (type === 'about') {
+      setMobileServicesOpen(false);
+      setMobileProductsOpen(false);
+      setMobileSolutionsOpen(false);
+      setMobileAboutOpen(!mobileAboutOpen);
     }
   };
 
@@ -141,10 +172,11 @@ export default function Navbar() {
               const isProducts = item.name === "Products";
               const isSolutions = item.name === "Solutions";
               const isServices = item.name === "Services";
-              const active = isActive(item.href);
+              const isAbout = item.name === "About";
+              const active = isActive(item.href, item.name);
               
               // Disable click for Products and Solutions (desktop only)
-              const isClickDisabled = isProducts || isSolutions;
+              const isClickDisabled = isProducts || isSolutions || isAbout;
 
               return (
                 <div
@@ -155,6 +187,7 @@ export default function Navbar() {
                       if (item.name === "Services") setShowServicesDropdown(true);
                       if (item.name === "Products") setShowProductsDropdown(true);
                       if (item.name === "Solutions") setShowSolutionsDropdown(true);
+                      if (item.name === "About") setShowAboutDropdown(true);
                     }
                   }}
                   onMouseLeave={() => {
@@ -162,10 +195,11 @@ export default function Navbar() {
                       if (item.name === "Services") setShowServicesDropdown(false);
                       if (item.name === "Products") setShowProductsDropdown(false);
                       if (item.name === "Solutions") setShowSolutionsDropdown(false);
+                      if (item.name === "About") setShowAboutDropdown(false);
                     }
                   }}
                 >
-                  {/* For Products and Solutions: use div instead of Link to prevent navigation */}
+                  {/* For Products, Solutions, and About: use div instead of Link to prevent navigation */}
                   {isClickDisabled ? (
                     <div
                       className="relative px-4 py-2 flex flex-col items-center cursor-default"
@@ -200,6 +234,7 @@ export default function Navbar() {
                           if (item.name === "Services") setShowServicesDropdown(false);
                           if (item.name === "Products") setShowProductsDropdown(false);
                           if (item.name === "Solutions") setShowSolutionsDropdown(false);
+                          if (item.name === "About") setShowAboutDropdown(false);
                         }
                       }}
                     >
@@ -377,6 +412,69 @@ export default function Navbar() {
                       </motion.div>
                     )}
                   </AnimatePresence>
+
+                  {/* About Dropdown - Desktop */}
+                  <AnimatePresence>
+                    {isAbout && showAboutDropdown && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -15, scale: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scale: 1, transition: { type: "spring", bounce: 0.3, duration: 0.4 } }}
+                        exit={{ opacity: 0, y: -5, transition: { duration: 0.15 } }}
+                        className="absolute top-full right-0 mt-2 w-72 bg-black shadow-2xl rounded-xl border border-[#29f67a]/20"
+                        style={{ boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+                      >
+                        <div className="flex flex-col py-1.5">
+                          {aboutDropdownItems.map((item, index) => (
+                            <div key={item.name}>
+                              {index > 0 && <div className="border-t border-[#29f67a]/10 mx-3 my-1" />}
+                              <motion.div
+                                initial={{ x: -5, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1, transition: { delay: 0.1 + index * 0.05, ease: "easeOut" } }}
+                              >
+                                <Link
+                                  to={item.path}
+                                  className="group px-4 py-3 hover:bg-[#29f67a]/10 transition-all duration-200 flex items-center"
+                                  onClick={() => setShowAboutDropdown(false)}
+                                >
+                                  <div className="flex-1">
+                                    <p className="font-medium text-white group-hover:text-[#29f67a] transition-colors">
+                                      {item.name}
+                                    </p>
+                                    <p className="text-xs text-gray-400 mt-0.5">
+                                      {item.description}
+                                    </p>
+                                  </div>
+                                  <svg
+                                    className="ml-auto h-4 w-4 text-gray-500 group-hover:text-[#29f67a] transition-colors"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                  >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                  </svg>
+                                </Link>
+                              </motion.div>
+                            </div>
+                          ))}
+                        </div>
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1, transition: { delay: 0.2 } }}
+                          className="px-4 py-2.5 text-xs text-gray-400 border-t border-[#29f67a]/10 flex justify-between items-center"
+                        >
+                          <span
+                            className="hover:text-[#29f67a] cursor-pointer transition-colors"
+                            onClick={() => {
+                              navigate("/contact");
+                              setShowAboutDropdown(false);
+                            }}
+                          >
+                            Contact us
+                          </span>
+                        </motion.div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               );
             })}
@@ -419,23 +517,30 @@ export default function Navbar() {
 
                 <div className="flex-1 py-2 overflow-y-auto">
                   {navItems.map((item) => {
-                    const active = isActive(item.href);
+                    const active = isActive(item.href, item.name);
                     const isServices = item.name === "Services";
                     const isProducts = item.name === "Products";
                     const isSolutions = item.name === "Solutions";
+                    const isAbout = item.name === "About";
 
-                    if (isServices || isProducts || isSolutions) {
+                    if (isServices || isProducts || isSolutions || isAbout) {
                       const isOpenState = isServices
                         ? mobileServicesOpen
                         : isProducts
                         ? mobileProductsOpen
-                        : mobileSolutionsOpen;
+                        : isSolutions
+                        ? mobileSolutionsOpen
+                        : mobileAboutOpen;
+                      
                       const dataToShow = isServices
                         ? servicesData
                         : isProducts
                         ? ourProducts
-                        : solutionsList;
-                      const dropdownType = isServices ? 'services' : isProducts ? 'products' : 'solutions';
+                        : isSolutions
+                        ? solutionsList
+                        : aboutDropdownItems;
+                      
+                      const dropdownType = isServices ? 'services' : isProducts ? 'products' : isSolutions ? 'solutions' : 'about';
 
                       return (
                         <div key={item.name} className="border-b border-[#29f67a]/10 mx-2">
@@ -449,13 +554,13 @@ export default function Navbar() {
                                 active ? "text-[#29f67a]" : "text-gray-300"
                               }`}
                               onClick={() => {
-  if (item.name.toLowerCase() === "services") {
-    navigate(item.href)
-    setIsOpen(false);
-  } else {
-    console.log("Not services")
-  }
-}}
+                                if (item.name.toLowerCase() === "services") {
+                                  navigate(item.href)
+                                  setIsOpen(false);
+                                } else {
+                                  console.log("Not services")
+                                }
+                              }}
                             >
                               {item.name}
                             </span>
@@ -498,12 +603,18 @@ export default function Navbar() {
                                       ? item_data.path
                                       : isProducts
                                       ? item_data.productHeadingSection?.pathUrl
+                                      : isSolutions
+                                      ? item_data.path
                                       : item_data.path;
+                                    
                                     const itemTitle = isServices
                                       ? item_data.title
                                       : isProducts
                                       ? item_data.productHeadingSection?.name
-                                      : item_data.title;
+                                      : isSolutions
+                                      ? item_data.title
+                                      : item_data.name;
+                                    
                                     const isItemActive = location.pathname === itemPath;
 
                                     return (
@@ -511,8 +622,7 @@ export default function Navbar() {
                                         key={idx}
                                         to={itemPath}
                                         onClick={() => {
-                                          setIsOpenState(false);
-                                          setTimeout(() => setIsOpen(false), 100);
+                                          setIsOpen(false);
                                         }}
                                         className={`flex items-center gap-2 px-4 py-2 rounded-lg transition text-sm ${
                                           isItemActive
