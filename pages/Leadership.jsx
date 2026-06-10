@@ -68,8 +68,8 @@ She also served as a Council Member of the Institute of Chartered Secretaries an
     },
     {
       name: "K J Giridhar Singh",
-      role: "Chief Technology Officer",
-      position: "",
+      role: "",
+      position: "Chief Technology Officer",
       image: "/crew/Giri.jpg",
       description: `K J Giridhar Singh is a technology architect and engineering leader with more than 25 years of experience designing, building, and scaling complex digital platforms across gaming, fintech, healthcare, artificial intelligence, blockchain, and SaaS environments. His expertise lies in turning ambitious business ideas into scalable technology platforms.
 
@@ -155,8 +155,8 @@ At Galileo Ventures, Helmar advises clients on organizational transformation, pr
         viewport={{ once: true }}
         className="pb-12 sm:pb-20"
       >
-         {/* Header */}
-        <motion.div 
+        {/* Header */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -197,7 +197,7 @@ At Galileo Ventures, Helmar advises clients on organizational transformation, pr
                   <div className="min-h-[140px] flex flex-col justify-center">
                     <h3 className="text-gray-200 text-lg sm:text-2xl font-semibold mb-1 tracking-wide  transition-colors  group-hover:text-[#29f67a]/80 transition-colors">
                       {member.name.toLocaleUpperCase()}{" "}
-                      
+
                     </h3>
                     <p className="text-[#29f67a] text-sm sm:text-md font-medium mb-1 min-h-[24px]">
                       {member.position}
@@ -208,7 +208,7 @@ At Galileo Ventures, Helmar advises clients on organizational transformation, pr
                   </div>
 
                   {/* Show first paragraph - split by double newline and take first */}
-                   <div className="text-gray-400 text-sm sm:text-md mt-3 sm:text-left leading-relaxed border-t border-white/5 pt-3">
+                  <div className="text-gray-400 text-sm sm:text-md mt-3 sm:text-left leading-relaxed border-t border-white/5 pt-3">
                     {member.description.split(/\n\s*\n/)[0]}
                   </div>
 
