@@ -10,6 +10,8 @@ const SmoothScroll = ({ children }) => {
       smooth: true,
     });
 
+    window.lenis = lenis;
+
     const raf = (time) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -19,6 +21,7 @@ const SmoothScroll = ({ children }) => {
 
     return () => {
       lenis.destroy();
+      window.lenis = null;
     };
   }, []);
 
