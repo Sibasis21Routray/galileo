@@ -83,8 +83,8 @@ At Galileo Ventures, Giri leads technology strategy, product engineering, cloud 
     },
     {
       name: "Job van Hasselt",
-      role: "Advisor",
-      position: "",
+      role: "",
+      position: "Advisor",
       image: "/crew/Job.jpg",
       description: `Job van Hasselt is an international commercial leader whose career spans more than four decades across Europe, Asia Pacific, the Middle East, and Africa. His expertise lies in building markets, establishing regional operations, and driving commercial growth in highly competitive industries.
 
@@ -98,8 +98,8 @@ His extensive network across Asia and Europe, coupled with his multicultural bus
     },
     {
       name: "Helmar ten Winkel",
-      role: "Advisor",
-      position: "",
+      role: "",
+      position: "Advisor",
       image: "/crew/Helmar.png",
       description: `Helmar ten Winkel is a business transformation specialist and former multinational executive with more than 30 years of experience helping organizations improve performance through better alignment of people, processes, and technology.
 
@@ -166,7 +166,8 @@ At Galileo Ventures, Helmar advises clients on organizational transformation, pr
             Our <span className="text-[#29f67a] font-bold">Leadership</span>
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Meet the visionary leaders and advisors who are driving our mission to empower businesses through technology and innovation.
+            Meet the visionary leaders and advisors who are driving our mission
+            to empower businesses through technology and innovation.
           </p>
         </motion.div>
         <div className="container">
@@ -197,14 +198,13 @@ At Galileo Ventures, Helmar advises clients on organizational transformation, pr
                   <div className="min-h-[140px] flex flex-col justify-center">
                     <h3 className="text-gray-200 text-lg sm:text-2xl font-semibold mb-1 tracking-wide  transition-colors  group-hover:text-[#29f67a]/80 transition-colors">
                       {member.name.toLocaleUpperCase()}{" "}
-
                     </h3>
                     <p className="text-[#29f67a] text-sm sm:text-md font-medium mb-1 min-h-[24px]">
                       {member.position}
                     </p>
                     <p className="text-white text-[12px] sm:text-[14px] font-bold tracking-wider leading-tight group-hover:text-[#29f67a]/80 transition-colors min-h-[40px]">
-  {member.role || "\u00A0"}
-</p>
+                      {member.role || "\u00A0"}
+                    </p>
                   </div>
 
                   {/* Show first paragraph - split by double newline and take first */}
