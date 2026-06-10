@@ -39,7 +39,6 @@ function Leadership() {
       image: "/crew/Arun.png",
       description: `Arun Augustine is a business leader and serial entrepreneur with over 30 years of global experience across technology, healthcare, digital businesses, and consumer products. He spent over two decades with a leading IT services and solutions company in Southeast Asia, where he served as Managing Director and Chief Marketing Officer, overseeing operations across 14 countries in Southeast Asia, as well as the UK, Germany, and select businesses in the United States.
 
-
 Following the company's acquisition by NTT (now NTT Data), Arun continued in an expanded leadership role for over eight years, driving regional growth and integration. After stepping down from his executive role, he continued to serve as a Board Member and an advisor to NTT.
 
 Following this, Arun transitioned into entrepreneurship, building, scaling, and exiting ventures across sectors. He co-founded Angstrohm Technologies, a health-tech platform, leading the business through growth and a successful partial exit in 2022, divesting 80% while remaining a shareholder.
@@ -113,6 +112,8 @@ Helmar's consulting and advisory work has focused on business process redesign, 
 At Galileo Ventures, Helmar advises clients on organizational transformation, process excellence, operating model design, and business improvement initiatives, helping organizations achieve measurable and lasting results.`,
     },
   ];
+
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -192,36 +193,38 @@ At Galileo Ventures, Helmar advises clients on organizational transformation, pr
                 </div>
 
                 {/* Content Container */}
-                <div className="p-4 sm:p-5 text-center flex flex-col flex-grow justify-between">
-                  <div>
+                <div className="p-4 sm:p-5 text-center flex flex-col flex-grow">
+                  <div className="min-h-[140px] flex flex-col justify-center">
                     <h3 className="text-gray-200 text-lg sm:text-2xl font-semibold mb-1 tracking-wide  transition-colors  group-hover:text-[#29f67a]/80 transition-colors">
                       {member.name.toLocaleUpperCase()}{" "}
                       
                     </h3>
-                    <p className="text-[#29f67a] text-sm sm:text-md font-medium mb-1">
+                    <p className="text-[#29f67a] text-sm sm:text-md font-medium mb-1 min-h-[24px]">
                       {member.position}
                     </p>
-                    <p className="text-white text-[12px] sm:text-[14px] font-bold uppercase tracking-wider leading-tight  group-hover:text-[#29f67a]/80 transition-colors">
+                    <p className="text-white text-[12px] sm:text-[14px] font-bold  tracking-wider leading-tight  group-hover:text-[#29f67a]/80 transition-colors">
                       {member.role}
                     </p>
                   </div>
 
                   {/* Show first paragraph - split by double newline and take first */}
-                  <div className="text-gray-400 text-sm sm:text-md mt-3 sm:text-left leading-relaxed border-t border-white/5 pt-3">
+                   <div className="text-gray-400 text-sm sm:text-md mt-3 sm:text-left leading-relaxed border-t border-white/5 pt-3">
                     {member.description.split(/\n\s*\n/)[0]}
                   </div>
 
                   {/* Read more button */}
-                  <button
-                    onClick={() => setSelectedMember(member)}
-                    className="group/btn flex gap-2 items-center justify-center sm:justify-start text-gray-400 text-md sm:text-md mt-3 leading-relaxed border-t border-white/5 pt-3 cursor-pointer transition-all duration-300 hover:text-[#29f67a] w-full"
-                  >
-                    <span>Read more</span>
-                    <MoveRightIcon className="w-3 h-3 transition-transform duration-300 group-hover/btn:translate-x-2" />
-                  </button>
+                  <div className="mt-auto">
+                    <button
+                      onClick={() => setSelectedMember(member)}
+                      className="group/btn flex gap-2 items-center justify-center sm:justify-start text-gray-400 text-md sm:text-md mt-3 leading-relaxed border-t border-white/5 pt-3 cursor-pointer transition-all duration-300 hover:text-[#29f67a] w-full"
+                    >
+                      <span>Read more</span>
+                      <MoveRightIcon className="w-3 h-3 transition-transform duration-300 group-hover/btn:translate-x-2" />
+                    </button>
 
-                  {/* Decorative line */}
-                  <div className="mt-4 w-8 h-px bg-[#29f67a]/30 mx-auto group-hover:w-12 group-hover:bg-[#29f67a] transition-all duration-300" />
+                    {/* Decorative line */}
+                    <div className="mt-4 w-8 h-px bg-[#29f67a]/30 mx-auto group-hover:w-12 group-hover:bg-[#29f67a] transition-all duration-300" />
+                  </div>
                 </div>
               </motion.div>
             ))}
