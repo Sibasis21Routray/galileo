@@ -37,9 +37,10 @@ function Leadership() {
       role: "Business Strategy, Growth & Innovation",
       position: "CEO",
       image: "/crew/Arun.png",
-      description: `Arun Augustine is a business leader and serial entrepreneur with over 30 years of global experience across technology, healthcare, digital businesses, and consumer products.
+      description: `Arun Augustine is a business leader and serial entrepreneur with over 30 years of global experience across technology, healthcare, digital businesses, and consumer products. He spent over two decades with a leading IT services and solutions company in Southeast Asia, where he served as Managing Director and Chief Marketing Officer, overseeing operations across 14 countries in Southeast Asia, as well as the UK, Germany, and select businesses in the United States.
 
-He spent over two decades with a leading IT services and solutions company in Southeast Asia, where he served as Managing Director and Chief Marketing Officer, overseeing operations across 14 countries in Southeast Asia, as well as the UK, Germany, and select businesses in the United States. Following the company's acquisition by NTT (now NTT Data), Arun continued in an expanded leadership role for over eight years, driving regional growth and integration. After stepping down from his executive role, he continued to serve as a Board Member and an advisor to NTT.
+
+Following the company's acquisition by NTT (now NTT Data), Arun continued in an expanded leadership role for over eight years, driving regional growth and integration. After stepping down from his executive role, he continued to serve as a Board Member and an advisor to NTT.
 
 Following this, Arun transitioned into entrepreneurship, building, scaling, and exiting ventures across sectors. He co-founded Angstrohm Technologies, a health-tech platform, leading the business through growth and a successful partial exit in 2022, divesting 80% while remaining a shareholder.
 
@@ -71,9 +72,9 @@ She also served as a Council Member of the Institute of Chartered Secretaries an
       role: "Chief Technology Officer",
       position: "",
       image: "/crew/Giri.jpg",
-      description: `K J Giridhar Singh is a technology architect and engineering leader with more than 25 years of experience designing, building, and scaling complex digital platforms across gaming, fintech, healthcare, artificial intelligence, blockchain, and SaaS environments.
+      description: `K J Giridhar Singh is a technology architect and engineering leader with more than 25 years of experience designing, building, and scaling complex digital platforms across gaming, fintech, healthcare, artificial intelligence, blockchain, and SaaS environments. His expertise lies in turning ambitious business ideas into scalable technology platforms.
 
-His expertise lies in turning ambitious business ideas into scalable technology platforms. Throughout his career, he has architected high-volume transaction systems, cloud-native applications, sportsbook platforms, gaming ecosystems, payment integrations, and healthcare technology solutions capable of supporting large user communities and demanding operational requirements.
+Throughout his career, he has architected high-volume transaction systems, cloud-native applications, sportsbook platforms, gaming ecosystems, payment integrations, and healthcare technology solutions capable of supporting large user communities and demanding operational requirements.
 
 Before joining Galileo Ventures, Giri held senior technology leadership positions with gaming and technology companies across India and Southeast Asia, where he led engineering organizations, modernized technology stacks, and implemented cloud-first architectures that improved scalability, performance, and operational efficiency.
 
@@ -193,14 +194,14 @@ At Galileo Ventures, Helmar advises clients on organizational transformation, pr
                 {/* Content Container */}
                 <div className="p-4 sm:p-5 text-center flex flex-col flex-grow justify-between">
                   <div>
-                    <h3 className="text-gray-200 text-lg sm:text-2xl font-semibold mb-1 tracking-wide  transition-colors">
-                      {member.name}{" "}
+                    <h3 className="text-gray-200 text-lg sm:text-2xl font-semibold mb-1 tracking-wide  transition-colors  group-hover:text-[#29f67a]/80 transition-colors">
+                      {member.name.toLocaleUpperCase()}{" "}
                       
                     </h3>
                     <p className="text-[#29f67a] text-sm sm:text-md font-medium mb-1">
                       {member.position}
                     </p>
-                    <p className="text-white text-[12px] sm:text-[14px] font-bold uppercase tracking-wider leading-tight">
+                    <p className="text-white text-[12px] sm:text-[14px] font-bold uppercase tracking-wider leading-tight  group-hover:text-[#29f67a]/80 transition-colors">
                       {member.role}
                     </p>
                   </div>
@@ -279,7 +280,7 @@ At Galileo Ventures, Helmar advises clients on organizational transformation, pr
                 {/* Fixed Header */}
                 <div className="shrink-0">
                   <h3 className="text-white text-2xl lg:text-3xl font-bold tracking-tight pr-8">
-                    {selectedMember.name}
+                    {selectedMember.name.toLocaleUpperCase()}
                     {selectedMember.position && (
                       <span className="text-base text-gray-400 pl-2">
                         ({selectedMember.position})
