@@ -164,7 +164,7 @@ ${formData.message}
       turnstileToken
     );
   };
-
+console.log(import.meta.env.VITE_TURNSTILE_SITE_KEY);
   return (
     <div className="relative">
       <form onSubmit={handleSubmit} className="space-y-5">
