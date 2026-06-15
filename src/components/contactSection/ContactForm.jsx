@@ -112,7 +112,7 @@ ${formData.message}
 
       // Create mailto link
       // Replace 'your-email@example.com' with your actual email address
-      const recipientEmail = 'tusar00005@gmail.com'; // Change this to your email
+      const recipientEmail = 'connect@galileonext.com'; // Change this to your email
       const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
       
       // Open default email client
