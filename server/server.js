@@ -146,12 +146,12 @@ app.post("/send-mail", async (req, res) => {
     // Send email using BrevoClient
     const response = await apiInstance.sendTransacEmail({
       sender: {
-        email: process.env.BREVO_SENDER_EMAIL || "tusar00005@gmail.com",
+        email: "connect@galileonext.com",
         name: "Galileo Next Website",
       },
       to: [
         {
-          email: process.env.CONTACT_FORM_RECIPIENT || "tusar00005@gmail.com",
+          email: "connect@galileonext.com",
           name: "Galileo Next",
         },
       ],
