@@ -269,7 +269,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full right-20 mt-2"
+                        className="absolute top-full right-1 mt-2"
                       >
                         <ServicesMenu
                           servicesData={filteredServicesData}
