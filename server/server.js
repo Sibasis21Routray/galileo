@@ -6,6 +6,8 @@ const rateLimit = require("express-rate-limit");
 const axios = require("axios");
 const validator = require("validator");
 const helmet = require("helmet");
+
+// Import Brevo correctly
 const Brevo = require("@getbrevo/brevo");
 
 const app = express();
@@ -57,12 +59,10 @@ const contactLimiter = rateLimit({
   },
 });
 
-// Brevo setup
-const apiInstance = new Brevo.TransactionalEmailsApi();
-apiInstance.setApiKey(
-  Brevo.TransactionalEmailsApiApiKeys.API_KEY,
-  process.env.BREVO_API_KEY
-);
+// Brevo setup - Using BrevoClient
+const apiInstance = new Brevo.BrevoClient({
+  apiKey: process.env.BREVO_API_KEY,
+});
 
 // Validation middleware
 const validateContactRequest = (req, res, next) => {
@@ -78,11 +78,6 @@ const validateContactRequest = (req, res, next) => {
 
 app.use("/send-mail", contactLimiter);
 app.use("/send-mail", validateContactRequest);
-
-// // Health check
-// app.get("/health", (req, res) => {
-//   res.status(200).json({ status: "OK", timestamp: new Date().toISOString() });
-// });
 
 // Main endpoint
 app.post("/send-mail", async (req, res) => {
@@ -148,15 +143,15 @@ app.post("/send-mail", async (req, res) => {
       }
     }
 
-    // Send email
-    await apiInstance.sendTransacEmail({
+    // Send email using BrevoClient
+    const response = await apiInstance.sendTransacEmail({
       sender: {
-        email: "tusar00005@gmail.com",
+        email: process.env.BREVO_SENDER_EMAIL || "tusar00005@gmail.com",
         name: "Galileo Next Website",
       },
       to: [
         {
-          email: "tusar00005@gmail.com",
+          email: process.env.CONTACT_FORM_RECIPIENT || "tusar00005@gmail.com",
           name: "Galileo Next",
         },
       ],
@@ -187,6 +182,11 @@ app.post("/send-mail", async (req, res) => {
       message: "Failed to send message. Please try again later.",
     });
   }
+});
+
+// Health check
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "OK", timestamp: new Date().toISOString() });
 });
 
 const PORT = process.env.PORT || 5000;
