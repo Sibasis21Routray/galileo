@@ -151,12 +151,12 @@ app.post("/send-mail", async (req, res) => {
     // Send email
     await apiInstance.sendTransacEmail({
       sender: {
-        email: "connect@galileonext.com",
+        email: "tusar00005@gmail.com",
         name: "Galileo Next Website",
       },
       to: [
         {
-          email: "connect@galileonext.com",
+          email: "tusar00005@gmail.com",
           name: "Galileo Next",
         },
       ],
