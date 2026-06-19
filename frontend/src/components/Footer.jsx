@@ -580,14 +580,7 @@ const Footer = () => {
               />
             </h3>
             <address className="not-italic text-white/60 space-y-4">
-              <motion.p whileHover={{ x: 5 }} className="flex items-center text-md">
-                <Link
-                  to="mailto:connect@galileonext.com"
-                  className="hover:text-[#29f67a] transition-colors duration-300"
-                >
-                  connect@galileonext.com
-                </Link>
-              </motion.p>
+             
               <motion.p whileHover={{ x: 5 }} className="flex items-center text-md cursor-pointer" onClick={()=>{navigate("/contact")}}>
                 <span
                   
@@ -595,6 +588,15 @@ const Footer = () => {
                 >
                   Contact
                 </span>
+              </motion.p>
+
+               <motion.p whileHover={{ x: 5 }} className="flex items-center text-md">
+                <Link
+                  to="mailto:connect@galileonext.com"
+                  className="hover:text-[#29f67a] transition-colors duration-300"
+                >
+                  connect@galileonext.com
+                </Link>
               </motion.p>
              
             </address>
