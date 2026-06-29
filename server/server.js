@@ -6,9 +6,7 @@ const rateLimit = require("express-rate-limit");
 const axios = require("axios");
 const validator = require("validator");
 const helmet = require("helmet");
-
-// Import Brevo correctly
-const Brevo = require("@getbrevo/brevo");
+const nodemailer = require("nodemailer");
 
 const app = express();
 app.set("trust proxy", 1);
@@ -59,10 +57,18 @@ const contactLimiter = rateLimit({
   },
 });
 
-// Brevo setup - Using BrevoClient
-const apiInstance = new Brevo.BrevoClient({
-  apiKey: process.env.BREVO_API_KEY,
-});
+// SMTP Transporter setup (using Brevo SMTP)
+const createTransporter = () => {
+  return nodemailer.createTransport({
+    host: 'smtp-relay.brevo.com',
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: process.env.BREVO_SMTP_LOGIN, // Your Brevo SMTP login (email)
+      pass: process.env.BREVO_SMTP_KEY,   // Your Brevo SMTP key
+    },
+  });
+};
 
 // Validation middleware
 const validateContactRequest = (req, res, next) => {
@@ -79,7 +85,7 @@ const validateContactRequest = (req, res, next) => {
 app.use("/send-mail", contactLimiter);
 app.use("/send-mail", validateContactRequest);
 
-// Main endpoint
+// Main endpoint - SMTP version
 app.post("/send-mail", async (req, res) => {
   try {
     const { name, email, subject, message, turnstileToken } = req.body;
@@ -143,24 +149,16 @@ app.post("/send-mail", async (req, res) => {
       }
     }
 
-    // Send email using BrevoClient
-    const response = await apiInstance.sendTransacEmail({
-      sender: {
-        email: "connect@galileonext.com",
-        name: "Galileo Next Website",
-      },
-      to: [
-        {
-          email: "connect@galileonext.com",
-          name: "Galileo Next",
-        },
-      ],
-      replyTo: {
-        email,
-        name,
-      },
+    // Create transporter instance
+    const transporter = createTransporter();
+
+    // Send email using SMTP
+    const mailOptions = {
+      from: `"Galileo Next Website" <${process.env.BREVO_SENDER_EMAIL || "connect@galileonext.com"}>`,
+      replyTo: `"${name}" <${email}>`,
+      to: process.env.RECEIVER_EMAIL || "connect@galileonext.com",
       subject: `Contact Form: ${subject}`,
-      htmlContent: `
+      html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
@@ -168,7 +166,19 @@ app.post("/send-mail", async (req, res) => {
         <hr />
         <p>${message}</p>
       `,
-    });
+      text: `
+        New Contact Form Submission
+        
+        Name: ${name}
+        Email: ${email}
+        Subject: ${subject}
+        
+        Message:
+        ${message}
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
 
     res.status(200).json({
       success: true,
@@ -177,9 +187,17 @@ app.post("/send-mail", async (req, res) => {
   } catch (error) {
     console.error("Mail Error:", error);
     
+    // More detailed error response
+    let errorMessage = "Failed to send message. Please try again later.";
+    if (error.response) {
+      console.error('SMTP Response:', error.response);
+    }
+    
     res.status(500).json({
       success: false,
-      message: "Failed to send message. Please try again later.",
+      message: errorMessage,
+      // Optionally include more details in development
+      ...(process.env.NODE_ENV === 'development' && { details: error.message }),
     });
   }
 });
