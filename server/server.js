@@ -7,9 +7,13 @@ const axios = require("axios");
 const validator = require("validator");
 const helmet = require("helmet");
 const nodemailer = require("nodemailer");
+const morgan=require("morgan")
 
 const app = express();
+
 app.set("trust proxy", 1);
+app.use(morgan("dev"));
+
 
 // Helmet with proper config
 app.use(
